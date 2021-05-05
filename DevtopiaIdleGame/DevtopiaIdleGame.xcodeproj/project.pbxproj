@@ -12,7 +12,6 @@
 		48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8D264083C300F6D4B0 /* GameViewController.swift */; };
 		48775C91264083C300F6D4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48775C8F264083C300F6D4B0 /* Main.storyboard */; };
 		48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48775C92264083C400F6D4B0 /* Assets.xcassets */; };
-		4EA069952641DCC7008DBCAC /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA069942641DCC7008DBCAC /* MainScene.swift */; };
 		4EA069972641DE3F008DBCAC /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA069962641DE3F008DBCAC /* Camera.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		48775C90264083C300F6D4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48775C92264083C400F6D4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48775C94264083C400F6D4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EA069942641DCC7008DBCAC /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		4EA069962641DE3F008DBCAC /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +60,6 @@
 				48775C8B264083C300F6D4B0 /* GameScene.swift */,
 				4EA069962641DE3F008DBCAC /* Camera.swift */,
 				48775C8D264083C300F6D4B0 /* GameViewController.swift */,
-				4EA069942641DCC7008DBCAC /* MainScene.swift */,
 				48775C8F264083C300F6D4B0 /* Main.storyboard */,
 				48775C92264083C400F6D4B0 /* Assets.xcassets */,
 				48775C94264083C400F6D4B0 /* Info.plist */,
@@ -141,7 +138,6 @@
 			files = (
 				48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */,
 				4EA069972641DE3F008DBCAC /* Camera.swift in Sources */,
-				4EA069952641DCC7008DBCAC /* MainScene.swift in Sources */,
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
 				48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */,
 			);
@@ -283,13 +279,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 478594C4R9;
+				DEVELOPMENT_TEAM = 2522W6SWRS;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MatheusHomrich.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = GuilhermeAntonini.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,13 +298,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 478594C4R9;
+				DEVELOPMENT_TEAM = 2522W6SWRS;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MatheusHomrich.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = GuilhermeAntonini.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

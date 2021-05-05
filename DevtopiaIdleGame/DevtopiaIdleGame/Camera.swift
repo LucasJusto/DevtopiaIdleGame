@@ -7,7 +7,7 @@ class Camera: SKCameraNode {
     
     // MARK: Váriaveis padrões
     
-    /** O nó da câmera. Tudo que você querira que seja afetádo pela câmera deve ser filho desse nó. */
+    /** O nó da câmera. Tudo que você queira que seja afetádo pela câmera deve ser filho desse nó. */
     let cenario: SKNode
     
     /** Limites do Tela do iPhone. O valor padrão é o size da View, mas esse valor pode ser mudado. */
