@@ -16,9 +16,9 @@ class GameScene: SKScene {
     private lazy var background: SKSpriteNode = {
         let background = SKSpriteNode(imageNamed: "Piso")
         //setter da posição do backgroud para a posição x: 0 , y: 0 [Item 2 do check-list]
-        background.position = CGPoint(x: 0 , y: 0)
+        background.position = CGPoint(x: 0.5,y: 0.5)
         //setter da anchorPoint do backgroud para a posição x: 0 , y: 0 [Item 1 do check-list]
-        background.anchorPoint = CGPoint(x: 0, y:0)
+        background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         background.zPosition = 0
         return background
     }()
@@ -35,7 +35,7 @@ class GameScene: SKScene {
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0 [Item 1 do check-list]
         anchorPoint = CGPoint(x: 0, y:0)
         //setter do tamanho da GameScene para o tamanho do cenário [Item 3 do check-list]
-        self.size = background.size
+        self.size = background.size 
         
         //atribui a câmera da GameScene a câmera customizada.
         camera = cameraNode

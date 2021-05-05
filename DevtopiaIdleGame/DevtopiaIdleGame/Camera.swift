@@ -70,7 +70,7 @@ class Camera: SKCameraNode {
         //determina a escla inicial do zoom para 1
         escalaZoom = 1.0
         //determina o intervalo de escla do zoom para o intervalo [1,1.3]
-        intervaloZoom = (1, 1.5)
+        intervaloZoom = (0.1, 1.0)
         //habilita a câmera e o zoom
         zoomHabilitado = true
         cameraHabilitada = true
@@ -80,6 +80,7 @@ class Camera: SKCameraNode {
         
         //adiciona o gesture a view da câmera
         pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.updateScale(_:)))
+
         sceneView.addGestureRecognizer(pinchGestureRecognizer)
         
         sceneView.addGestureRecognizer(swipeNavigation)
