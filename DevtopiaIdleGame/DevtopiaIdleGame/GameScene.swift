@@ -13,18 +13,33 @@ class GameScene: SKScene {
         //setter da anchorPoint do backgroud para a posição x: 0.5 , y: 0.5
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         background.zPosition = 0
+        
+        background.addChild(developer)
+        background.addChild(developer2)
+        
         return background
     }()
     
-    //váriavel para o developer
+    //váriavel para o developer 1
     private lazy var developer: SKSpriteNode = {
         let developer = SKSpriteNode(imageNamed: "Dev_step_01")
-        //setter da posição do dev para a posição x: 0.5 , y: 0.5
-        developer.position = CGPoint(x: 0.5,y: 0.5)
+        //setter da posição do dev para a posição x: 0 , y: 0
+        developer.position = CGPoint(x: 0.455,y: 5.065)
         //setter da anchorPoint do dev para a posição x: 0.5 , y: 0.5
         developer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         developer.zPosition = 1
         return developer
+    }()
+    
+    //váriavel para o developer 2
+    private lazy var developer2: SKSpriteNode = {
+        let developer2 = SKSpriteNode(imageNamed: "Dev_step_01")
+        //setter da posição do dev para a posição x: 0 , y: 0
+        developer2.position = CGPoint(x: 0,y: 0)
+        //setter da anchorPoint do dev para a posição x: 0.5 , y: 0.5
+        developer2.anchorPoint = CGPoint(x: 0.975, y: 2.585)
+        developer2.zPosition = 1
+        return developer2
     }()
     
     //Camera do jogo
@@ -34,6 +49,11 @@ class GameScene: SKScene {
         cameraNode.position = CGPoint(x:UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
         return cameraNode
     }()
+    
+    
+    
+    
+    
     
     override func didMove(to view: SKView) {
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
@@ -46,7 +66,6 @@ class GameScene: SKScene {
         
         //adiciona a câmera e o cenário como filhas da GameScene
         addChild(background)
-        addChild(developer)
         addChild(cameraNode)
     }
 }
