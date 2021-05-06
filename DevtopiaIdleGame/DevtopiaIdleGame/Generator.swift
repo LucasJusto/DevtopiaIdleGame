@@ -14,6 +14,10 @@ protocol Generator: Upgradable {
     
     func getCurrencyPerSec() -> Decimal
     
+    func addMultiplier(m: Multiplier)
+    
+    func setMultipliers(ms: [Multiplier])
+    
 }
 
 extension Generator {
@@ -25,9 +29,19 @@ extension Generator {
         return perSec * multiplier
     }
     
-    mutating func upgrade() {
+    func upgrade() {
         currentLevel += 1
         currentPrice *= 1.1
         perSec += increase
+        observer.updateDevCoinsPerSec()
+    }
+    
+   func addMultiplier(m: Multiplier){
+        multipliers.append(m)
+        observer.updateDevCoinsPerSec()
+    }
+    
+    func setMultipliers(ms: [Multiplier]) {
+        multipliers = ms
     }
 }

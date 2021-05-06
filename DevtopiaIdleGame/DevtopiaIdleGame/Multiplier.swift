@@ -14,9 +14,10 @@ protocol Multiplier: Upgradable {
 }
 
 extension Multiplier {
-    mutating func upgrade() {
+    func upgrade() {
         currentLevel += 1
         currentPrice *= 1.1
         multiply += increase
+        observer.updateDevCoinsPerSec()
     }
 }

@@ -12,12 +12,14 @@ public class MainCurrency {
     private var devCoinsPerSec: Decimal //current amount of devCoins that the player is generating per second
     private var generators: [Generator] //all the generators that the player has
     private var offlineMultiplier: Decimal //the multiplier to know how much the player made per sec while offline (10%)
+    private var multipliers: [Multiplier] //all the multipliers the player has
     
     init(){
         devCoins = Decimal(50)
         devCoinsPerSec = Decimal(0)
         generators = [Generator]()
         offlineMultiplier = Decimal(0.1)
+        multipliers = [Multiplier]()
     }
     
     func getDevCoins() -> Decimal {
@@ -30,6 +32,10 @@ public class MainCurrency {
     
     func addGenerator(generator: Generator) {
         generators.append(generator)
+        for g in generators {
+            g.setMultipliers(ms: multipliers)
+        }
+        self.updateDevCoinsPerSec()
     }
     
     func updateDevCoinsPerSec(){
@@ -45,5 +51,13 @@ public class MainCurrency {
     
     func updateDevCoins(value: Decimal){
         devCoins += value
+    }
+    
+    func addMultiplier(multiplier: Multiplier){
+        multipliers.append(multiplier)
+        for g in generators {
+            g.setMultipliers(ms: multipliers)
+        }
+        self.updateDevCoinsPerSec()
     }
 }
