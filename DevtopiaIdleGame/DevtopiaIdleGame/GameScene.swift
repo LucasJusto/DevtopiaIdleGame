@@ -23,10 +23,10 @@ class GameScene: SKScene {
     //váriavel para o developer 1
     private lazy var developer: SKSpriteNode = {
         let developer = SKSpriteNode(imageNamed: "Dev_step_01")
-        //setter da posição do dev para a posição x: 0 , y: 0
-        developer.position = CGPoint(x: 0.455,y: 5.065)
-        //setter da anchorPoint do dev para a posição x: 0.5 , y: 0.5
-        developer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //setter da posição do dev1
+        developer2.position = CGPoint(x: 0,y: 844.5)
+        //setter da anchorPoint do dev1 para a posição x: 0.458 , y: 0.5
+        developer2.anchorPoint = CGPoint(x: 0.458, y: 0.5)
         developer.zPosition = 1
         return developer
     }()
@@ -34,10 +34,10 @@ class GameScene: SKScene {
     //váriavel para o developer 2
     private lazy var developer2: SKSpriteNode = {
         let developer2 = SKSpriteNode(imageNamed: "Dev_step_01")
-        //setter da posição do dev para a posição x: 0 , y: 0
-        developer2.position = CGPoint(x: 0,y: 0)
-        //setter da anchorPoint do dev para a posição x: 0.5 , y: 0.5
-        developer2.anchorPoint = CGPoint(x: 0.975, y: 2.585)
+        //setter da posição do dev2
+        developer2.position = CGPoint(x: 0,y: 844.5)
+        //setter da anchorPoint do dev2 para a posição x: 0.458 , y: 0.5
+        developer2.anchorPoint = CGPoint(x: 0.458, y: 0.5)
         developer2.zPosition = 1
         return developer2
     }()
