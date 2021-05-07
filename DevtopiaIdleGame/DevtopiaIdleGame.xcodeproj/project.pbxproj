@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4861443A2645C54B003CACB3 /* TopTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486144392645C54B003CACB3 /* TopTab.swift */; };
 		48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C85264083C300F6D4B0 /* AppDelegate.swift */; };
 		48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8B264083C300F6D4B0 /* GameScene.swift */; };
 		48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8D264083C300F6D4B0 /* GameViewController.swift */; };
@@ -17,11 +18,15 @@
 		48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA22643177E00F6D4B0 /* Multiplier.swift */; };
 		48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
 		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
-		F4B675E82644750C00249400 /* MenuUpgrade.sks in Resources */ = {isa = PBXBuildFile; fileRef = F4B675E72644750C00249400 /* MenuUpgrade.sks */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		486144392645C54B003CACB3 /* TopTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTab.swift; sourceTree = "<group>"; };
+		486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		486144412645D912003CACB3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		486144422645D912003CACB3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		486144432645D913003CACB3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		48775C82264083C300F6D4B0 /* DevtopiaIdleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevtopiaIdleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48775C85264083C300F6D4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48775C8B264083C300F6D4B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -34,7 +39,6 @@
 		48775CA02641CAFC00F6D4B0 /* Upgradable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgradable.swift; sourceTree = "<group>"; };
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		F4B675E72644750C00249400 /* MenuUpgrade.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuUpgrade.sks; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +53,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4861443B2645D81F003CACB3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				48775C9C2641C6CB00F6D4B0 /* MainCurrency.swift */,
+				48775C9E2641C7AE00F6D4B0 /* Generator.swift */,
+				48775CA02641CAFC00F6D4B0 /* Upgradable.swift */,
+				48775CA22643177E00F6D4B0 /* Multiplier.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4861443C2645D854003CACB3 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				486144392645C54B003CACB3 /* TopTab.swift */,
+				48775CA52645B32200F6D4B0 /* Camera.swift */,
+				48775C8B264083C300F6D4B0 /* GameScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		4861443D2645D8A4003CACB3 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		4861443E2645D8BC003CACB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4861443F2645D8DF003CACB3 /* Fonts */,
+				48775C92264083C400F6D4B0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4861443F2645D8DF003CACB3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				486144422645D912003CACB3 /* Montserrat-Bold.ttf */,
+				486144432645D913003CACB3 /* Montserrat-Medium.ttf */,
+				486144412645D912003CACB3 /* Montserrat-Regular.ttf */,
+				486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		48775C79264083C300F6D4B0 = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +121,14 @@
 		48775C84264083C300F6D4B0 /* DevtopiaIdleGame */ = {
 			isa = PBXGroup;
 			children = (
-				48775CA52645B32200F6D4B0 /* Camera.swift */,
+				4861443E2645D8BC003CACB3 /* Resources */,
+				4861443D2645D8A4003CACB3 /* Nodes */,
+				4861443C2645D854003CACB3 /* Scene */,
+				4861443B2645D81F003CACB3 /* Base */,
 				48775C85264083C300F6D4B0 /* AppDelegate.swift */,
-				48775C8B264083C300F6D4B0 /* GameScene.swift */,
 				48775C8D264083C300F6D4B0 /* GameViewController.swift */,
 				48775C8F264083C300F6D4B0 /* Main.storyboard */,
-				48775C92264083C400F6D4B0 /* Assets.xcassets */,
 				48775C94264083C400F6D4B0 /* Info.plist */,
-				F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */,
-				F4B675E72644750C00249400 /* MenuUpgrade.sks */,
-				48775C9C2641C6CB00F6D4B0 /* MainCurrency.swift */,
-				48775C9E2641C7AE00F6D4B0 /* Generator.swift */,
-				48775CA02641CAFC00F6D4B0 /* Upgradable.swift */,
-				48775CA22643177E00F6D4B0 /* Multiplier.swift */,
 			);
 			path = DevtopiaIdleGame;
 			sourceTree = "<group>";
@@ -142,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B675E82644750C00249400 /* MenuUpgrade.sks in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
 			);
@@ -158,6 +205,7 @@
 				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
 				48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */,
 				48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */,
+				4861443A2645C54B003CACB3 /* TopTab.swift in Sources */,
 				48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */,
 				48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */,
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
@@ -303,7 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 478594C4R9;
+				DEVELOPMENT_TEAM = 6GD2RK7JQN;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 478594C4R9;
+				DEVELOPMENT_TEAM = 6GD2RK7JQN;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (

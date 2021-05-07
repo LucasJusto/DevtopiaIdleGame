@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
+	</array>
+	<key>item3</key>
+	<string>Montserrat-SemiBold.ttf</string>
+	<key>item2</key>
+	<string>Montserrat-Regular.ttf</string>
+	<key>item0</key>
+	<string>Montserrat-Bold.ttf</string>
+	<key>item1</key>
+	<string>Montserrat-Medium.ttf</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

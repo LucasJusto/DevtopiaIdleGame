@@ -8,11 +8,20 @@
 import Foundation
 import SpriteKit
 
-class DevsDesk: SKNode{
+class DevsDesk: SKNode, Generator{
+    var perSec: Decimal
+    var multipliers: [Multiplier]
+    var id: Int
+    var currentPrice: Decimal
+    var basePrice: Decimal
+    var currentLevel: Int
+    var increase: Decimal
+    var observer: MainCurrency
+    
     
     private lazy var desk: SKSpriteNode = {
 
-        let desk = SKSpriteNode(imageNamed: "Dev_step_01")
+        let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
         
         //setter da anchorPoint do dev para a posição x: 0.458 , y: 0.5
         desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
@@ -22,7 +31,15 @@ class DevsDesk: SKNode{
         return desk
     }()
     
-    init(x: Double = 0, y: Double = 844.5) {
+    init(x: Double = 0, y: Double = 844.5, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency) {
+        self.perSec = increase
+        self.multipliers = [Multiplier]()
+        self.id = id
+        self.currentPrice = basePrice
+        self.basePrice = basePrice
+        self.currentLevel = 1
+        self.increase = increase
+        self.observer = observer
         super.init()
         isUserInteractionEnabled = true
         addChild(desk)
@@ -41,7 +58,7 @@ class DevsDesk: SKNode{
         let node = self.atPoint(location ?? .zero)
         
         if node.name == "desk" {
-            print("dévLóverrr") //button action
+            print("teste") //button action
         }
     }
     
