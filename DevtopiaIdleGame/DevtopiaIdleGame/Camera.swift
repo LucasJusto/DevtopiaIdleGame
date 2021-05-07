@@ -60,12 +60,12 @@ class Camera: SKCameraNode {
     /** Ultima Localização do toque na tela. */
     private var ultimaPosicaoDoToque: CGPoint!
     
-    
     init(sceneView: SKView, cenario: SKNode) {
         //configurações iniciais da câmera
         self.cenario = cenario
         self.cenarioFrame = cenario.frame
-        self.limitesdDaTela = sceneView.bounds
+        let myBounds = CGRect(x: 0, y: 0, width: sceneView.bounds.width/2, height: sceneView.bounds.height/2)
+        self.limitesdDaTela = myBounds
         
         //determina a escla inicial do zoom para 1
         escalaZoom = 1.0
@@ -121,10 +121,10 @@ class Camera: SKCameraNode {
         //Cálcula o limites da tela
         // Os cálculos do tipo (bounds.size.width / 2) são necessários para a compensação mátematica da câmera em relação ao seu anchor point. Mais informações na Parte 1 (o link é encontrado no final dessa parte).
         let frame = cenarioFrame
-        var minX = frame.minX + (limitesdDaTela.size.width / 2)
-        var maxX = frame.maxX - (limitesdDaTela.size.width / 2)
-        var minY = frame.minY + (limitesdDaTela.size.height / 2)
-        var maxY = frame.maxY - (limitesdDaTela.size.height / 2)
+        var minX = frame.minX + (limitesdDaTela.size.width/2)
+        var maxX = frame.maxX - (limitesdDaTela.size.width/2)
+        var minY = frame.minY + (limitesdDaTela.size.height/2)
+        var maxY = frame.maxY - (limitesdDaTela.size.height/2)
         
         
         //Essa verificações são necessárias para saber se o tamanho do cenário é menor do que o tamanho da View, se sim os valores são trocados.
