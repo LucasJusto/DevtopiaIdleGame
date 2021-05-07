@@ -13,10 +13,10 @@
 		48775C91264083C300F6D4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48775C8F264083C300F6D4B0 /* Main.storyboard */; };
 		48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48775C92264083C400F6D4B0 /* Assets.xcassets */; };
 		48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9C2641C6CB00F6D4B0 /* MainCurrency.swift */; };
-		48775C9F2641C7AE00F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
 		48775CA12641CAFC00F6D4B0 /* Upgradable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA02641CAFC00F6D4B0 /* Upgradable.swift */; };
 		48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA22643177E00F6D4B0 /* Multiplier.swift */; };
-		4E428A28264091650095E276 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E428A27264091650095E276 /* MainScene.swift */; };
+		48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
+		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
 		F4B675E82644750C00249400 /* MenuUpgrade.sks in Resources */ = {isa = PBXBuildFile; fileRef = F4B675E72644750C00249400 /* MenuUpgrade.sks */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		48775C9E2641C7AE00F6D4B0 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		48775CA02641CAFC00F6D4B0 /* Upgradable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgradable.swift; sourceTree = "<group>"; };
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
-		4E428A27264091650095E276 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		F4B675E72644750C00249400 /* MenuUpgrade.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuUpgrade.sks; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,14 +68,13 @@
 		48775C84264083C300F6D4B0 /* DevtopiaIdleGame */ = {
 			isa = PBXGroup;
 			children = (
+				48775CA52645B32200F6D4B0 /* Camera.swift */,
 				48775C85264083C300F6D4B0 /* AppDelegate.swift */,
 				48775C8B264083C300F6D4B0 /* GameScene.swift */,
-				4EA069962641DE3F008DBCAC /* Camera.swift */,
 				48775C8D264083C300F6D4B0 /* GameViewController.swift */,
 				48775C8F264083C300F6D4B0 /* Main.storyboard */,
 				48775C92264083C400F6D4B0 /* Assets.xcassets */,
 				48775C94264083C400F6D4B0 /* Info.plist */,
-				4E428A27264091650095E276 /* MainScene.swift */,
 				F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */,
 				F4B675E72644750C00249400 /* MenuUpgrade.sks */,
 				48775C9C2641C6CB00F6D4B0 /* MainCurrency.swift */,
@@ -156,11 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
+				48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */,
 				48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */,
 				48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */,
 				48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */,
-				4E428A28264091650095E276 /* MainScene.swift in Sources */,
-				48775C9F2641C7AE00F6D4B0 /* Generator.swift in Sources */,
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
 				48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
