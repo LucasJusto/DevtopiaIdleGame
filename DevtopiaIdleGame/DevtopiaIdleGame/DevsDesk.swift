@@ -11,21 +11,23 @@ import SpriteKit
 class DevsDesk: SKNode{
     
     private lazy var desk: SKSpriteNode = {
+
         let desk = SKSpriteNode(imageNamed: "Dev_step_01")
-        //setter da posição do dev para a posição x: 0.5 , y: 0.5
-        desk.position = CGPoint(x: 0.5,y: 0.5)
-        //setter da anchorPoint do dev para a posição x: 0.5 , y: 0.5
-        desk.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        //setter da anchorPoint do dev para a posição x: 0.458 , y: 0.5
+        desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
         desk.zPosition = 1
         desk.name = "desk"
         //desk.size = CGSize(width: 500, height: 500
         return desk
     }()
     
-    override init() {
+    init(x: Double = 0, y: Double = 844.5) {
         super.init()
         isUserInteractionEnabled = true
         addChild(desk)
+        desk.position = CGPoint(x: x, y: y)
+        
     }
     
     
@@ -39,7 +41,7 @@ class DevsDesk: SKNode{
         let node = self.atPoint(location ?? .zero)
         
         if node.name == "desk" {
-            print("matheus") //ação do botao
+            print("dévLóverrr") //button action
         }
     }
     

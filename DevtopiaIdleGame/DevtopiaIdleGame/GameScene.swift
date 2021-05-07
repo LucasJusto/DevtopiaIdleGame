@@ -11,7 +11,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        let desk = DevsDesk()
+        let desk = DevsDesk(x: 0.0, y: 0.0)
         addChild(desk)
         
     }
