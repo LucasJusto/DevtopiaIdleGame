@@ -1,6 +1,11 @@
 {
   "colors" : [
     {
+      "display-gamut" : "sRGB",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "display-P3",
       "idiom" : "universal"
     }
   ],

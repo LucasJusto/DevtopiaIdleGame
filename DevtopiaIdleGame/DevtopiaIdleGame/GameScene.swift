@@ -63,11 +63,6 @@ class GameScene: SKScene {
         return cameraNode
     }()
     
-    
-    
-    
-    
-    
     override func didMove(to view: SKView) {
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y:0)
@@ -81,6 +76,7 @@ class GameScene: SKScene {
         addChild(background)
         addChild(cameraNode)
     }
+
 }
 
 
