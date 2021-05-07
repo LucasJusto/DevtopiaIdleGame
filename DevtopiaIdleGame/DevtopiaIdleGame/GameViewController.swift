@@ -1,9 +1,3 @@
-//
-//  GameViewController.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 03/05/21.
-//
 
 import UIKit
 import SpriteKit
@@ -11,24 +5,30 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = SKScene(fileNamed: "GameScene") {
+            super.viewDidLoad()
             
-            // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFill
-            
-            // Present the scene
             if let view = self.view as! SKView? {
-                view.presentScene(scene)
-                
+                // Carrega SKScene da classe GameScene.swift
+                let scene = GameScene(size: view.bounds.size)
+                scene.scaleMode = .resizeFill
                 view.ignoresSiblingOrder = true
                 
                 view.showsFPS = true
                 view.showsNodeCount = true
+                view.isMultipleTouchEnabled = true
+                view.isUserInteractionEnabled = true
+                
+                view.presentScene(scene)
             }
         }
-    }
+        
+        override var shouldAutorotate: Bool {
+            return false
+        }
+        
+        override var prefersStatusBarHidden: Bool {
+            return false
+        }
+
 }
+

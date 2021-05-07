@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C85264083C300F6D4B0 /* AppDelegate.swift */; };
-		48775C88264083C300F6D4B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48775C87264083C300F6D4B0 /* GameScene.sks */; };
-		48775C8A264083C300F6D4B0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48775C89264083C300F6D4B0 /* Actions.sks */; };
 		48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8B264083C300F6D4B0 /* GameScene.swift */; };
 		48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8D264083C300F6D4B0 /* GameViewController.swift */; };
 		48775C91264083C300F6D4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48775C8F264083C300F6D4B0 /* Main.storyboard */; };
@@ -26,8 +24,6 @@
 /* Begin PBXFileReference section */
 		48775C82264083C300F6D4B0 /* DevtopiaIdleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevtopiaIdleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48775C85264083C300F6D4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48775C87264083C300F6D4B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		48775C89264083C300F6D4B0 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		48775C8B264083C300F6D4B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		48775C8D264083C300F6D4B0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		48775C90264083C300F6D4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,9 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				48775C85264083C300F6D4B0 /* AppDelegate.swift */,
-				48775C87264083C300F6D4B0 /* GameScene.sks */,
-				48775C89264083C300F6D4B0 /* Actions.sks */,
 				48775C8B264083C300F6D4B0 /* GameScene.swift */,
+				4EA069962641DE3F008DBCAC /* Camera.swift */,
 				48775C8D264083C300F6D4B0 /* GameViewController.swift */,
 				48775C8F264083C300F6D4B0 /* Main.storyboard */,
 				48775C92264083C400F6D4B0 /* Assets.xcassets */,
@@ -150,9 +145,7 @@
 			files = (
 				F4B675E82644750C00249400 /* MenuUpgrade.sks in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
-				48775C88264083C300F6D4B0 /* GameScene.sks in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
-				48775C8A264083C300F6D4B0 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -311,14 +304,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = 478594C4R9;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LucasJusto.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = MatheusHomrich.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,14 +324,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = 478594C4R9;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LucasJusto.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = MatheusHomrich.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
