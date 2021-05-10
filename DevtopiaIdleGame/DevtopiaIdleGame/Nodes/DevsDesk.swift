@@ -8,6 +8,10 @@
 import Foundation
 import SpriteKit
 
+protocol DevDelegate: AnyObject {
+    func didTapDev(character: SKNode)
+}
+
 class DevsDesk: SKNode, Generator{
     var perSec: Decimal
     var multipliers: [Multiplier]
@@ -17,6 +21,7 @@ class DevsDesk: SKNode, Generator{
     var currentLevel: Int
     var increase: Decimal
     var observer: MainCurrency
+    weak var delegate: DevDelegate?
     
     
     private lazy var desk: SKSpriteNode = {
@@ -31,8 +36,8 @@ class DevsDesk: SKNode, Generator{
         return desk
     }()
     
-    init(x: Double = 0, y: Double = 844.5, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency) {
-        self.perSec = increase
+    init(x: Double = 0, y: Double = 844.5, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency) {
+        self.perSec = perSec
         self.multipliers = [Multiplier]()
         self.id = id
         self.currentPrice = basePrice
@@ -41,10 +46,13 @@ class DevsDesk: SKNode, Generator{
         self.increase = increase
         self.observer = observer
         super.init()
+        let multiplier = Equipment(id: 0, basePrice: 750, observer: observer)
+        self.addMultiplier(m: multiplier)
         isUserInteractionEnabled = true
         addChild(desk)
         desk.position = CGPoint(x: x, y: y)
-        
+        self.observer.addGenerator(generator: self)
+        self.observer.addMultiplier(multiplier: multiplier)
     }
     
     
@@ -58,7 +66,7 @@ class DevsDesk: SKNode, Generator{
         let node = self.atPoint(location ?? .zero)
         
         if node.name == "desk" {
-            print("teste") //button action
+            delegate?.didTapDev(character: self)
         }
     }
     

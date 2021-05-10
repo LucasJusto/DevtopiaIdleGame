@@ -15,7 +15,7 @@ public class MainCurrency {
     private var multipliers: [Multiplier] //all the multipliers the player has
     
     init(){
-        devCoins = Decimal(50)
+        devCoins = Decimal(500)
         devCoinsPerSec = Decimal(0)
         generators = [Generator]()
         offlineMultiplier = Decimal(0.1)

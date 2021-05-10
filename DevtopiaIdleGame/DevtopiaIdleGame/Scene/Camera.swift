@@ -1,7 +1,7 @@
 import UIKit
 import SpriteKit
 
-class Camera: SKCameraNode {
+class Camera: SKCameraNode, UIGestureRecognizerDelegate {
     
     // MARK: Properties
     
@@ -47,14 +47,17 @@ class Camera: SKCameraNode {
     
     // MARK: Navegação
     
+    //var a: UISwipeGestureRecognizer
+    
     /** Gesture para o navegação da câmera. */
-    private var swipeNavigation: UILongPressGestureRecognizer {
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.updatePosition(_:)))
-        longPressGestureRecognizer.numberOfTouchesRequired = 1
-        longPressGestureRecognizer.numberOfTapsRequired = 0
-        longPressGestureRecognizer.allowableMovement = 0
-        longPressGestureRecognizer.minimumPressDuration = 0
-        return longPressGestureRecognizer
+    private var swipeNavigation: UIPanGestureRecognizer {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.updatePosition(_:)))
+        //        longPressGestureRecognizer.numberOfTouchesRequired = 1
+        //        longPressGestureRecognizer.numberOfTapsRequired = 0
+        //        longPressGestureRecognizer.allowableMovement = 0
+        //        longPressGestureRecognizer.minimumPressDuration = 0
+        panGesture.maximumNumberOfTouches = 1
+        return panGesture
     }
     
     /** Ultima Localização do toque na tela. */
@@ -80,7 +83,10 @@ class Camera: SKCameraNode {
         
         //adiciona o gesture a view da câmera
         pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.updateScale(_:)))
-
+        
+        pinchGestureRecognizer.delegate = self
+        swipeNavigation.delegate = self
+        
         sceneView.addGestureRecognizer(pinchGestureRecognizer)
         
         sceneView.addGestureRecognizer(swipeNavigation)
@@ -166,31 +172,68 @@ class Camera: SKCameraNode {
     // MARK: Input
     
     /** Escala o cenário a partir de um input proveniente do pinchGestureRecognizer.*/
-    @objc func updateScale(_ recognizer: UIPinchGestureRecognizer) {
+    //    @objc func updateScale(_ recognizer: UIPinchGestureRecognizer) {
+    //
+    //        guard let scene = self.scene else { return }
+    //
+    //        //captura o primeiro toque do usuário
+    //        if recognizer.state == .began {
+    //            posicaoInicialDoToque = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
+    //
+    //        }
+    //        //Cálcula o zoom, aplica no cenário e centraliza a câmera.
+    //        if recognizer.state == .changed && cameraHabilitada && zoomHabilitado {
+    //
+    //            escalaZoom *= recognizer.scale
+    //            applyZoomScale(scale: escalaZoom)
+    //            recognizer.scale = 1
+    //            //centerOnPosition(scenePosition: CGPoint(x: posicaoInicialDoToque.x * escalaZoom, y: posicaoInicialDoToque.y * escalaZoom))
+    //        }
+    //
+    //        if recognizer.state == .ended { }
+    //    }
+    
+    @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
         
         guard let scene = self.scene else { return }
         
-        //captura o primeiro toque do usuário
-        if recognizer.state == .began {
-            posicaoInicialDoToque = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
-            
+        if sender.numberOfTouches == 2 {
+            let locationInView = sender.location(in: scene.view)
+            let location = self.convert(locationInView, from: self)
+            if sender.state == .changed {
+                let deltaScale = (sender.scale - 1.0) * 2
+                let convertedScale = sender.scale - deltaScale
+                let newScale = self.xScale * convertedScale
+                self.setScale(newScale)
+                
+                let locationAfterScale = self.convert(locationInView, from: self)
+                let locationDelta = CGPoint(x: location.x - locationAfterScale.x, y: location.y - locationAfterScale.y)
+                let newPoint = CGPoint(x: self.position.x + locationDelta.x, y: self.position.y + locationDelta.y)
+                self.position = newPoint
+                sender.scale = 1.0
+            }
         }
-        //Cálcula o zoom, aplica no cenário e centraliza a câmera.
-        if recognizer.state == .changed && cameraHabilitada && zoomHabilitado {
-            
-            escalaZoom *= recognizer.scale
-            applyZoomScale(scale: escalaZoom)
-            recognizer.scale = 1
-            centerOnPosition(scenePosition: CGPoint(x: posicaoInicialDoToque.x * escalaZoom, y: posicaoInicialDoToque.y * escalaZoom))
-        }
-        
-        if recognizer.state == .ended { }
     }
+    
+    
+    
+    //        @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
+    //            guard sender.view != nil else {
+    //                return
+    //            }
+    //
+    //            if sender.state == .began || sender.state == .changed {
+    //                self.setScale(sender.scale)
+    //                self.scale
+    //                sender.scale = 1.0
+    //            }
+    //        }
+    //
     
     // MARK: Navegação pela tela
     
     /** Move a câmera pelo cenário a partir de input proveniente do pinchGestureRecognizer.*/
-    @objc func updatePosition(_ recognizer: UILongPressGestureRecognizer) {
+    @objc func updatePosition(_ recognizer: UIPanGestureRecognizer) {
         
         if recognizer.state == .began {
             //salva a posição inicial do toque como ultima
@@ -208,5 +251,9 @@ class Camera: SKCameraNode {
             centerOnPosition(scenePosition: CGPoint(x: Int(position.x - difference.x), y: Int(position.y - -difference.y)))
             ultimaPosicaoDoToque = location
         }
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

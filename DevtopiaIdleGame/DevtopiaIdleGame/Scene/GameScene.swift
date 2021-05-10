@@ -2,7 +2,8 @@ import SpriteKit
 import Foundation
 
 class GameScene: SKScene {
-    
+    var mainCurrency: MainCurrency = MainCurrency()
+    var topTab: TopTab!
     // MARK: Propriedades
     //váriavel para a o fundo da cena
     private lazy var background: SKSpriteNode = {
@@ -32,7 +33,8 @@ class GameScene: SKScene {
         let cameraNode = Camera(sceneView: self.view!, cenario: background)
         //setter da posição inicial para o valor de x igual a metade da largura de sua tela e de y igual a metade da altura da tela.
         cameraNode.position = CGPoint(x:UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
-        cameraNode.addChild(TopTab())
+        topTab = TopTab(mainCurrency: mainCurrency)
+        cameraNode.addChild(topTab)
         return cameraNode
     }()
     
@@ -47,11 +49,24 @@ class GameScene: SKScene {
         
         //adiciona a câmera e o cenário como filhas da GameScene
         addChild(background)
-        background.addChild(DevsDesk(x: 0, y: 844.5, increase: 2, id: 0, basePrice: 50, observer: MainCurrency()))
+        let devsDesk = DevsDesk(x: 0, y: 844.5, perSec: 20, increase: 2, id: 0, basePrice: 500, observer: mainCurrency)
+        devsDesk.delegate = self
+        background.addChild(devsDesk)
+        
         addChild(cameraNode)
         
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        topTab.updateLabels()
     }
 
 }
 
-
+extension GameScene: DevDelegate {
+    func didTapDev(character: SKNode) {
+        print("teste")
+    }
+    
+    
+}

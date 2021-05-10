@@ -9,7 +9,7 @@ import Foundation
 
 protocol Multiplier: Upgradable {
     
-    var multiply: Decimal { get set } //value to multiply the generate per sec from a generator.
+    var multiply: Decimal { get set } //value to multiply the generate per sec from a generator. example: 0 = 0%;  0.01 = 1%...
     
 }
 
