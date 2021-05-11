@@ -22,6 +22,9 @@
 		4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */; };
 		4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144422645D912003CACB3 /* Montserrat-Bold.ttf */; };
 		4ED9B15E264B0B4C00B04D3D /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 4ED9B15D264B0B4C00B04D3D /* AppIcon.appiconset */; };
+		4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144412645D912003CACB3 /* Montserrat-Regular.ttf */; };
+		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
+		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -200,9 +203,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */,
 				4ED9B15E264B0B4C00B04D3D /* AppIcon.appiconset in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
+				4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
+				4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */,
 				4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
