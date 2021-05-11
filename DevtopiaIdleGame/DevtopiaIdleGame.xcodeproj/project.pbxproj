@@ -19,6 +19,7 @@
 		48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA22643177E00F6D4B0 /* Multiplier.swift */; };
 		48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
 		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
+		4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		48775CA02641CAFC00F6D4B0 /* Upgradable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgradable.swift; sourceTree = "<group>"; };
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			children = (
 				F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */,
 				486144442649A8FE003CACB3 /* Equipment.swift */,
+				4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
+				4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */,
 				48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */,
 				486144452649A8FE003CACB3 /* Equipment.swift in Sources */,
 				48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */,

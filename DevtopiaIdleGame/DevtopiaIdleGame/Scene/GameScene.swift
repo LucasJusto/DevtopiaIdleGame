@@ -64,8 +64,16 @@ class GameScene: SKScene {
 }
 
 extension GameScene: DevDelegate {
-    func didTapDev(character: SKNode) {
-        print("teste")
+    func didTapDev(character: Generator) {
+        var isIn: Bool = false
+        for child in cameraNode.children {
+            if child.name == "GeneratorUpgradeMenu" {
+                isIn = true
+            }
+        }
+        if !isIn {
+            self.cameraNode.addChild(GeneratorUpgradeMenu(generator: character))
+        }
     }
     
     

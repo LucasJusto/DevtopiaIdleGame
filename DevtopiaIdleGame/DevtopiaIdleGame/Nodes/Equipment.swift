@@ -15,8 +15,10 @@ class Equipment: Multiplier {
     var currentLevel: Int
     var increase: Decimal
     var observer: MainCurrency
+    var name: String
     
     public init(id: Int, basePrice: Decimal, observer: MainCurrency){
+        self.name = "desk"
         self.multiply = 0
         self.id = id
         self.currentPrice = basePrice

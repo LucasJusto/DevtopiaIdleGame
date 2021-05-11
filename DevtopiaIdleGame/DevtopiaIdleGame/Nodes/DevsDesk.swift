@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 protocol DevDelegate: AnyObject {
-    func didTapDev(character: SKNode)
+    func didTapDev(character: Generator)
 }
 
 class DevsDesk: SKNode, Generator{
