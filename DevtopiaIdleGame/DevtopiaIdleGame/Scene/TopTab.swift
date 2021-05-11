@@ -24,22 +24,24 @@ class TopTab: SKSpriteNode {
         self.mainCurrency = mainCurrency
         //main currency per sec
         leftWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
-        leftLabel = SKLabelNode(text: "\(mainCurrency.getDevCoinsPerSec())/s")
+        leftLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
+        leftLabel.text = "\(mainCurrency.getDevCoinsPerSec())/s"
         leftLabel.fontColor = .black
-        leftLabel.position = CGPoint(x: 0, y: -(leftLabel.frame.height/2) + 7)
-        //leftLabel.fontName = "Montserrat-Bold"
+        leftLabel.position = CGPoint(x: 0, y: -(leftLabel.frame.height/2) + 10)
         leftLabel.fontSize = 15
         
         //premium currency
         midWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
-        midLabel = SKLabelNode(text: "0")
+        midLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
+        midLabel.text = "0"
         midLabel.fontColor = .black
         midLabel.position = CGPoint(x: 0, y: -(midLabel.frame.height/2) + 7)
         midLabel.fontSize = 15
         
         //main currency
         rightWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
-        rightLabel = SKLabelNode(text: "\(mainCurrency.getDevCoins())")
+        rightLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
+        rightLabel.text = "\(mainCurrency.getDevCoins())"
         rightLabel.fontColor = .black
         rightLabel.position = CGPoint(x: 0, y: -(rightLabel.frame.height/2) + 7)
         rightLabel.fontSize = 15
