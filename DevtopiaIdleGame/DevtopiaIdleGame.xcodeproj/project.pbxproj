@@ -20,6 +20,7 @@
 		48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
 		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
 		4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144422645D912003CACB3 /* Montserrat-Bold.ttf */; };
+		4ED9B15E264B0B4C00B04D3D /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 4ED9B15D264B0B4C00B04D3D /* AppIcon.appiconset */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		48775CA02641CAFC00F6D4B0 /* Upgradable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgradable.swift; sourceTree = "<group>"; };
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		4ED9B15D264B0B4C00B04D3D /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 		4861443E2645D8BC003CACB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ED9B15D264B0B4C00B04D3D /* AppIcon.appiconset */,
 				4861443F2645D8DF003CACB3 /* Fonts */,
 				48775C92264083C400F6D4B0 /* Assets.xcassets */,
 			);
@@ -194,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED9B15E264B0B4C00B04D3D /* AppIcon.appiconset in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
 				4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */,
