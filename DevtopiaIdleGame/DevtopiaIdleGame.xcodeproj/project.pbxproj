@@ -24,6 +24,7 @@
 		4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144412645D912003CACB3 /* Montserrat-Regular.ttf */; };
 		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
 		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
+		5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A412B264C565C00FE60E3 /* SoundController.swift */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
+		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				48775C9E2641C7AE00F6D4B0 /* Generator.swift */,
 				48775CA02641CAFC00F6D4B0 /* Upgradable.swift */,
 				48775CA22643177E00F6D4B0 /* Multiplier.swift */,
+				5C4A412B264C565C00FE60E3 /* SoundController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */,
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
 				48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */,
+				5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
 				48775CA12641CAFC00F6D4B0 /* Upgradable.swift in Sources */,
 			);
