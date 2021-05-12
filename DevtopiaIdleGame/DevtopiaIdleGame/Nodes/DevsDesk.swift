@@ -7,12 +7,15 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
+
 
 protocol DevDelegate: AnyObject {
     func didTapDev(character: Generator)
 }
 
 class DevsDesk: SKNode, Generator{
+    var sound = SoundController()
     var perSec: Decimal
     var multipliers: [Multiplier]
     var id: Int
@@ -66,6 +69,7 @@ class DevsDesk: SKNode, Generator{
         let node = self.atPoint(location ?? .zero)
         
         if node.name == "desk" {
+            sound.playSound(sound: "upgradeVisualSound", type: "mp3")
             delegate?.didTapDev(character: self)
         }
     }
