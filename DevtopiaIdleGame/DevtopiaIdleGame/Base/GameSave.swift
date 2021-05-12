@@ -8,17 +8,13 @@
 import Foundation
 import UIKit
 
-class GameSave {
+struct GameSave {
     
     let userDefaults = UserDefaults.standard
-    
-    var value: Any? = 0
-    
-    
+
     
     func setValue(value: Any = 0, label: String) {
         
-        self.value = value
         userDefaults.setValue(value, forKey: label)
     }
     
