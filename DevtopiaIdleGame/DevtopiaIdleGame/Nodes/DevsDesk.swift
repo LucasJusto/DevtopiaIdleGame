@@ -7,7 +7,6 @@
 
 import Foundation
 import SpriteKit
-import AVFoundation
 
 
 protocol DevDelegate: AnyObject {
@@ -15,7 +14,6 @@ protocol DevDelegate: AnyObject {
 }
 
 class DevsDesk: SKNode, Generator{
-    var sound = SoundController()
     var perSec: Decimal
     var multipliers: [Multiplier]
     var id: Int
@@ -28,7 +26,7 @@ class DevsDesk: SKNode, Generator{
     
     
     private lazy var desk: SKSpriteNode = {
-
+        
         let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
         
         //setter da anchorPoint do dev para a posição x: 0.458 , y: 0.5
@@ -68,8 +66,8 @@ class DevsDesk: SKNode, Generator{
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
         
+        
         if node.name == "desk" {
-            sound.playSound(sound: "upgradeVisualSound", type: "mp3")
             delegate?.didTapDev(character: self)
         }
     }

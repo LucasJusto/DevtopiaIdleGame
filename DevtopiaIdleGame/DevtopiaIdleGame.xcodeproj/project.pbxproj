@@ -25,6 +25,10 @@
 		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
 		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
 		5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A412B264C565C00FE60E3 /* SoundController.swift */; };
+		F47499F6264C7071008DFDC9 /* upgradeVisualSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */; };
+		F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F3264C706F008DFDC9 /* selectSound.wav */; };
+		F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F4264C706F008DFDC9 /* insuficientMoney.wav */; };
+		F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F5264C7071008DFDC9 /* backgroundMusic.wav */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
+		F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = upgradeVisualSound.mp3; sourceTree = "<group>"; };
+		F47499F3264C706F008DFDC9 /* selectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = selectSound.wav; sourceTree = "<group>"; };
+		F47499F4264C706F008DFDC9 /* insuficientMoney.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = insuficientMoney.wav; sourceTree = "<group>"; };
+		F47499F5264C7071008DFDC9 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +106,7 @@
 		4861443E2645D8BC003CACB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F47499F1264C7047008DFDC9 /* Sounds */,
 				4861443F2645D8DF003CACB3 /* Fonts */,
 				48775C92264083C400F6D4B0 /* Assets.xcassets */,
 			);
@@ -144,6 +153,17 @@
 				48775C94264083C400F6D4B0 /* Info.plist */,
 			);
 			path = DevtopiaIdleGame;
+			sourceTree = "<group>";
+		};
+		F47499F1264C7047008DFDC9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F47499F5264C7071008DFDC9 /* backgroundMusic.wav */,
+				F47499F4264C706F008DFDC9 /* insuficientMoney.wav */,
+				F47499F3264C706F008DFDC9 /* selectSound.wav */,
+				F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +223,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */,
 				4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
 				4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
+				F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */,
+				F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */,
 				4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */,
+				F47499F6264C7071008DFDC9 /* upgradeVisualSound.mp3 in Resources */,
 				4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -45,6 +45,13 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+       let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
+        sound.isPositional = false
+        sound.autoplayLooped = true
+        addChild(sound)
+        sound.run(SKAction.play())
+        
+//        GameViewController.GameScene.addChild(backgroundSound)
         
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
