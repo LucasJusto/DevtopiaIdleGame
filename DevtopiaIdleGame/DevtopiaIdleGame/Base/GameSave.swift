@@ -9,28 +9,39 @@ import Foundation
 import UIKit
 
 struct GameSave {
+
+    private enum TypeStore: String {
+        case timeLeft
+    }
     
     let userDefaults = UserDefaults.standard
-
     
     func setValue(value: Any = 0, label: String) {
         
         userDefaults.setValue(value, forKey: label)
     }
     
-    
-    
     func getValue(label: String) -> Any {
-        
+    
         if let valueGetter = userDefaults.value(forKey: label) as Any? {
-            return valueGetter 
+            return unwrap(any: valueGetter)
         }
         return 0
     }
     
+    func saveTimeLeftApp() {
+        userDefaults.setValue(Date(), forKey: TypeStore.timeLeft.rawValue)
+    }
     
+    func getTimeLeftApp() -> Any {
+        return unwrap(any: userDefaults.value(forKey: TypeStore.timeLeft.rawValue) ?? 0)
+    }
     
-    func unwrap(any:Any) -> Any {
+    func getTimeAway() -> Date {
+        return Date() - (getTimeLeftApp() as! TimeInterval)
+    }
+    
+    func unwrap(any: Any) -> Any {
         
         let mi = Mirror(reflecting: any)
         if mi.displayStyle != .optional {
