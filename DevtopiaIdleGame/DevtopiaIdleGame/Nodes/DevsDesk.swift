@@ -68,6 +68,11 @@ class DevsDesk: SKNode, Generator{
         
         
         if node.name == "desk" {
+            let sound = SKAudioNode(fileNamed: "selectSound.wav")
+             sound.isPositional = false
+            sound.autoplayLooped = false
+             addChild(sound)
+             sound.run(SKAction.play())
             delegate?.didTapDev(character: self)
         }
     }
