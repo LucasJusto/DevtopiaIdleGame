@@ -35,7 +35,7 @@
 		486144422645D912003CACB3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		486144432645D913003CACB3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		486144442649A8FE003CACB3 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
-		48775C82264083C300F6D4B0 /* DevtopiaIdleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevtopiaIdleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48775C82264083C300F6D4B0 /* DevTopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevTopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48775C85264083C300F6D4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48775C8B264083C300F6D4B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		48775C8D264083C300F6D4B0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		48775C83264083C300F6D4B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48775C82264083C300F6D4B0 /* DevtopiaIdleGame.app */,
+				48775C82264083C300F6D4B0 /* DevTopia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48775C81264083C300F6D4B0 /* DevtopiaIdleGame */ = {
+		48775C81264083C300F6D4B0 /* DevTopia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48775C97264083C400F6D4B0 /* Build configuration list for PBXNativeTarget "DevtopiaIdleGame" */;
+			buildConfigurationList = 48775C97264083C400F6D4B0 /* Build configuration list for PBXNativeTarget "DevTopia" */;
 			buildPhases = (
 				48775C7E264083C300F6D4B0 /* Sources */,
 				48775C7F264083C300F6D4B0 /* Frameworks */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = DevtopiaIdleGame;
+			name = DevTopia;
 			productName = DevtopiaIdleGame;
-			productReference = 48775C82264083C300F6D4B0 /* DevtopiaIdleGame.app */;
+			productReference = 48775C82264083C300F6D4B0 /* DevTopia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48775C81264083C300F6D4B0 /* DevtopiaIdleGame */,
+				48775C81264083C300F6D4B0 /* DevTopia */,
 			);
 		};
 /* End PBXProject section */
@@ -417,7 +417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48775C97264083C400F6D4B0 /* Build configuration list for PBXNativeTarget "DevtopiaIdleGame" */ = {
+		48775C97264083C400F6D4B0 /* Build configuration list for PBXNativeTarget "DevTopia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48775C98264083C400F6D4B0 /* Debug */,
