@@ -42,16 +42,11 @@ class GameScene: SKScene {
         return cameraNode
     }()
     
+    //Background Music
+    let backgroundMusic = SoundController()
+    
     
     override func didMove(to view: SKView) {
-        
-       let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
-        sound.isPositional = false
-        sound.autoplayLooped = true
-        addChild(sound)
-        sound.run(SKAction.play())
-        
-//        GameViewController.GameScene.addChild(backgroundSound)
         
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
@@ -69,10 +64,7 @@ class GameScene: SKScene {
         
         addChild(cameraNode)
         
-//        let gameBackgroundMusic: SKAudioNode = SKAudioNode(fileNamed: "backgroundMusic.wav")
-//        addChild(gameBackgroundMusic)
-        
-        
+        backgroundMusic.backgroundMusic(parentNode: background)
     }
     
     override func update(_ currentTime: TimeInterval) {

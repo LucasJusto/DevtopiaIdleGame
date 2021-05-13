@@ -8,24 +8,42 @@
 import Foundation
 import SpriteKit
 
-let SoundState = "SoundState"
-
-
-class SoundController: SKAudioNode {
+public class SoundController {
     
-    
-    func setSounds(_ state:Bool) {
-        UserDefaults.standard.set(state, forKey: SoundState)
-        UserDefaults.standard.synchronize()
+     func backgroundMusic(parentNode: SKNode){
+  
+        let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
+        sound.isPositional = false
+        sound.autoplayLooped = true
+        parentNode.addChild(sound)
+        sound.run(SKAction.play())
     }
     
-    func getSound() -> Bool {
-        return UserDefaults.standard.bool(forKey: SoundState)
+    func selectSound(parentNode: SKNode){
+        
+        let sound = SKAudioNode(fileNamed: "selectSound.wav")
+        sound.isPositional = false
+        sound.autoplayLooped = false
+        parentNode.addChild(sound)
+        sound.run(SKAction.play())
     }
     
+    func upgradeSound(parentNode: SKNode){
+        
+        let sound = SKAudioNode(fileNamed: "upgradeVisualSound.mp3")
+        sound.isPositional = false
+        sound.autoplayLooped = false
+        parentNode.addChild(sound)
+        sound.run(SKAction.play())
+    }
     
-    
-    
-    
+    func insuficientMoneySound(parentNode: SKNode){
+        
+        let sound = SKAudioNode(fileNamed: "insuficientMoney.wav")
+        sound.isPositional = false
+        sound.autoplayLooped = false
+        parentNode.addChild(sound)
+        sound.run(SKAction.play())
+    }
     
 }

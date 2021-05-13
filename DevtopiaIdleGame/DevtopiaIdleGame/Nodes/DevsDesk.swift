@@ -9,6 +9,8 @@ import Foundation
 import SpriteKit
 
 
+let soundController = SoundController()
+
 protocol DevDelegate: AnyObject {
     func didTapDev(character: Generator)
 }
@@ -68,11 +70,9 @@ class DevsDesk: SKNode, Generator{
         
         
         if node.name == "desk" {
-            let sound = SKAudioNode(fileNamed: "selectSound.wav")
-             sound.isPositional = false
-            sound.autoplayLooped = false
-             addChild(sound)
-             sound.run(SKAction.play())
+           
+            soundController.selectSound(parentNode: desk)
+            
             delegate?.didTapDev(character: self)
         }
     }
