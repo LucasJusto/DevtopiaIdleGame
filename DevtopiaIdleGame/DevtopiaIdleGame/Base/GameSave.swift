@@ -37,8 +37,14 @@ struct GameSave {
         return unwrap(any: userDefaults.value(forKey: TypeStore.timeLeft.rawValue) ?? 0)
     }
     
-    func getTimeAway() -> Date {
-        return Date() - (getTimeLeftApp() as! TimeInterval)
+    func getTimeAway() -> Decimal {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        let stringDate: String = "\(getTimeLeftApp())"
+        let convertedTimeAway: Date = dateFormatter.date(from: stringDate)!
+        let result: Decimal = Decimal((Calendar.current.dateComponents([.second], from: convertedTimeAway, to: Date()).second ?? 0)) - Decimal((Calendar.current.dateComponents([.second], from: Date(), to: Date()).second ?? 0))
+        return result
+        
     }
     
     func unwrap(any: Any) -> Any {

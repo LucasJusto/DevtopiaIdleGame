@@ -12,9 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var gameSave: GameSave = GameSave()
+    var gameScene: GameScene = GameScene()
+    var mainCurrency: MainCurrency = MainCurrency()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        mainCurrency = gameScene.mainCurrency
+        
+        //mainCurrency.updateDevCoinsWhenBack(timeAway: gameSave.getTimeAway())
         return true
     }
 
@@ -25,14 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        
+        gameSave.saveTimeLeftApp()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        mainCurrency.updateDevCoinsWhenBack(timeAway: gameSave.getTimeAway())
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        //mainCurrency.updateDevCoinsWhenBack(timeAway: gameSave.getTimeAway())
     }
 
 

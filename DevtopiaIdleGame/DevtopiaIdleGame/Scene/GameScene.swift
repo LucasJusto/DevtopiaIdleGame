@@ -47,11 +47,6 @@ class GameScene: SKScene {
         background.addChild(devsDesk)
         
         addChild(cameraNode)
-        
-        
-        save1.setValue(value: 10.5, label: "nome")
-        
-        print(save1.unwrap(any: save1.getValue(label: "nome")))
          
         
     }
@@ -72,3 +67,4 @@ extension GameScene: DevDelegate {
     
     
 }
+
