@@ -71,7 +71,7 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
         self.limitesdDaTela = myBounds
         
         //determina a escla inicial do zoom para 1
-        escalaZoom = 1.0
+        escalaZoom = 1
         //determina o intervalo de escla do zoom para o intervalo [1,1.3]
         intervaloZoom = (0.1, 1.0)
         //habilita a câmera e o zoom
@@ -172,50 +172,50 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
     // MARK: Input
     
     /** Escala o cenário a partir de um input proveniente do pinchGestureRecognizer.*/
-    //    @objc func updateScale(_ recognizer: UIPinchGestureRecognizer) {
-    //
-    //        guard let scene = self.scene else { return }
-    //
-    //        //captura o primeiro toque do usuário
-    //        if recognizer.state == .began {
-    //            posicaoInicialDoToque = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
-    //
-    //        }
-    //        //Cálcula o zoom, aplica no cenário e centraliza a câmera.
-    //        if recognizer.state == .changed && cameraHabilitada && zoomHabilitado {
-    //
-    //            escalaZoom *= recognizer.scale
-    //            applyZoomScale(scale: escalaZoom)
-    //            recognizer.scale = 1
-    //            //centerOnPosition(scenePosition: CGPoint(x: posicaoInicialDoToque.x * escalaZoom, y: posicaoInicialDoToque.y * escalaZoom))
-    //        }
-    //
-    //        if recognizer.state == .ended { }
-    //    }
+        @objc func updateScale(_ recognizer: UIPinchGestureRecognizer) {
     
-    @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
-        
-        guard let scene = self.scene else { return }
-        
-        if sender.numberOfTouches == 2 {
-            let locationInView = sender.location(in: scene.view)
-            let location = self.convert(locationInView, from: self)
-            if sender.state == .changed {
-                let deltaScale = (sender.scale - 1.0) * 2
-                let convertedScale = sender.scale - deltaScale
-                let newScale = self.xScale * convertedScale
-                self.setScale(newScale)
-                
-                let locationAfterScale = self.convert(locationInView, from: self)
-                let locationDelta = CGPoint(x: location.x - locationAfterScale.x, y: location.y - locationAfterScale.y)
-                let newPoint = CGPoint(x: self.position.x + locationDelta.x, y: self.position.y + locationDelta.y)
-                self.position = newPoint
-                sender.scale = 1.0
+            guard let scene = self.scene else { return }
+    
+            //captura o primeiro toque do usuário
+            if recognizer.state == .began {
+                posicaoInicialDoToque = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
+    
             }
+            //Cálcula o zoom, aplica no cenário e centraliza a câmera.
+            if recognizer.state == .changed && cameraHabilitada && zoomHabilitado {
+    
+                escalaZoom *= recognizer.scale
+                applyZoomScale(scale: escalaZoom)
+                recognizer.scale = 1
+                //centerOnPosition(scenePosition: CGPoint(x: posicaoInicialDoToque.x * escalaZoom, y: posicaoInicialDoToque.y * escalaZoom))
+            }
+    
+            if recognizer.state == .ended { }
         }
-    }
     
-    
+//    @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
+//
+//        guard let scene = self.scene else { return }
+//
+//        if sender.numberOfTouches == 2 {
+//            let locationInView = sender.location(in: scene.view)
+//            let location = self.convert(locationInView, from: self)
+//            if sender.state == .changed {
+//                let deltaScale = (sender.scale - 1.0) * 2
+//                let convertedScale = sender.scale - deltaScale
+//                let newScale = self.xScale * convertedScale
+//                self.setScale(newScale)
+//
+//                let locationAfterScale = self.convert(locationInView, from: self)
+//                let locationDelta = CGPoint(x: location.x - locationAfterScale.x, y: location.y - locationAfterScale.y)
+//                let newPoint = CGPoint(x: self.position.x + locationDelta.x, y: self.position.y + locationDelta.y)
+//                self.position = newPoint
+//                sender.scale = 1.0
+//            }
+//        }
+//    }
+//
+//
     
     //        @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
     //            guard sender.view != nil else {
