@@ -2,6 +2,9 @@ import SpriteKit
 import Foundation
 
 class GameScene: SKScene {
+//    var gameBackgroundMusic: SKAudioNode!
+    
+    
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
     // MARK: Propriedades
@@ -39,11 +42,16 @@ class GameScene: SKScene {
         return cameraNode
     }()
     
+    //Background Music
+    let backgroundMusic = SoundController()
+    
+    
     override func didMove(to view: SKView) {
+        
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         //setter do tamanho da GameScene para o tamanho do cenário
-        self.size = background.size 
+        self.size = background.size
         
         //atribui a câmera da GameScene a câmera customizada.
         camera = cameraNode
@@ -56,6 +64,7 @@ class GameScene: SKScene {
         
         addChild(cameraNode)
         
+        backgroundMusic.backgroundMusic(parentNode: background)
     }
     
     override func update(_ currentTime: TimeInterval) {
