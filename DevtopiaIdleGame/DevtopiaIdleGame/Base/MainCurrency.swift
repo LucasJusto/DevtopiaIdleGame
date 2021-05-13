@@ -16,7 +16,7 @@ public class MainCurrency {
     
     init(){
         devCoins = Decimal(500)
-        devCoinsPerSec = Decimal(0)
+        devCoinsPerSec = Decimal(100)
         generators = [Generator]()
         offlineMultiplier = Decimal(0.1)
         multipliers = [Multiplier]()
@@ -88,5 +88,9 @@ public class MainCurrency {
         }
         
         return ret!
+      
+    func updateDevCoinsWhenBack(timeAway: Decimal) {
+        devCoins += timeAway * devCoinsPerSec * 0.1
+        print(devCoins)
     }
 }
