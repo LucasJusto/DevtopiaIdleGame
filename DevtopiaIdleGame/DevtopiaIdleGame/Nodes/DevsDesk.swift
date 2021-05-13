@@ -26,7 +26,8 @@ class DevsDesk: SKNode, Generator{
     var observer: MainCurrency
     weak var delegate: DevDelegate?
     
-    
+    public lazy var desk: SKSpriteNode = {
+
     private lazy var desk: SKSpriteNode = {
         
         let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
@@ -51,9 +52,9 @@ class DevsDesk: SKNode, Generator{
         super.init()
         let multiplier = Equipment(id: 0, basePrice: 750, observer: observer)
         self.addMultiplier(m: multiplier)
-        isUserInteractionEnabled = true
-        addChild(desk)
-        desk.position = CGPoint(x: x, y: y)
+        self.isUserInteractionEnabled = true
+        self.addChild(desk)
+        self.desk.position = CGPoint(x: x, y: y)
         self.observer.addGenerator(generator: self)
         self.observer.addMultiplier(multiplier: multiplier)
     }

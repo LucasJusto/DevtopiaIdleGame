@@ -8,6 +8,9 @@
 import Foundation
 
 class Equipment: Multiplier {
+    var changeVisual1: Int
+    var changeVisual2: Int
+    var priceMultiplier: Decimal
     var multiply: Decimal
     var id: Int
     var currentPrice: Decimal
@@ -21,10 +24,13 @@ class Equipment: Multiplier {
         self.name = "desk"
         self.multiply = 0
         self.id = id
-        self.currentPrice = basePrice
-        self.basePrice = basePrice
+        self.currentPrice = 20
+        self.basePrice = 20
         self.currentLevel = 0
         self.increase = 0.01
         self.observer = observer
+        self.changeVisual1 = 1
+        self.changeVisual2 = 2
+        self.priceMultiplier = 1.1
     }
 }
