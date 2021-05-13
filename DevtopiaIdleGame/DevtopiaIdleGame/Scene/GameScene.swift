@@ -75,6 +75,4 @@ extension GameScene: DevDelegate {
             self.cameraNode.addChild(GeneratorUpgradeMenu(generator: character))
         }
     }
-    
-    
 }

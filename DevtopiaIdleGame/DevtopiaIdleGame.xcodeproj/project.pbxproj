@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481F9BB1264C5059007AFC35 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481F9BB0264C5059007AFC35 /* CloseButton.swift */; };
+		481F9BB4264C68CC007AFC35 /* UpgradeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */; };
 		4861443A2645C54B003CACB3 /* TopTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486144392645C54B003CACB3 /* TopTab.swift */; };
 		486144452649A8FE003CACB3 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486144442649A8FE003CACB3 /* Equipment.swift */; };
 		48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C85264083C300F6D4B0 /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		481F9BB0264C5059007AFC35 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeButton.swift; sourceTree = "<group>"; };
 		486144392645C54B003CACB3 /* TopTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTab.swift; sourceTree = "<group>"; };
 		486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		486144412645D912003CACB3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */,
 				486144442649A8FE003CACB3 /* Equipment.swift */,
 				4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */,
+				481F9BB0264C5059007AFC35 /* CloseButton.swift */,
+				481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -222,9 +228,11 @@
 				486144452649A8FE003CACB3 /* Equipment.swift in Sources */,
 				48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */,
 				4861443A2645C54B003CACB3 /* TopTab.swift in Sources */,
+				481F9BB1264C5059007AFC35 /* CloseButton.swift in Sources */,
 				48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */,
 				48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */,
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
+				481F9BB4264C68CC007AFC35 /* UpgradeButton.swift in Sources */,
 				48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
 				48775CA12641CAFC00F6D4B0 /* Upgradable.swift in Sources */,

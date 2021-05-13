@@ -60,4 +60,33 @@ public class MainCurrency {
         }
         self.updateDevCoinsPerSec()
     }
+    
+    func decimalToString(value: Decimal) -> String {
+        //convert devCoins or devCoinsPerSec to String using K, M, B, T, AA, AB...
+        var ret: String?
+        
+        if value < pow(10, 3) {
+            ret = "\(value)"
+        }
+        else if value < pow(10, 6) {
+            ret = "\(value/pow(10, 3))K"
+        }
+        else if value < pow(10, 9) {
+            ret = "\(value/pow(10, 6))M"
+        }
+        else if value < pow(10, 12) {
+            ret = "\(value/pow(10, 9))B"
+        }
+        else if value < pow(10, 15) {
+            ret = "\(value/pow(10, 12))T"
+        }
+        else if value < pow(10, 18) {
+            ret = "\(value/pow(10, 15))AA"
+        }
+        else if value < pow(10, 21) {
+            ret = "\(value/pow(10, 18))AB"
+        }
+        
+        return ret!
+    }
 }
