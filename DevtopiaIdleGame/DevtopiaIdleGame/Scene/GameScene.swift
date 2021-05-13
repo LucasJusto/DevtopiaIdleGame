@@ -7,6 +7,9 @@ class GameScene: SKScene {
     
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
+    
+    var save1: GameSave = GameSave()
+    
     // MARK: Propriedades
     //váriavel para a o fundo da cena
     private lazy var background: SKSpriteNode = {
@@ -20,16 +23,6 @@ class GameScene: SKScene {
         return background
     }()
     
-//    //váriavel para o developer 1
-//    private lazy var developer: SKSpriteNode = {
-//        let developer = SKSpriteNode(imageNamed: "Dev_step_01-1")
-//        //setter da posição do dev1
-//        developer.position = CGPoint(x: 0,y: 844.5)
-//        //setter da anchorPoint do dev1 para a posição x: 0.458 , y: 0.5
-//        developer.anchorPoint = CGPoint(x: 0.458, y: 0.5)
-//        developer.zPosition = 1
-//        return developer
-//    }()
     
     //Camera do jogo
     private lazy var cameraNode: Camera = {
@@ -63,6 +56,7 @@ class GameScene: SKScene {
         background.addChild(devsDesk)
         
         addChild(cameraNode)
+         
         
         backgroundMusic.backgroundMusic(parentNode: background)
     }
@@ -71,6 +65,9 @@ class GameScene: SKScene {
         topTab.updateLabels()
     }
 
+    
+    
+   
 }
 
 extension GameScene: DevDelegate {
@@ -88,3 +85,4 @@ extension GameScene: DevDelegate {
     
     
 }
+
