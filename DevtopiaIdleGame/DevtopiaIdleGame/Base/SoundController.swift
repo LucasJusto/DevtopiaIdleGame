@@ -10,7 +10,7 @@ import SpriteKit
 
 public class SoundController {
     
-     func backgroundMusic(parentNode: SKNode){
+     static func backgroundMusic(parentNode: SKNode){
   
         let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
         sound.isPositional = false
@@ -19,7 +19,7 @@ public class SoundController {
         sound.run(SKAction.play())
     }
     
-    func selectSound(parentNode: SKNode){
+    static func selectSound(parentNode: SKNode){
         
         let sound = SKAudioNode(fileNamed: "selectSound.wav")
         sound.isPositional = false
@@ -28,7 +28,7 @@ public class SoundController {
         sound.run(SKAction.play())
     }
     
-    func upgradeSound(parentNode: SKNode){
+    static func upgradeSound(parentNode: SKNode){
         
         let sound = SKAudioNode(fileNamed: "upgradeVisualSound.mp3")
         sound.isPositional = false
@@ -37,7 +37,7 @@ public class SoundController {
         sound.run(SKAction.play())
     }
     
-    func insuficientMoneySound(parentNode: SKNode){
+    static func insuficientMoneySound(parentNode: SKNode){
         
         let sound = SKAudioNode(fileNamed: "insuficientMoney.wav")
         sound.isPositional = false

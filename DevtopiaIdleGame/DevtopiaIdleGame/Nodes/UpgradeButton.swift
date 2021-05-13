@@ -71,10 +71,12 @@ class UpgradeButton: SKSpriteNode {
             self.menu.updateNumbers()
             self.price.text = "\(self.menu.generator.currentPrice)"
             //play song
+            SoundController.upgradeSound(parentNode: self)
         }
         else {
             //not enough currency to upgrade dev
             //play song
+            SoundController.insuficientMoneySound(parentNode: self)
         }
     }
     
@@ -98,11 +100,13 @@ class UpgradeButton: SKSpriteNode {
                 }
             }
             //play song
+            SoundController.upgradeSound(parentNode: self)
         }
         else {
             //not enough currency to upgrade equipment
             
             //play song
+            SoundController.insuficientMoneySound(parentNode: self)
         }
     }
 }

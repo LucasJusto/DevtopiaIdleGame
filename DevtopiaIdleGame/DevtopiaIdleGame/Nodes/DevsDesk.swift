@@ -8,9 +8,6 @@
 import Foundation
 import SpriteKit
 
-
-let soundController = SoundController()
-
 protocol DevDelegate: AnyObject {
     func didTapDev(character: Generator)
 }
@@ -27,8 +24,6 @@ class DevsDesk: SKNode, Generator{
     weak var delegate: DevDelegate?
     
     public lazy var desk: SKSpriteNode = {
-
-    private lazy var desk: SKSpriteNode = {
         
         let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
         
@@ -72,7 +67,7 @@ class DevsDesk: SKNode, Generator{
         
         if node.name == "desk" {
            
-            soundController.selectSound(parentNode: desk)
+            SoundController.selectSound(parentNode: desk)
             
             delegate?.didTapDev(character: self)
         }

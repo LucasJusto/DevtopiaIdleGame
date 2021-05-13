@@ -35,10 +35,6 @@ class GameScene: SKScene {
         return cameraNode
     }()
     
-    //Background Music
-    let backgroundMusic = SoundController()
-    
-    
     override func didMove(to view: SKView) {
         
         //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
@@ -58,7 +54,7 @@ class GameScene: SKScene {
         addChild(cameraNode)
          
         
-        backgroundMusic.backgroundMusic(parentNode: background)
+        SoundController.backgroundMusic(parentNode: background)
     }
     
     override func update(_ currentTime: TimeInterval) {

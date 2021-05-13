@@ -88,6 +88,7 @@ public class MainCurrency {
         }
         
         return ret!
+    }
       
     func updateDevCoinsWhenBack(timeAway: Decimal) {
         devCoins += timeAway * devCoinsPerSec * 0.1
