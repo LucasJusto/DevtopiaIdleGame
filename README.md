@@ -1,2 +1,2 @@
 # DevtopiaIdleGame
-DevtopiaIdleGame an Idle Game where the main theme is around software development
+DevtopiaIdleGame is an Idle Game where the main theme is around software development
