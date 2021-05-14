@@ -26,11 +26,11 @@ extension Multiplier {
         currentPrice *= priceMultiplier
         multiply += increase
         observer.updateDevCoinsPerSec()
-        if currentLevel >= changeVisual1 && currentLevel < changeVisual2{
+        if currentLevel == changeVisual1{
             increase += 0.005
             priceMultiplier = 1.15
         }
-        else if currentLevel >= changeVisual2 {
+        else if currentLevel == changeVisual2{
             increase += 0.01
             priceMultiplier = 1.2
         }
