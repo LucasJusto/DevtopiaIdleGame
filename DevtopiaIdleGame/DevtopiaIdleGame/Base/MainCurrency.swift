@@ -63,35 +63,48 @@ public class MainCurrency {
     
     func decimalToString(value: Decimal) -> String {
         //convert devCoins or devCoinsPerSec to String using K, M, B, T, AA, AB...
-        var ret: String?
+        var str: String = ""
+        var n: String = "0"
         
         if value < pow(10, 3) {
-            ret = "\(value)"
+            str = ""
+            n = "\(value)"
         }
         else if value < pow(10, 6) {
-            ret = "\(value/pow(10, 3))K"
+            str = "K"
+            n = "\(value/pow(10, 3))"
         }
         else if value < pow(10, 9) {
-            ret = "\(value/pow(10, 6))M"
+            str = "M"
+            n = "\(value/pow(10, 6))"
         }
         else if value < pow(10, 12) {
-            ret = "\(value/pow(10, 9))B"
+            str = "B"
+            n = "\(value/pow(10, 9))"
         }
         else if value < pow(10, 15) {
-            ret = "\(value/pow(10, 12))T"
+            str = "T"
+            n = "\(value/pow(10, 12))"
         }
         else if value < pow(10, 18) {
-            ret = "\(value/pow(10, 15))AA"
+            str = "AA"
+            n = "\(value/pow(10, 15))"
         }
         else if value < pow(10, 21) {
-            ret = "\(value/pow(10, 18))AB"
+            str = "AB"
+            n = "\(value/pow(10, 18))"
         }
         
-        return ret!
+        let splitedN = n.split(separator: ".")
+        let nInteger: String = "\(splitedN[0])"
+        var nDecimal: String = "00"
+        if splitedN.count > 1  {
+            nDecimal = "\(splitedN[1].suffix(2))"
+        }
+        return "\(nInteger).\(nDecimal)\(str)"
     }
       
     func updateDevCoinsWhenBack(timeAway: Decimal) {
         devCoins += timeAway * devCoinsPerSec * 0.1
-        print(devCoins)
     }
 }

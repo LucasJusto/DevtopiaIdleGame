@@ -18,6 +18,7 @@ protocol Generator: Upgradable {
     
     func setMultipliers(ms: [Multiplier])
     
+    func getIncrease() -> Decimal
 }
 
 extension Generator {
@@ -27,6 +28,15 @@ extension Generator {
             multiplier += m.multiply
         }
         return perSec * multiplier
+    }
+    
+    func getIncrease() -> Decimal {
+        var multiplier: Decimal = Decimal(1)
+        for m in multipliers {
+            multiplier += m.multiply
+        }
+        return increase * multiplier
+
     }
     
     func upgrade() {

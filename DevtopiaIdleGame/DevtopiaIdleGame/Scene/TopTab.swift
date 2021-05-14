@@ -25,7 +25,7 @@ class TopTab: SKSpriteNode {
         //main currency per sec
         leftWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
         leftLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
-        leftLabel.text = "\(mainCurrency.getDevCoinsPerSec())/s"
+        leftLabel.text = "\(mainCurrency.decimalToString(value: mainCurrency.getDevCoinsPerSec()))/s"
         leftLabel.fontColor = .black
         leftLabel.position = CGPoint(x: 0, y: -(leftLabel.frame.height/2) + 10)
         leftLabel.fontSize = 15
@@ -41,7 +41,7 @@ class TopTab: SKSpriteNode {
         //main currency
         rightWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
         rightLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
-        rightLabel.text = "\(mainCurrency.getDevCoins())"
+        rightLabel.text = mainCurrency.decimalToString(value: mainCurrency.getDevCoins())
         rightLabel.fontColor = .black
         rightLabel.position = CGPoint(x: 0, y: -(rightLabel.frame.height/2) + 7)
         rightLabel.fontSize = 15
@@ -83,11 +83,11 @@ class TopTab: SKSpriteNode {
     }
     
     func updateLabels(){
-        leftLabel.text = "\(mainCurrency.getDevCoinsPerSec())/s"
+        leftLabel.text = "\(mainCurrency.decimalToString(value: mainCurrency.getDevCoinsPerSec()))/s"
         
         midLabel.text = "0"
         
-        rightLabel.text = "\(mainCurrency.getDevCoins())"
+        rightLabel.text = mainCurrency.decimalToString(value: mainCurrency.getDevCoins())
     }
     
 }

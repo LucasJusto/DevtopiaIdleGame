@@ -18,33 +18,41 @@ class UpgradeButton: SKSpriteNode {
     
     init(menu: GeneratorUpgradeMenu, type: ButtonType) {
         self.menu = menu
-        self.price = SKLabelNode(text: "\(menu.generator.currentPrice)")
+        self.price = SKLabelNode(text: "\(menu.generator.observer.decimalToString(value: menu.generator.currentPrice))")
         super.init(texture: nil, color: UIColor(named: "greenTab")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.12))
         self.price.horizontalAlignmentMode = .left
         self.price.fontName = "Montserrat-Regular"
         self.price.fontSize = 12
         self.price.fontColor = UIColor(named: "white")
-        if type == ButtonType.developer {
-            self.name = "developer"
-        }
-        else if type == ButtonType.equipment {
-            self.name = "equipment"
-            self.price.text = "\(self.menu.equipment!.currentPrice)"
-        }
+        
         self.isUserInteractionEnabled = true
         self.zPosition = 101
         let upgradeLabel = SKLabelNode(text: "Upgrade")
         upgradeLabel.fontName = "Montserrat-SemiBold"
         upgradeLabel.fontSize = 12
         upgradeLabel.position = CGPoint(x: 0, y: self.size.height * 0.05)
-        self.addChild(upgradeLabel)
+        
         
         let coinImage: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
         coinImage.size = CGSize(width: 15, height: 15)
         coinImage.position = CGPoint(x: -self.price.frame.width/2, y: -self.size.height*0.2)
         self.price.position = CGPoint(x: coinImage.position.x + coinImage.size.width/2, y: -self.size.height * 0.2 - price.fontSize/2)
+        if type == ButtonType.developer {
+            self.name = "developer"
+            coinImage.name = "developer"
+            self.price.name = "developer"
+            upgradeLabel.name = "developer"
+        }
+        else if type == ButtonType.equipment {
+            self.name = "equipment"
+            coinImage.name = "equipment"
+            self.price.name = "equipment"
+            upgradeLabel.name = "equipment"
+            self.price.text = "\(menu.generator.observer.decimalToString(value: menu.equipment!.currentPrice))"
+        }
         self.addChild(coinImage)
         self.addChild(self.price)
+        self.addChild(upgradeLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,7 +77,7 @@ class UpgradeButton: SKSpriteNode {
             self.menu.generator.observer.updateDevCoins(value: -self.menu.generator.currentPrice)
             self.menu.generator.upgrade()
             self.menu.updateNumbers()
-            self.price.text = "\(self.menu.generator.currentPrice)"
+            self.price.text = "\(menu.generator.observer.decimalToString(value: menu.generator.currentPrice))"
             //play song
             SoundController.upgradeSound(parentNode: self)
         }
@@ -86,7 +94,7 @@ class UpgradeButton: SKSpriteNode {
             self.menu.generator.observer.updateDevCoins(value: -self.menu.equipment!.currentPrice)
             self.menu.equipment!.upgrade()
             self.menu.updateNumbers()
-            self.price.text = "\(self.menu.equipment!.currentPrice)"
+            self.price.text = "\(menu.generator.observer.decimalToString(value: menu.equipment!.currentPrice))"
             if self.menu.equipment!.currentLevel >= self.menu.equipment!.changeVisual1 && self.menu.equipment!.currentLevel < self.menu.equipment!.changeVisual2 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_02")

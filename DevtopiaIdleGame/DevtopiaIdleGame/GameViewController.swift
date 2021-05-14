@@ -10,6 +10,8 @@ class GameViewController: UIViewController {
             if let view = self.view as! SKView? {
                 // Carrega SKScene da classe GameScene.swift
                 let scene = GameScene(size: view.bounds.size)
+                let delegate = UIApplication.shared.delegate as? AppDelegate
+                delegate?.mainCurrency = scene.mainCurrency
                 scene.scaleMode = .resizeFill
                 view.ignoresSiblingOrder = true
                 

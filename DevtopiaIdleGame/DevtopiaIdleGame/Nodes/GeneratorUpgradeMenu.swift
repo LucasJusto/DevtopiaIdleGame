@@ -30,20 +30,20 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         self.levelLabel = SKLabelNode(text: "Level")
         self.developerLevelLabel = SKLabelNode(text: "Developer: \(generator.currentLevel)")
         self.valueProducedLabel = SKLabelNode(text: "Value produced:")
-        self.generatorPerSecLabel = SKLabelNode(text: "\(generator.getCurrencyPerSec())/s")
-        self.equipment = Equipment(id: 0, basePrice: 0, observer: MainCurrency())
+        self.generatorPerSecLabel = SKLabelNode(text: "\(generator.observer.decimalToString(value:(generator.getCurrencyPerSec())))/s")
+        self.equipment = Equipment(id: 0, basePrice: 0, observer: generator.observer)
         for m in generator.multipliers {
             if m.name == "desk" {
                 equipment = (m as! Equipment)
             }
         }
-        self.devPerSecNow = SKLabelNode(text: "\(self.generator.perSec)/s")
+        self.devPerSecNow = SKLabelNode(text: "\((generator.observer.decimalToString(value: self.generator.getCurrencyPerSec())))/s")
         self.devPerSecNow.horizontalAlignmentMode = .left
-        self.devPerSecAfter = SKLabelNode(text: "\(self.generator.perSec + self.generator.increase)/s")
+        self.devPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value:(self.generator.getCurrencyPerSec() + self.generator.getIncrease())))/s")
         self.devPerSecAfter.horizontalAlignmentMode = .left
-        self.equipmentPerSecNow = SKLabelNode(text: "\((1 + self.equipment!.multiply)*100)%")
+        self.equipmentPerSecNow = SKLabelNode(text: "\(generator.observer.decimalToString(value: (1 + self.equipment!.multiply)*100))%")
         self.equipmentPerSecNow.horizontalAlignmentMode = .left
-        self.equipmentPerSecAfter = SKLabelNode(text: "\((1 + self.equipment!.multiply + self.equipment!.increase)*100)%")
+        self.equipmentPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value: ((1 + equipment!.multiply + equipment!.increase)*100)))%")
         self.equipmentPerSecAfter.horizontalAlignmentMode = .left
         self.equipmentLevelLabel = SKLabelNode(text: "Work Station: \(equipment!.currentLevel)")
         super.init(texture: nil, color: UIColor(named: "white")!, size: CGSize(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6))
@@ -230,11 +230,11 @@ class GeneratorUpgradeMenu: SKSpriteNode {
     func updateNumbers() {
         developerLevelLabel.text = "Developer: \(generator.currentLevel)"
         equipmentLevelLabel.text = "Work Station: \(equipment!.currentLevel)"
-        generatorPerSecLabel.text = "\(generator.getCurrencyPerSec())/s"
-        devPerSecNow.text = "\(self.generator.perSec)/s"
-        devPerSecAfter.text = "\(self.generator.perSec + self.generator.increase)/s"
-        equipmentPerSecNow.text = "\((1 + self.equipment!.multiply)*100)%"
-        equipmentPerSecAfter.text = "\((1 + self.equipment!.multiply + self.equipment!.increase)*100)%"
+        generatorPerSecLabel.text = "\(generator.observer.decimalToString(value:(generator.getCurrencyPerSec())))/s"
+        devPerSecNow.text = "\((generator.observer.decimalToString(value: self.generator.getCurrencyPerSec())))/s"
+        devPerSecAfter.text = "\(generator.observer.decimalToString(value:(self.generator.getCurrencyPerSec() + self.generator.getIncrease())))/s"
+        equipmentPerSecNow.text = "\(generator.observer.decimalToString(value: (1 + self.equipment!.multiply)*100))%"
+        equipmentPerSecAfter.text = "\(generator.observer.decimalToString(value: ((1 + equipment!.multiply + equipment!.increase)*100)))%"
         equipmentLevelLabel.text = "Work Station: \(equipment!.currentLevel)"
     }
 }

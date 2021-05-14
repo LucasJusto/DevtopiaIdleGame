@@ -7,7 +7,18 @@ class GameScene: SKScene {
     
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
-    
+    lazy var perSecIncrement: SKAction = {
+        let incrementAction = SKAction.run {
+            self.mainCurrency.updateDevCoins()
+        }
+        let delay = SKAction.wait(forDuration: 1)
+        
+        let sequence = SKAction.sequence([delay, incrementAction])
+        
+        let actionForever = SKAction.repeatForever(sequence)
+        
+        return actionForever
+    }()
     var save1: GameSave = GameSave()
     
     // MARK: Propriedades
@@ -55,14 +66,20 @@ class GameScene: SKScene {
          
         
         SoundController.backgroundMusic(parentNode: background)
+        startIncrement()
     }
     
     override func update(_ currentTime: TimeInterval) {
         topTab.updateLabels()
     }
 
+    func startIncrement() {
+        run(perSecIncrement, withKey: "perSecIncrement")
+    }
     
-    
+    func stopIncrement() {
+        removeAction(forKey: "perSecIncrement")
+    }
    
 }
 
