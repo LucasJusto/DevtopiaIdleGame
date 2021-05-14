@@ -16,7 +16,7 @@ public class MainCurrency {
     
     init(){
         devCoins = Decimal(500)
-        devCoinsPerSec = Decimal(100)
+        devCoinsPerSec = Decimal(0)
         generators = [Generator]()
         offlineMultiplier = Decimal(0.1)
         multipliers = [Multiplier]()
@@ -99,7 +99,7 @@ public class MainCurrency {
         let nInteger: String = "\(splitedN[0])"
         var nDecimal: String = "00"
         if splitedN.count > 1  {
-            nDecimal = "\(splitedN[1].suffix(2))"
+            nDecimal = "\(splitedN[1].prefix(2))"
         }
         return "\(nInteger).\(nDecimal)\(str)"
     }

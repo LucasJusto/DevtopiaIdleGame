@@ -98,13 +98,13 @@ class UpgradeButton: SKSpriteNode {
             if self.menu.equipment!.currentLevel >= self.menu.equipment!.changeVisual1 && self.menu.equipment!.currentLevel < self.menu.equipment!.changeVisual2 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_02")
-                    //devsdesk.desk.position = CGPoint()
+                    devsdesk.desk.position = CGPoint(x: -66.5, y: 814.5)
                 }
             }
             else if self.menu.equipment!.currentLevel >= self.menu.equipment!.changeVisual2 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_03")
-                    //devsdesk.desk.position = CGPoint()
+                    devsdesk.desk.position = CGPoint(x: -66.5, y: 814.5)
                 }
             }
             //play song

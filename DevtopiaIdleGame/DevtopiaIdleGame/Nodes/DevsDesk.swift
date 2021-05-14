@@ -45,7 +45,7 @@ class DevsDesk: SKNode, Generator{
         self.increase = increase
         self.observer = observer
         super.init()
-        let multiplier = Equipment(id: self.id, basePrice: self.basePrice * 0.5 , observer: observer)
+        let multiplier = Equipment(id: self.id, basePrice: self.basePrice * 0.2 , observer: observer)
         self.addMultiplier(m: multiplier)
         self.isUserInteractionEnabled = true
         self.addChild(desk)
