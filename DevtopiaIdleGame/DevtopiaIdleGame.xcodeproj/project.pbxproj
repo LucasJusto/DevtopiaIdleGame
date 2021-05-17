@@ -28,7 +28,7 @@
 		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
 		5C4A4128264B21D500FE60E3 /* GameSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4127264B21D500FE60E3 /* GameSave.swift */; };
 		5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A412B264C565C00FE60E3 /* SoundController.swift */; };
-		F47499F6264C7071008DFDC9 /* upgradeVisualSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */; };
+		F44E8E6E2652E07F001A76C2 /* upgradeVisualSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */; };
 		F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F3264C706F008DFDC9 /* selectSound.wav */; };
 		F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F4264C706F008DFDC9 /* insuficientMoney.wav */; };
 		F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F5264C7071008DFDC9 /* backgroundMusic.wav */; };
@@ -59,7 +59,7 @@
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		5C4A4127264B21D500FE60E3 /* GameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
 		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
-		F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = upgradeVisualSound.mp3; sourceTree = "<group>"; };
+		F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upgradeVisualSound.wav; sourceTree = "<group>"; };
 		F47499F3264C706F008DFDC9 /* selectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = selectSound.wav; sourceTree = "<group>"; };
 		F47499F4264C706F008DFDC9 /* insuficientMoney.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = insuficientMoney.wav; sourceTree = "<group>"; };
 		F47499F5264C7071008DFDC9 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				F47499F5264C7071008DFDC9 /* backgroundMusic.wav */,
 				F47499F4264C706F008DFDC9 /* insuficientMoney.wav */,
 				F47499F3264C706F008DFDC9 /* selectSound.wav */,
-				F47499F2264C706F008DFDC9 /* upgradeVisualSound.mp3 */,
+				F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -234,13 +234,13 @@
 			files = (
 				F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */,
 				4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */,
+				F44E8E6E2652E07F001A76C2 /* upgradeVisualSound.wav in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
 				4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
 				F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */,
 				F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */,
 				4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */,
-				F47499F6264C7071008DFDC9 /* upgradeVisualSound.mp3 in Resources */,
 				4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,11 +30,12 @@ public class SoundController {
     
     static func upgradeSound(parentNode: SKNode){
         
-        let sound = SKAudioNode(fileNamed: "upgradeVisualSound.mp3")
+        let sound = SKAudioNode(fileNamed: "upgradeVisualSound.wav")
         sound.isPositional = false
         sound.autoplayLooped = false
         parentNode.addChild(sound)
         sound.run(SKAction.play())
+        
     }
     
     static func insuficientMoneySound(parentNode: SKNode){
