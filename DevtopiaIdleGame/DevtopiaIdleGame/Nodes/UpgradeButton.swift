@@ -95,15 +95,17 @@ class UpgradeButton: SKSpriteNode {
             self.menu.equipment!.upgrade()
             self.menu.updateNumbers()
             self.price.text = "\(menu.generator.observer.decimalToString(value: menu.equipment!.currentPrice))"
-            if self.menu.equipment!.currentLevel >= self.menu.equipment!.changeVisual1 && self.menu.equipment!.currentLevel < self.menu.equipment!.changeVisual2 {
+            if self.menu.equipment!.currentLevel == self.menu.equipment!.changeVisual1 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_02")
                     devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x - 66.5, y: devsdesk.desk.position.y - 30)
+                    self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_02")
                 }
             }
-            else if self.menu.equipment!.currentLevel >= self.menu.equipment!.changeVisual2 {
+            else if self.menu.equipment!.currentLevel == self.menu.equipment!.changeVisual2 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_03")
+                    self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_03")
                 }
             }
             //play song
