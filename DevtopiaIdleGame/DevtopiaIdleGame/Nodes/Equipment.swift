@@ -29,8 +29,8 @@ class Equipment: Multiplier {
         self.currentLevel = 0
         self.increase = 0.01
         self.observer = observer
-        self.changeVisual1 = 1
-        self.changeVisual2 = 5
+        self.changeVisual1 = 30
+        self.changeVisual2 = 70
         self.priceMultiplier = 1.1
     }
 }

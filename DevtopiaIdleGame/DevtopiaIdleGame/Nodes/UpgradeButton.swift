@@ -13,7 +13,7 @@ enum ButtonType {
 }
 
 class UpgradeButton: SKSpriteNode {
-    var menu: GeneratorUpgradeMenu
+    unowned var menu: GeneratorUpgradeMenu!
     var price: SKLabelNode
     
     init(menu: GeneratorUpgradeMenu, type: ButtonType) {

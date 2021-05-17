@@ -7,6 +7,7 @@ class GameScene: SKScene {
     
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
+    var keyboard: KeyboardButton!
     lazy var perSecIncrement: SKAction = {
         let incrementAction = SKAction.run {
             self.mainCurrency.updateDevCoins()
@@ -43,6 +44,8 @@ class GameScene: SKScene {
         cameraNode.applyZoomScale(scale: 0.5)
         topTab = TopTab(mainCurrency: mainCurrency)
         cameraNode.addChild(topTab)
+        keyboard = KeyboardButton(mainCurrency: mainCurrency)
+        cameraNode.addChild(keyboard)
         return cameraNode
     }()
     

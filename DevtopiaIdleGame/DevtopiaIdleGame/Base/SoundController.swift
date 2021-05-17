@@ -25,7 +25,9 @@ public class SoundController {
         sound.isPositional = false
         sound.autoplayLooped = false
         parentNode.addChild(sound)
-        sound.run(SKAction.play())
+        sound.run(SKAction.sequence([.play(), .wait(forDuration: 0.5)])){
+            sound.removeFromParent()
+        }
     }
     
     static func upgradeSound(parentNode: SKNode){
@@ -34,7 +36,9 @@ public class SoundController {
         sound.isPositional = false
         sound.autoplayLooped = false
         parentNode.addChild(sound)
-        sound.run(SKAction.play())
+        sound.run(SKAction.sequence([.play(), .wait(forDuration: 2)])){
+            sound.removeFromParent()
+        }
         
     }
     
@@ -44,7 +48,19 @@ public class SoundController {
         sound.isPositional = false
         sound.autoplayLooped = false
         parentNode.addChild(sound)
-        sound.run(SKAction.play())
+        sound.run(SKAction.sequence([.play(), .wait(forDuration: 0.5)])){
+            sound.removeFromParent()
+        }
+    }
+    
+    static func keyboardClick(parent: SKSpriteNode){
+        let sound = SKAudioNode(fileNamed: "typing.wav")
+        sound.isPositional = false
+        sound.autoplayLooped = false
+        parent.addChild(sound)
+        sound.run(SKAction.sequence([.play(), .wait(forDuration: 0.5)])){
+            sound.removeFromParent()
+        }
     }
     
 }

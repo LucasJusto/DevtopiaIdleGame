@@ -9,9 +9,9 @@ import Foundation
 import SpriteKit
 
 class CloseButton: SKSpriteNode {
-    var menu: GeneratorUpgradeMenu
+    weak var menu: GeneratorUpgradeMenu?
     
-    init(menu: GeneratorUpgradeMenu) {
+    init(menu: GeneratorUpgradeMenu?) {
         self.menu = menu
         super.init(texture: SKTexture(imageNamed: "Close_Button"), color: UIColor(named: "white")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.07, height: UIScreen.main.bounds.width * 0.07))
         self.name = "closeButton"
@@ -28,7 +28,7 @@ class CloseButton: SKSpriteNode {
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
         if node.name == "closeButton" {
-            self.menu.removeFromParent()
+            self.menu?.removeFromParent()
         }
     }
 }
