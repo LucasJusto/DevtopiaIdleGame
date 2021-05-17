@@ -23,6 +23,7 @@ class GeneratorUpgradeMenu: SKSpriteNode {
     var equipmentPerSecNow: SKLabelNode
     var equipmentPerSecAfter: SKLabelNode
     var equipment: Equipment?
+    var devImage: SKSpriteNode
     
     public init(generator: Generator){
         self.generator = generator
@@ -46,6 +47,8 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         self.equipmentPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value: ((1 + equipment!.multiply + equipment!.increase)*100)))%")
         self.equipmentPerSecAfter.horizontalAlignmentMode = .left
         self.equipmentLevelLabel = SKLabelNode(text: "Work Station: \(equipment!.currentLevel)")
+        devImage = SKSpriteNode(imageNamed: "Dev_step_01-1")
+        devImage.texture = (generator as! DevsDesk).desk.texture
         super.init(texture: nil, color: UIColor(named: "white")!, size: CGSize(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6))
         self.zPosition = 100
         self.name = "GeneratorUpgradeMenu"
@@ -66,9 +69,8 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         let greenRectangle: SKSpriteNode = SKSpriteNode(texture: nil, color: UIColor(named: "greenTab")!, size: CGSize(width: self.size.width * 0.95, height: self.size.height * 0.475))
         greenRectangle.position = CGPoint(x: 0, y: self.size.height/2 - greenRectangle.size.height/2 - self.size.width * 0.025)
         //adding dev's image
-        let devImage: SKSpriteNode = SKSpriteNode(imageNamed: "Dev_step_01-1")
         devImage.size = CGSize(width: greenRectangle.size.width * 0.6, height: greenRectangle.size.height * 0.85)
-        devImage.position = CGPoint(x: greenRectangle.size.width * -0.2, y: 0)
+        devImage.position = CGPoint(x: greenRectangle.size.width * -0.22, y: 0)
         greenRectangle.addChild(devImage)
         
         var verticalPadding: CGFloat = 0
