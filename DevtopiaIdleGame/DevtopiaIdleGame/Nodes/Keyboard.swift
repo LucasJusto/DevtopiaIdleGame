@@ -29,7 +29,7 @@ class KeyboardButton: SKSpriteNode {
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
         if node.name == "keyboardButton" {
-            self.mainCurrency.updateDevCoins(value: mainCurrency.getDevCoinsPerSec() * 0.05)
+            self.mainCurrency.updateDevCoins(value: mainCurrency.getDevCoinsPerSec() * 0.2)
             SoundController.keyboardClick(parent: self)
         }
     }
