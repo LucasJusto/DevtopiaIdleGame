@@ -34,6 +34,7 @@
 		F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F3264C706F008DFDC9 /* selectSound.wav */; };
 		F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F4264C706F008DFDC9 /* insuficientMoney.wav */; };
 		F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F5264C7071008DFDC9 /* backgroundMusic.wav */; };
+		F4B2F86A265439970040C0E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B2F869265439970040C0E4 /* LaunchScreen.storyboard */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		F47499F3264C706F008DFDC9 /* selectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = selectSound.wav; sourceTree = "<group>"; };
 		F47499F4264C706F008DFDC9 /* insuficientMoney.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = insuficientMoney.wav; sourceTree = "<group>"; };
 		F47499F5264C7071008DFDC9 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
+		F4B2F869265439970040C0E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 		48775C79264083C300F6D4B0 = {
 			isa = PBXGroup;
 			children = (
+				F4B2F869265439970040C0E4 /* LaunchScreen.storyboard */,
 				48775C84264083C300F6D4B0 /* DevtopiaIdleGame */,
 				48775C83264083C300F6D4B0 /* Products */,
 			);
@@ -247,6 +250,7 @@
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
 				F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */,
 				F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */,
+				F4B2F86A265439970040C0E4 /* LaunchScreen.storyboard in Resources */,
 				4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */,
 				4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */,
 			);
@@ -415,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
