@@ -30,6 +30,14 @@ public class MainCurrency {
         return devCoinsPerSec
     }
     
+    func getGenerators() -> [Generator]{
+        return generators
+    }
+    
+    func setDevCoins(value: Decimal) {
+        devCoins = value
+    }
+    
     func addGenerator(generator: Generator) {
         generators.append(generator)
         for g in generators {
