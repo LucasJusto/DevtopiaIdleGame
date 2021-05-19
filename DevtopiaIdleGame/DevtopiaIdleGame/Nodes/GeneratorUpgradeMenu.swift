@@ -32,12 +32,7 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         self.developerLevelLabel = SKLabelNode(text: "Developer: \(generator.currentLevel)")
         self.valueProducedLabel = SKLabelNode(text: "Value produced:")
         self.generatorPerSecLabel = SKLabelNode(text: "\(generator.observer.decimalToString(value:(generator.getCurrencyPerSec())))/s")
-        self.equipment = Equipment(id: 0, basePrice: 0, observer: generator.observer)
-        for m in generator.multipliers {
-            if m.name == "desk" {
-                equipment = (m as! Equipment)
-            }
-        }
+        self.equipment = (self.generator as! DevsDesk).equipment
         self.devPerSecNow = SKLabelNode(text: "\((generator.observer.decimalToString(value: self.generator.getCurrencyPerSec())))/s")
         self.devPerSecNow.horizontalAlignmentMode = .left
         self.devPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value:(self.generator.getCurrencyPerSec() + self.generator.getIncrease())))/s")

@@ -22,6 +22,7 @@ class DevsDesk: SKNode, Generator{
     var increase: Decimal
     var observer: MainCurrency
     weak var delegate: DevDelegate?
+    var equipment: Equipment
     
     public lazy var desk: SKSpriteNode = {
         
@@ -35,23 +36,22 @@ class DevsDesk: SKNode, Generator{
         return desk
     }()
     
-    init(x: Double = 0, y: Double = 844.5, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency) {
+    init(x: CGFloat, y: CGFloat, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency, equipmentLevel: Int, equipmentMultiply: Decimal, equipmentPriceMultiplier: Decimal, currentLevel: Int, equipmentCurrentPrice: Decimal, currentPrice: Decimal) {
         self.perSec = perSec
         self.multipliers = [Multiplier]()
         self.id = id
-        self.currentPrice = basePrice
+        self.currentPrice = currentPrice
         self.basePrice = basePrice
-        self.currentLevel = 1
+        self.currentLevel = currentLevel
         self.increase = increase
         self.observer = observer
+        equipment = Equipment(id: self.id, basePrice: self.basePrice * 0.2, observer: self.observer, currentPrice: equipmentCurrentPrice, currentLevel: equipmentLevel, multiply: equipmentMultiply, priceMultiplier: equipmentPriceMultiplier)
         super.init()
-        let multiplier = Equipment(id: self.id, basePrice: self.basePrice * 0.2 , observer: observer)
-        self.addMultiplier(m: multiplier)
+        self.addMultiplier(m: equipment)
         self.isUserInteractionEnabled = true
         self.addChild(desk)
         self.desk.position = CGPoint(x: x, y: y)
-        self.observer.addGenerator(generator: self)
-        self.observer.addMultiplier(multiplier: multiplier)
+        self.observer.addMultiplier(multiplier: equipment)
     }
     
     

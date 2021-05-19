@@ -20,17 +20,17 @@ class Equipment: Multiplier {
     var observer: MainCurrency
     var name: String
     
-    public init(id: Int, basePrice: Decimal, observer: MainCurrency){
+    public init(id: Int, basePrice: Decimal, observer: MainCurrency, currentPrice: Decimal, currentLevel: Int, multiply: Decimal, priceMultiplier: Decimal) {
         self.name = "desk"
-        self.multiply = 0
+        self.multiply = multiply
         self.id = id
-        self.currentPrice = basePrice
         self.basePrice = basePrice
-        self.currentLevel = 0
+        self.currentPrice = currentPrice
+        self.currentLevel = currentLevel
         self.increase = 0.01
         self.observer = observer
         self.changeVisual1 = 30
         self.changeVisual2 = 70
-        self.priceMultiplier = 1.1
+        self.priceMultiplier = priceMultiplier
     }
 }
