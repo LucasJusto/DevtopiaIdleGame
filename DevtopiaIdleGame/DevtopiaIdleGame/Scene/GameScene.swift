@@ -2,8 +2,6 @@ import SpriteKit
 import Foundation
 
 class GameScene: SKScene {
-//    var gameBackgroundMusic: SKAudioNode!
-    
     
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
@@ -22,8 +20,8 @@ class GameScene: SKScene {
     }()
     var save1: GameSave = GameSave()
     
-    // MARK: Propriedades
-    //váriavel para a o fundo da cena
+    // MARK: Properties
+    //background properties
     private lazy var background: SKSpriteNode = {
         let background = SKSpriteNode(imageNamed: "Piso")
         //setter da posição do backgroud para a posição x: 0.5 , y: 0.5
@@ -36,7 +34,7 @@ class GameScene: SKScene {
     }()
     
     
-    //Camera do jogo
+    //Game camera
     private lazy var cameraNode: Camera = {
         let cameraNode = Camera(sceneView: self.view!, cenario: background)
         //setter da posição inicial para o valor de x igual a metade da largura de sua tela e de y igual a metade da altura da tela.
@@ -84,20 +82,9 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk2)
             background.addChild(devsDesk2)
         }
-//        if let _ = save1.userDefaults.value(forKey: "devCoins") {
-//            let devsDesk = DevsDesk(x: 0, y: 844.5, perSec: 20, increase: 2, id: 0, basePrice: 500, observer: mainCurrency, equipmentLevel: 0, equipmentMultiply: 0, equipmentPriceMultiplier: 1.1, currentLevel: 0, equipmentCurrentPrice: 500 * 0.2)
-//            devsDesk.delegate = self
-//            background.addChild(devsDesk)
-//        }
-//        else {
-//            let devsDesk = DevsDesk(x: 0, y: 844.5, perSec: 20, increase: 2, id: 0, basePrice: 500, observer: mainCurrency, equipmentLevel: 0, equipmentMultiply: 0, equipmentPriceMultiplier: 1.1, currentLevel: 0, equipmentCurrentPrice: 500 * 0.2)
-//            devsDesk.delegate = self
-//            background.addChild(devsDesk)
-//        }
         
         addChild(cameraNode)
          
-        
         SoundController.backgroundMusic(parentNode: background)
         startIncrement()
     }
