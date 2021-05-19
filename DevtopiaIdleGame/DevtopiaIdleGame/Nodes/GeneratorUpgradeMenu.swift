@@ -71,7 +71,7 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         greenRectangle.addChild(devImage)
         
         let closeButton: CloseButton = CloseButton(menu: self, width: greenRectangle.size.width * 0.1, height: greenRectangle.size.width * 0.1)
-        closeButton.position = CGPoint(x: greenRectangle.size.width * 0.5 - closeButton.size.width/2, y: greenRectangle.size.width * 0.5 - closeButton.size.width/2)
+        closeButton.position = CGPoint(x: greenRectangle.size.width * 0.5 - closeButton.size.width/2 - self.size.width * 0.02, y: greenRectangle.size.height * 0.5 - closeButton.size.height/2 - self.size.width * 0.02)
         
         greenRectangle.addChild(closeButton)
         
