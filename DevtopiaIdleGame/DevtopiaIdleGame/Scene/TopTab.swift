@@ -22,46 +22,51 @@ class TopTab: SKSpriteNode {
     
     public init(mainCurrency: MainCurrency){
         
-        let leftPadding: CGFloat = 5
-        dollarImage = SKSpriteNode(imageNamed: "Money")
-        dollarImage.size = CGSize(width: 20, height: 20)
-        coinImageLeft = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageLeft.size = CGSize(width: 15, height: 15)
-        coinImageRight = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageRight.size = CGSize(width: 15, height: 15)
-        
-        
-        self.mainCurrency = mainCurrency
-        //main currency per sec
         leftWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
+        
+        midWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
+        
+        rightWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
+        
+        
+        coinImageLeft = SKSpriteNode(imageNamed: "DevCoin")
+        coinImageLeft.size = CGSize(width: leftWhiteBar.size.height * 0.8, height: leftWhiteBar.size.height * 0.8)
+        dollarImage = SKSpriteNode(imageNamed: "Money")
+        dollarImage.size = CGSize(width: midWhiteBar.size.height * 0.8, height: midWhiteBar.size.height * 0.8)
+        coinImageRight = SKSpriteNode(imageNamed: "DevCoin")
+        coinImageRight.size = CGSize(width: rightWhiteBar.size.height * 0.8, height: rightWhiteBar.size.height * 0.8)
+        
+        let leftPadding: CGFloat = 5
+        self.mainCurrency = mainCurrency
+        
+        //main currency per sec
         leftLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
         leftLabel.text = "\(mainCurrency.decimalToString(value: mainCurrency.getDevCoinsPerSec()))/s"
         leftLabel.fontColor = .black
         coinImageLeft.position = CGPoint(x: -leftWhiteBar.size.width/2 + leftPadding + coinImageLeft.size.width/2, y: 0)
-        leftLabel.position = CGPoint(x: coinImageLeft.position.x + 10, y: 0)
-        leftLabel.fontSize = 12
+        leftLabel.position = CGPoint(x: coinImageLeft.position.x + coinImageLeft.size.width/2, y: 0)
+        leftLabel.fontSize = leftWhiteBar.size.height * 0.5
         leftLabel.horizontalAlignmentMode = .left
         leftLabel.verticalAlignmentMode = .center
         
         //premium currency
-        midWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
+        
         midLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
         midLabel.text = "0"
         midLabel.fontColor = .black
         dollarImage.position = CGPoint(x: -midWhiteBar.size.width/2 + leftPadding + dollarImage.size.width/2, y: 0)
-        midLabel.position = CGPoint(x: dollarImage.position.x + 10, y: 0)
-        midLabel.fontSize = 12
+        midLabel.position = CGPoint(x: dollarImage.position.x + dollarImage.size.width/2, y: 0)
+        midLabel.fontSize = midWhiteBar.size.height * 0.5
         midLabel.horizontalAlignmentMode = .left
         midLabel.verticalAlignmentMode = .center
         
         //main currency
-        rightWhiteBar = SKSpriteNode(texture: nil, color: .white, size: CGSize(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.03))
         rightLabel = SKLabelNode(fontNamed: "Montserrat-Bold")
         rightLabel.text = mainCurrency.decimalToString(value: mainCurrency.getDevCoins())
         rightLabel.fontColor = .black
         coinImageRight.position = CGPoint(x: -rightWhiteBar.size.width/2 + leftPadding + coinImageRight.size.width/2, y: 0)
-        rightLabel.position = CGPoint(x: coinImageRight.position.x + 10, y: 0)
-        rightLabel.fontSize = 12
+        rightLabel.position = CGPoint(x: coinImageRight.position.x + coinImageRight.size.width/2, y: 0)
+        rightLabel.fontSize = rightWhiteBar.size.height * 0.5
         rightLabel.horizontalAlignmentMode = .left
         rightLabel.verticalAlignmentMode = .center
         

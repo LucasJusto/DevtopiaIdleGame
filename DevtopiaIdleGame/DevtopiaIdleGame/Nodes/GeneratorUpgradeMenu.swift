@@ -53,12 +53,9 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         self.zPosition = 100
         self.name = "GeneratorUpgradeMenu"
         self.isUserInteractionEnabled = true
-        let closeButton: CloseButton = CloseButton(menu: self)
-        closeButton.position = CGPoint(x: self.frame.width * 0.5 - 30, y: self.frame.height * 0.5 - 30)
         
         self.addChild(createGreenRectangle())
         self.addChild(createGrayRectangle())
-        self.addChild(closeButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,43 +70,48 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         devImage.position = CGPoint(x: greenRectangle.size.width * -0.22, y: 0)
         greenRectangle.addChild(devImage)
         
+        let closeButton: CloseButton = CloseButton(menu: self, width: greenRectangle.size.width * 0.1, height: greenRectangle.size.width * 0.1)
+        closeButton.position = CGPoint(x: greenRectangle.size.width * 0.5 - closeButton.size.width/2, y: greenRectangle.size.width * 0.5 - closeButton.size.width/2)
+        
+        greenRectangle.addChild(closeButton)
+        
         var verticalPadding: CGFloat = 0
         
         levelLabel.horizontalAlignmentMode = .left
-        levelLabel.fontSize = 25
+        levelLabel.fontSize = greenRectangle.size.height * 0.13
         levelLabel.position = CGPoint(x: greenRectangle.size.width/20, y: greenRectangle.size.height/4 - verticalPadding)
         levelLabel.fontName = "Montserrat-Bold"
         greenRectangle.addChild(levelLabel)
         
         developerLevelLabel.horizontalAlignmentMode = .left
-        developerLevelLabel.fontSize = 13
-        verticalPadding += levelLabel.fontSize+5
+        developerLevelLabel.fontSize = levelLabel.fontSize/2
+        verticalPadding += levelLabel.fontSize
         developerLevelLabel.position = CGPoint(x: greenRectangle.size.width/20, y: greenRectangle.size.height/4 - verticalPadding)
         developerLevelLabel.fontName = "Montserrat-SemiBold"
         greenRectangle.addChild(developerLevelLabel)
         
         equipmentLevelLabel.horizontalAlignmentMode = .left
-        equipmentLevelLabel.fontSize = 13
-        verticalPadding += developerLevelLabel.fontSize + 15
+        equipmentLevelLabel.fontSize = levelLabel.fontSize/2
+        verticalPadding += developerLevelLabel.fontSize * 2
         equipmentLevelLabel.position = CGPoint(x: greenRectangle.size.width/20, y: greenRectangle.size.height/4 - verticalPadding)
         equipmentLevelLabel.fontName = "Montserrat-SemiBold"
         greenRectangle.addChild(equipmentLevelLabel)
         
         valueProducedLabel.horizontalAlignmentMode = .left
-        valueProducedLabel.fontSize = 15
-        verticalPadding += equipmentLevelLabel.fontSize + valueProducedLabel.fontSize + 20
+        valueProducedLabel.fontSize = levelLabel.fontSize/2
+        verticalPadding += equipmentLevelLabel.fontSize * 3
         valueProducedLabel.position = CGPoint(x: greenRectangle.size.width/20, y: greenRectangle.size.height/4 - verticalPadding)
         valueProducedLabel.fontName = "Montserrat-Regular"
         greenRectangle.addChild(valueProducedLabel)
         
         generatorPerSecLabel.horizontalAlignmentMode = .left
-        generatorPerSecLabel.fontSize = 15
-        verticalPadding += valueProducedLabel.fontSize + equipmentLevelLabel.fontSize + 5
-        generatorPerSecLabel.position = CGPoint(x: greenRectangle.size.width/20 + 22, y: greenRectangle.size.height/4 - verticalPadding + 3)
+        generatorPerSecLabel.fontSize = levelLabel.fontSize/2
+        verticalPadding += valueProducedLabel.fontSize * 2
+        generatorPerSecLabel.position = CGPoint(x: greenRectangle.size.width/20 + generatorPerSecLabel.fontSize, y: greenRectangle.size.height/4 - verticalPadding + 1)
         generatorPerSecLabel.fontName = "Montserrat-Bold"
         greenRectangle.addChild(generatorPerSecLabel)
         
-        coinImage1.size = CGSize(width: 20, height: 20)
+        coinImage1.size = CGSize(width: generatorPerSecLabel.fontSize, height: generatorPerSecLabel.fontSize)
         coinImage1.anchorPoint = CGPoint(x: 0, y: 0)
         coinImage1.position = CGPoint(x: greenRectangle.size.width/20, y: greenRectangle.size.height/4 - verticalPadding)
         greenRectangle.addChild(coinImage1)
@@ -123,12 +125,12 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         grayRectangle.position = CGPoint(x: 0, y: y)
         
         //developer skills black rectangle
-        let developerRectangle: SKSpriteNode = SKSpriteNode(color: UIColor(named: "black")!, size: CGSize(width: grayRectangle.size.width * 0.9, height: grayRectangle.size.height * 0.10))
+        let developerRectangle: SKSpriteNode = SKSpriteNode(color: UIColor(named: "black")!, size: CGSize(width: grayRectangle.size.width * 0.9, height: grayRectangle.size.height * 0.1))
         developerRectangle.position = CGPoint(x: 0, y: grayRectangle.size.height * 0.4 - developerRectangle.size.height/2)
         let developerLabel: SKLabelNode = SKLabelNode(text: "Developer Skills")
         developerLabel.horizontalAlignmentMode = .left
         developerLabel.color = UIColor(named: "white")
-        developerLabel.fontSize = 13
+        developerLabel.fontSize = developerRectangle.size.height * 0.7
         developerLabel.fontName = "Montserrat-Bold"
         developerLabel.position = CGPoint(x: -developerRectangle.size.width * 0.475, y: -developerLabel.fontSize/2)
         developerRectangle.addChild(developerLabel)
@@ -140,32 +142,32 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         grayRectangle.addChild(developerUpgradeButton)
         
         let devNowLabel: SKLabelNode = SKLabelNode(text: "Now")
-        devNowLabel.fontSize = 10
+        devNowLabel.fontSize = developerLabel.fontSize * 0.7
         devNowLabel.fontName = "Montserrat-Regular"
         devNowLabel.fontColor = UIColor(named: "black")
         devNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: developerUpgradeButton.position.y + developerUpgradeButton.size.height/2 - devNowLabel.fontSize)
         devNowLabel.horizontalAlignmentMode = .left
         let devAfterLabel: SKLabelNode = SKLabelNode(text: "After Upgrade")
-        devAfterLabel.fontSize = 10
+        devAfterLabel.fontSize = developerLabel.fontSize * 0.85
         devAfterLabel.fontName = "Montserrat-Bold"
         devAfterLabel.fontColor = UIColor(named: "black")
-        devAfterLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: devNowLabel.position.y - devAfterLabel.fontSize - 10)
+        devAfterLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: devNowLabel.position.y - devAfterLabel.fontSize/2 - grayRectangle.size.height * 0.08)
         devAfterLabel.horizontalAlignmentMode = .left
         
         let coinImageDevNow: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageDevNow.size = CGSize(width: 12, height: 12)
-        coinImageDevNow.position = CGPoint(x: devNowLabel.position.x + devNowLabel.frame.width + 10, y: devNowLabel.position.y + coinImageDevNow.size.height/2 - 2)
-        devPerSecNow.fontSize = 12
+        coinImageDevNow.size = CGSize(width: devNowLabel.fontSize, height: devNowLabel.fontSize)
+        coinImageDevNow.position = CGPoint(x: devNowLabel.position.x + devNowLabel.frame.width + grayRectangle.size.width * 0.03, y: devNowLabel.position.y + coinImageDevNow.size.height/2)
+        devPerSecNow.fontSize = coinImageDevNow.size.height
         devPerSecNow.fontName = "Montserrat-Regular"
         devPerSecNow.fontColor = UIColor(named: "black")
-        devPerSecNow.position = CGPoint(x: coinImageDevNow.position.x + 7, y: coinImageDevNow.position.y - 5)
+        devPerSecNow.position = CGPoint(x: coinImageDevNow.position.x + coinImageDevNow.size.width/2, y: coinImageDevNow.position.y - devPerSecNow.fontSize/2)
         let coinImageDevAfter: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageDevAfter.size = CGSize(width: 15, height: 15)
-        coinImageDevAfter.position = CGPoint(x: devAfterLabel.position.x + 5, y: devAfterLabel.position.y - coinImageDevAfter.size.height)
-        devPerSecAfter.fontSize = 12
+        coinImageDevAfter.size = CGSize(width: devAfterLabel.fontSize, height: devAfterLabel.fontSize)
+        coinImageDevAfter.position = CGPoint(x: devAfterLabel.position.x + coinImageDevAfter.size.width/2, y: devAfterLabel.position.y - coinImageDevAfter.size.height)
+        devPerSecAfter.fontSize = coinImageDevAfter.size.height
         devPerSecAfter.fontName = "Montserrat-SemiBold"
         devPerSecAfter.fontColor = UIColor(named: "black")
-        devPerSecAfter.position = CGPoint(x: coinImageDevAfter.position.x + 8, y: coinImageDevAfter.position.y - 4)
+        devPerSecAfter.position = CGPoint(x: coinImageDevAfter.position.x + coinImageDevAfter.size.width/2, y: coinImageDevAfter.position.y - devPerSecAfter.fontSize/2)
         
         grayRectangle.addChild(devNowLabel)
         grayRectangle.addChild(coinImageDevNow)
@@ -175,12 +177,12 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         grayRectangle.addChild(devPerSecAfter)
         
         //work station black rectangle
-        let equipmentRectangle: SKSpriteNode = SKSpriteNode(color: UIColor(named: "black")!, size: CGSize(width: grayRectangle.size.width * 0.9, height: grayRectangle.size.height * 0.10))
+        let equipmentRectangle: SKSpriteNode = SKSpriteNode(color: UIColor(named: "black")!, size: CGSize(width: grayRectangle.size.width * 0.9, height: grayRectangle.size.height * 0.1))
         equipmentRectangle.position = CGPoint(x: 0, y: -grayRectangle.size.height * 0.05 - equipmentRectangle.size.height/2)
         let equipmentLabel: SKLabelNode = SKLabelNode(text: "Work Station")
         equipmentLabel.horizontalAlignmentMode = .left
         equipmentLabel.color = UIColor(named: "white")
-        equipmentLabel.fontSize = 13
+        equipmentLabel.fontSize = equipmentRectangle.size.height * 0.7
         equipmentLabel.fontName = "Montserrat-Bold"
         equipmentLabel.position = CGPoint(x: -equipmentRectangle.size.width * 0.475, y: -equipmentLabel.fontSize/2)
         equipmentRectangle.addChild(equipmentLabel)
@@ -192,32 +194,33 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         grayRectangle.addChild(equipmentUpgradeButton)
         
         let equipmentNowLabel: SKLabelNode = SKLabelNode(text: "Now")
-        equipmentNowLabel.fontSize = 10
+        equipmentNowLabel.fontSize = equipmentLabel.fontSize * 0.7
         equipmentNowLabel.fontName = "Montserrat-Regular"
         equipmentNowLabel.fontColor = UIColor(named: "black")
         equipmentNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: equipmentUpgradeButton.position.y + equipmentUpgradeButton.size.height/2 - equipmentNowLabel.fontSize)
         equipmentNowLabel.horizontalAlignmentMode = .left
         let equipmentAfterLabel: SKLabelNode = SKLabelNode(text: "After Upgrade")
-        equipmentAfterLabel.fontSize = 10
+        equipmentAfterLabel.fontSize = equipmentLabel.fontSize * 0.85
         equipmentAfterLabel.fontName = "Montserrat-Bold"
         equipmentAfterLabel.fontColor = UIColor(named: "black")
         equipmentAfterLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: equipmentNowLabel.position.y - equipmentAfterLabel.fontSize - 10)
         equipmentAfterLabel.horizontalAlignmentMode = .left
         
         let coinImageEquipmentNow: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageEquipmentNow.size = CGSize(width: 12, height: 12)
-        coinImageEquipmentNow.position = CGPoint(x: equipmentNowLabel.position.x + equipmentNowLabel.frame.width + 10, y: equipmentNowLabel.position.y + coinImageEquipmentNow.size.height/2 - 2)
-        equipmentPerSecNow.fontSize = 12
+        coinImageEquipmentNow.size = CGSize(width: equipmentNowLabel.fontSize, height: equipmentNowLabel.fontSize)
+        coinImageEquipmentNow.position = CGPoint(x: equipmentNowLabel.position.x + equipmentNowLabel.frame.width + grayRectangle.size.width * 0.03, y: equipmentNowLabel.position.y + coinImageEquipmentNow.size.height/2)
+        equipmentPerSecNow.fontSize = equipmentNowLabel.fontSize
         equipmentPerSecNow.fontName = "Montserrat-Regular"
         equipmentPerSecNow.fontColor = UIColor(named: "black")
-        equipmentPerSecNow.position = CGPoint(x: coinImageEquipmentNow.position.x + 7, y: coinImageEquipmentNow.position.y - 5)
+        equipmentPerSecNow.position = CGPoint(x: coinImageEquipmentNow.position.x + coinImageEquipmentNow.size.width/2, y: coinImageEquipmentNow.position.y - equipmentPerSecNow.fontSize/2)
+    
         let coinImageEquipmentAfter: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
-        coinImageEquipmentAfter.size = CGSize(width: 15, height: 15)
-        coinImageEquipmentAfter.position = CGPoint(x: equipmentAfterLabel.position.x + 5, y: equipmentAfterLabel.position.y - coinImageEquipmentAfter.size.height)
-        equipmentPerSecAfter.fontSize = 12
+        coinImageEquipmentAfter.size = CGSize(width: equipmentAfterLabel.fontSize, height: equipmentAfterLabel.fontSize)
+        coinImageEquipmentAfter.position = CGPoint(x: equipmentAfterLabel.position.x + coinImageEquipmentAfter.size.width/2 , y: equipmentAfterLabel.position.y - coinImageEquipmentAfter.size.height)
+        equipmentPerSecAfter.fontSize = coinImageEquipmentAfter.size.height
         equipmentPerSecAfter.fontName = "Montserrat-SemiBold"
         equipmentPerSecAfter.fontColor = UIColor(named: "black")
-        equipmentPerSecAfter.position = CGPoint(x: coinImageEquipmentAfter.position.x + 8, y: coinImageEquipmentAfter.position.y - 4)
+        equipmentPerSecAfter.position = CGPoint(x: coinImageEquipmentAfter.position.x + coinImageEquipmentAfter.size.width/2, y: coinImageEquipmentAfter.position.y - equipmentPerSecAfter.fontSize/2)
         
         grayRectangle.addChild(equipmentNowLabel)
         grayRectangle.addChild(coinImageEquipmentNow)

@@ -19,24 +19,24 @@ class UpgradeButton: SKSpriteNode {
     init(menu: GeneratorUpgradeMenu, type: ButtonType) {
         self.menu = menu
         self.price = SKLabelNode(text: "\(menu.generator.observer.decimalToString(value: menu.generator.currentPrice))")
-        super.init(texture: nil, color: UIColor(named: "greenTab")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.12))
+        super.init(texture: nil, color: UIColor(named: "greenTab")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.width * 0.1))
         self.price.horizontalAlignmentMode = .left
         self.price.fontName = "Montserrat-Regular"
-        self.price.fontSize = 12
+        self.price.fontSize = self.size.height * 0.3
         self.price.fontColor = UIColor(named: "white")
         
         self.isUserInteractionEnabled = true
         self.zPosition = 101
         let upgradeLabel = SKLabelNode(text: "Upgrade")
         upgradeLabel.fontName = "Montserrat-SemiBold"
-        upgradeLabel.fontSize = 12
+        upgradeLabel.fontSize = self.size.height * 0.3
         upgradeLabel.position = CGPoint(x: 0, y: self.size.height * 0.05)
         
         
         let coinImage: SKSpriteNode = SKSpriteNode(imageNamed: "DevCoin")
-        coinImage.size = CGSize(width: 15, height: 15)
+        coinImage.size = CGSize(width: price.fontSize, height: price.fontSize)
         coinImage.position = CGPoint(x: -self.price.frame.width/2, y: -self.size.height*0.2)
-        self.price.position = CGPoint(x: coinImage.position.x + coinImage.size.width/2, y: -self.size.height * 0.2 - price.fontSize/2)
+        self.price.position = CGPoint(x: coinImage.position.x + coinImage.size.width/2, y: coinImage.position.y - price.fontSize/2 + 1)
         if type == ButtonType.developer {
             self.name = "developer"
             coinImage.name = "developer"

@@ -11,9 +11,9 @@ import SpriteKit
 class CloseButton: SKSpriteNode {
     weak var menu: GeneratorUpgradeMenu?
     
-    init(menu: GeneratorUpgradeMenu?) {
+    init(menu: GeneratorUpgradeMenu?, width: CGFloat, height: CGFloat) {
         self.menu = menu
-        super.init(texture: SKTexture(imageNamed: "Close_Button"), color: UIColor(named: "white")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.07, height: UIScreen.main.bounds.width * 0.07))
+        super.init(texture: SKTexture(imageNamed: "Close_Button"), color: UIColor(named: "white")! ,size: CGSize(width: width, height: height))
         self.name = "closeButton"
         self.isUserInteractionEnabled = true
         self.zPosition = 101
