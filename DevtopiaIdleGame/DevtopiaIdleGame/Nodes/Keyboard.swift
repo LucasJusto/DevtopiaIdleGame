@@ -7,7 +7,7 @@ class KeyboardButton: SKSpriteNode {
     
     init(mainCurrency: MainCurrency) {
         self.mainCurrency = mainCurrency
-        super.init(texture: SKTexture(imageNamed: "Keyboard"), color: UIColor(named: "white")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.1))
+        super.init(texture: SKTexture(imageNamed: "Keyboard"), color: UIColor(named: "white")!, size: CGSize(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.1))
         self.position = CGPoint(x: 0, y: (UIScreen.main.bounds.height * -0.43) + self.size.height/2)
         self.name = "keyboardButton"
         self.isUserInteractionEnabled = true
