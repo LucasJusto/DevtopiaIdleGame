@@ -28,7 +28,7 @@ class DevsDesk: SKNode, Generator{
         }
         //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
         desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
-        desk.zPosition = 1
+        desk.zPosition = 2
         desk.name = "desk"
         
         return desk
