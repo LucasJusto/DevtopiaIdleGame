@@ -48,6 +48,12 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        let panel = SKSpriteNode(imageNamed: "Panel")
+        panel.position = CGPoint(x: 0.6,y: 844.5)
+        panel.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        panel.zPosition = 1
+        background.addChild(panel)
+        
         // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         // GameScene size setter to scenario size
