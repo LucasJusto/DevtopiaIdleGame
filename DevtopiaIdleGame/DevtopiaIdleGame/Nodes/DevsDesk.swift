@@ -6,6 +6,10 @@ protocol DevDelegate: AnyObject {
 }
 
 class DevsDesk: SKNode, Generator{
+    
+    var character: String
+    var characterAsset: String = ""
+    var anchorPoint: CGPoint = CGPoint(x: 0.0, y: 0.0 )
     var perSec: Decimal
     var multipliers: [Multiplier]
     var id: Int
@@ -17,19 +21,33 @@ class DevsDesk: SKNode, Generator{
     weak var delegate: DevDelegate?
     var equipment: Equipment
     
+    
+    
+    
+    
     public lazy var desk: SKSpriteNode = {
         
-        let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
+        if character == "dev" {
+            characterAsset = "Dev_step_01-1"
+            anchorPoint = CGPoint(x: 0.458, y: 0.5 )
+        }
+        else {
+            characterAsset = "Designer_step_01"
+            anchorPoint = CGPoint(x: 0.564, y: 0.578 )
+        }
+        
+        let desk = SKSpriteNode(imageNamed: characterAsset)
         
         //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
-        desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
+        desk.anchorPoint = anchorPoint
         desk.zPosition = 2
         desk.name = "desk"
         //desk.size = CGSize(width: 500, height: 500
         return desk
     }()
     
-    init(x: CGFloat, y: CGFloat, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency, equipmentLevel: Int, equipmentMultiply: Decimal, equipmentPriceMultiplier: Decimal, currentLevel: Int, equipmentCurrentPrice: Decimal, currentPrice: Decimal) {
+    init(character: String, x: CGFloat, y: CGFloat, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency, equipmentLevel: Int, equipmentMultiply: Decimal, equipmentPriceMultiplier: Decimal, currentLevel: Int, equipmentCurrentPrice: Decimal, currentPrice: Decimal) {
+        self.character = character
         self.perSec = perSec
         self.multipliers = [Multiplier]()
         self.id = id

@@ -83,7 +83,8 @@ class GameScene: SKScene {
             let left = (x: -193, y: initialPoint.y)
             
             //Devs creation
-            let devsDesk = DevsDesk(x: CGFloat(initialPoint.x),
+            let devsDesk = DevsDesk(character: "designer",
+                                    x: CGFloat(initialPoint.x),
                                     y: CGFloat(initialPoint.y),
                                     perSec: 20,
                                     increase: 2,
@@ -99,7 +100,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk)
             background.addChild(devsDesk)
             
-            let devsDesk2 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -3),
+            let devsDesk2 = DevsDesk(character: "dev",
+                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -3),
                                      y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -3),
                                      perSec: 20,
                                      increase: 2,
@@ -116,7 +118,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk2)
             background.addChild(devsDesk2)
             
-            let devsDesk3 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
+            let devsDesk3 = DevsDesk(character: "dev",
+                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
                                      y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -6),
                                      perSec: 20,
                                      increase: 2,
@@ -133,7 +136,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk3)
             background.addChild(devsDesk3)
             
-            let devsDesk4 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -3),
+            let devsDesk4 = DevsDesk(character: "designer",
+                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -3),
                                      y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -3),
                                      perSec: 20,
                                      increase: 2,
@@ -150,7 +154,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk4)
             background.addChild(devsDesk4)
             
-            let devsDesk5 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
+            let devsDesk5 = DevsDesk(character: "designer",
+                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
                                      y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -6),
                                      perSec: 20,
                                      increase: 2,
@@ -167,7 +172,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk5)
             background.addChild(devsDesk5)
             
-            let devsDesk6 = DevsDesk(x: CGFloat(down.x),
+            let devsDesk6 = DevsDesk(character: "dev",
+                                     x: CGFloat(down.x),
                                      y: CGFloat(initialPoint.y) - CGFloat(down.y * -3),
                                      perSec: 20,
                                      increase: 2,
@@ -184,7 +190,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk6)
             background.addChild(devsDesk6)
             
-            let devsDesk7 = DevsDesk(x: CGFloat(down.x),
+            let devsDesk7 = DevsDesk(character: "dev",
+                                     x: CGFloat(down.x),
                                      y: CGFloat(initialPoint.y) - CGFloat(down.y * -6),
                                      perSec: 20,
                                      increase: 2,
@@ -201,7 +208,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk7)
             background.addChild(devsDesk7)
             
-            let devsDesk8 = DevsDesk(x: CGFloat(down.x) - CGFloat(downLeft.x * -3),
+            let devsDesk8 = DevsDesk(character: "dev",
+                                     x: CGFloat(down.x) - CGFloat(downLeft.x * -3),
                                      y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downLeft.y * -3)),
                                      perSec: 20,
                                      increase: 2,
@@ -218,7 +226,8 @@ class GameScene: SKScene {
             mainCurrency.addGenerator(generator: devsDesk8)
             background.addChild(devsDesk8)
             
-            let devsDesk9 = DevsDesk(x: CGFloat(down.x) - CGFloat(downRight.x * -3),
+            let devsDesk9 = DevsDesk(character: "dev",
+                                     x: CGFloat(down.x) - CGFloat(downRight.x * -3),
                                      y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downRight.y * -3)),
                                      perSec: 20,
                                      increase: 2,
