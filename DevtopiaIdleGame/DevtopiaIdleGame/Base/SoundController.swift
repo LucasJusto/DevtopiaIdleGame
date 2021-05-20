@@ -56,9 +56,10 @@ public class SoundController {
         for sound in sounds {
             sound.isPositional = false
             sound.autoplayLooped = false
-            parent.addChild(sound)
         }
+        
         guard let sound = sounds.randomElement() else { return }
+        parent.addChild(sound)
         
         sound.run(SKAction.sequence([.play(), .wait(forDuration: 0.5)])){
             sound.removeFromParent()
