@@ -78,12 +78,12 @@ class GameScene: SKScene {
             let initialPoint = (x: 0.0, y: 844.5)
             let downLeft = (x: -97, y: -56)
             let downRight = (x: 97, y: -56)
-            let upLeft = (x: -97, y: 56)
-            let upRight = (x: 97, y: 56)
+            //let upLeft = (x: -97, y: 56)
+            //let upRight = (x: 97, y: 56)
             let down = (x: initialPoint.x, y: -112)
-            let up = (x: initialPoint.x, y: 112)
-            let right = (x: 193, y: initialPoint.y)
-            let left = (x: -193, y: initialPoint.y)
+            //let up = (x: initialPoint.x, y: 112)
+            //let right = (x: 193, y: initialPoint.y)
+            //let left = (x: -193, y: initialPoint.y)
             
             //Devs creation
             let devsDesk = DevsDesk(x: CGFloat(initialPoint.x),
