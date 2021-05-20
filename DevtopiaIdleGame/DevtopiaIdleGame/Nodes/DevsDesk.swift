@@ -20,12 +20,17 @@ class DevsDesk: SKNode, Generator{
     public lazy var desk: SKSpriteNode = {
         
         let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
-        
+        if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+            desk.texture = SKTexture(imageNamed: "Dev_step_02")
+        }
+        else if self.equipment.currentLevel >= equipment.changeVisual2 {
+            desk.texture = SKTexture(imageNamed: "Dev_step_03")
+        }
         //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
         desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
         desk.zPosition = 1
         desk.name = "desk"
-        //desk.size = CGSize(width: 500, height: 500
+        
         return desk
     }()
     
