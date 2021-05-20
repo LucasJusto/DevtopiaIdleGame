@@ -1,16 +1,9 @@
-//
-//  SoundController.swift
-//  DevTopia
-//
-//  Created by Guilherme Valent Antonini on 12/05/21.
-//
-
 import Foundation
 import SpriteKit
 
 public class SoundController {
     
-     static func backgroundMusic(parentNode: SKNode){
+     static func backgroundMusic(parentNode: SKNode) {
   
         let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
         sound.isPositional = false
@@ -19,7 +12,7 @@ public class SoundController {
         sound.run(SKAction.play())
     }
     
-    static func selectSound(parentNode: SKNode){
+    static func selectSound(parentNode: SKNode) {
         
         let sound = SKAudioNode(fileNamed: "selectSound.wav")
         sound.isPositional = false
@@ -30,7 +23,7 @@ public class SoundController {
         }
     }
     
-    static func upgradeSound(parentNode: SKNode){
+    static func upgradeSound(parentNode: SKNode) {
         
         let sound = SKAudioNode(fileNamed: "upgradeVisualSound.wav")
         sound.isPositional = false
@@ -42,7 +35,7 @@ public class SoundController {
         
     }
     
-    static func insuficientMoneySound(parentNode: SKNode){
+    static func insuficientMoneySound(parentNode: SKNode) {
         
         let sound = SKAudioNode(fileNamed: "insuficientMoney.wav")
         sound.isPositional = false
@@ -52,8 +45,7 @@ public class SoundController {
             sound.removeFromParent()
         }
     }
-    
-    
+        
     static func keyboardClick(parent: SKSpriteNode){
         let soundOne = SKAudioNode(fileNamed: "sound1.wav")
         let soundTwo = SKAudioNode(fileNamed: "sound2.wav")

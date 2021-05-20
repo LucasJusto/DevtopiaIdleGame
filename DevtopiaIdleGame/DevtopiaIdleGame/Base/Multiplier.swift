@@ -1,10 +1,3 @@
-//
-//  Multiplier.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 05/05/21.
-//
-
 import Foundation
 
 protocol Multiplier: Upgradable {
@@ -26,11 +19,11 @@ extension Multiplier {
         currentPrice *= priceMultiplier
         multiply += increase
         observer.updateDevCoinsPerSec()
-        if currentLevel == changeVisual1{
+        if currentLevel == changeVisual1 {
             increase += 0.005
             priceMultiplier = 1.15
         }
-        else if currentLevel == changeVisual2{
+        else if currentLevel == changeVisual2 {
             increase += 0.01
             priceMultiplier = 1.2
         }

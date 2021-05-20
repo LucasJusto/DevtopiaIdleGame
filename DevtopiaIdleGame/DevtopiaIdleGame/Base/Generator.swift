@@ -1,10 +1,3 @@
-//
-//  Generator.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 04/05/21.
-//
-
 import Foundation
 
 protocol Generator: Upgradable {
@@ -46,7 +39,7 @@ extension Generator {
         observer.updateDevCoinsPerSec()
     }
     
-   func addMultiplier(m: Multiplier){
+   func addMultiplier(m: Multiplier) {
         multipliers.append(m)
         observer.updateDevCoinsPerSec()
     }

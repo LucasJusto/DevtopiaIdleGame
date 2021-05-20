@@ -1,10 +1,3 @@
-//
-//  MainCurrency.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 04/05/21.
-//
-
 import Foundation
 
 public class MainCurrency {
@@ -30,6 +23,14 @@ public class MainCurrency {
         return devCoinsPerSec
     }
     
+    func getGenerators() -> [Generator] {
+        return generators
+    }
+    
+    func setDevCoins(value: Decimal) {
+        devCoins = value
+    }
+    
     func addGenerator(generator: Generator) {
         generators.append(generator)
         for g in generators {
@@ -38,14 +39,14 @@ public class MainCurrency {
         self.updateDevCoinsPerSec()
     }
     
-    func updateDevCoinsPerSec(){
+    func updateDevCoinsPerSec() {
         devCoinsPerSec = 0
         for g in generators {
             devCoinsPerSec += g.getCurrencyPerSec()
         }
     }
     
-    func updateDevCoins(){
+    func updateDevCoins() {
         devCoins += devCoinsPerSec
     }
     
@@ -53,7 +54,7 @@ public class MainCurrency {
         devCoins += value
     }
     
-    func addMultiplier(multiplier: Multiplier){
+    func addMultiplier(multiplier: Multiplier) {
         multipliers.append(multiplier)
         for g in generators {
             g.setMultipliers(ms: multipliers)

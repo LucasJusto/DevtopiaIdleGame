@@ -1,10 +1,3 @@
-//
-//  GeneratorUpgradeMenu.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 11/05/21.
-//
-
 import Foundation
 import SpriteKit
 
@@ -25,26 +18,21 @@ class GeneratorUpgradeMenu: SKSpriteNode {
     var equipment: Equipment?
     var devImage: SKSpriteNode
     
-    public init(generator: Generator){
+    public init(generator: Generator) {
         self.generator = generator
         self.coinImage1 = SKSpriteNode(imageNamed: "DevCoin")
         self.levelLabel = SKLabelNode(text: "Level")
         self.developerLevelLabel = SKLabelNode(text: "Developer: \(generator.currentLevel)")
         self.valueProducedLabel = SKLabelNode(text: "Value produced:")
         self.generatorPerSecLabel = SKLabelNode(text: "\(generator.observer.decimalToString(value:(generator.getCurrencyPerSec())))/s")
-        self.equipment = Equipment(id: 0, basePrice: 0, observer: generator.observer)
-        for m in generator.multipliers {
-            if m.name == "desk" {
-                equipment = (m as! Equipment)
-            }
-        }
+        self.equipment = (self.generator as! DevsDesk).equipment
         self.devPerSecNow = SKLabelNode(text: "\((generator.observer.decimalToString(value: self.generator.getCurrencyPerSec())))/s")
         self.devPerSecNow.horizontalAlignmentMode = .left
         self.devPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value:(self.generator.getCurrencyPerSec() + self.generator.getIncrease())))/s")
         self.devPerSecAfter.horizontalAlignmentMode = .left
-        self.equipmentPerSecNow = SKLabelNode(text: "\(generator.observer.decimalToString(value: (1 + self.equipment!.multiply)*100))%")
+        self.equipmentPerSecNow = SKLabelNode(text: "\(generator.observer.decimalToString(value: (1 + self.equipment!.multiply) * 100))%")
         self.equipmentPerSecNow.horizontalAlignmentMode = .left
-        self.equipmentPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value: ((1 + equipment!.multiply + equipment!.increase)*100)))%")
+        self.equipmentPerSecAfter = SKLabelNode(text: "\(generator.observer.decimalToString(value: ((1 + equipment!.multiply + equipment!.increase) * 100)))%")
         self.equipmentPerSecAfter.horizontalAlignmentMode = .left
         self.equipmentLevelLabel = SKLabelNode(text: "Work Station: \(equipment!.currentLevel)")
         devImage = SKSpriteNode(imageNamed: "Dev_step_01-1")

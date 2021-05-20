@@ -1,10 +1,3 @@
-//
-//  Upgradable.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 04/05/21.
-//
-
 import Foundation
 
 protocol Upgradable: AnyObject {

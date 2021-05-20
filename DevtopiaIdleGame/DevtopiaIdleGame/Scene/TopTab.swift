@@ -1,10 +1,3 @@
-//
-//  TopTab.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 07/05/21.
-//
-
 import Foundation
 import SpriteKit
 
@@ -87,9 +80,7 @@ class TopTab: SKSpriteNode {
         self.addChild(rightWhiteBar)
         rightWhiteBar.addChild(coinImageRight)
         rightWhiteBar.addChild(rightLabel)
-        
-        
-        
+     
     }
     
     required init?(coder aDecoder: NSCoder) {
