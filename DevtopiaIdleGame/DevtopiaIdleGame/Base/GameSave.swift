@@ -76,7 +76,7 @@ struct GameSave {
     func loadProgress(mainCurrency: MainCurrency) {
         let devCoins = unwrap(any: userDefaults.value(forKey: "devCoins")!) as! NSNumber
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
-        let nDevs = 2
+        let nDevs = 9
         for i in 0...nDevs-1 {
             let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
             let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
