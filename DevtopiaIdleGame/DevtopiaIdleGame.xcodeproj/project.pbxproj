@@ -21,6 +21,8 @@
 		48775CA32643177E00F6D4B0 /* Multiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA22643177E00F6D4B0 /* Multiplier.swift */; };
 		48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C9E2641C7AE00F6D4B0 /* Generator.swift */; };
 		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
+		487D23132656E7E700E019AC /* WelcomeBackPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487D23122656E7E700E019AC /* WelcomeBackPopUp.swift */; };
+		487D23152656FDB000E019AC /* LetsPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487D23142656FDB000E019AC /* LetsPlayButton.swift */; };
 		4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */; };
 		48FA3CE62652F81000C27CFC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA3CE52652F81000C27CFC /* Keyboard.swift */; };
 		48FA3CEA2652FF1900C27CFC /* sound5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48FA3CE92652FF1900C27CFC /* sound5.wav */; };
@@ -64,6 +66,8 @@
 		48775CA02641CAFC00F6D4B0 /* Upgradable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgradable.swift; sourceTree = "<group>"; };
 		48775CA22643177E00F6D4B0 /* Multiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplier.swift; sourceTree = "<group>"; };
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		487D23122656E7E700E019AC /* WelcomeBackPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackPopUp.swift; sourceTree = "<group>"; };
+		487D23142656FDB000E019AC /* LetsPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsPlayButton.swift; sourceTree = "<group>"; };
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		48FA3CE52652F81000C27CFC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		48FA3CE92652FF1900C27CFC /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
@@ -126,7 +130,9 @@
 				481F9BB0264C5059007AFC35 /* CloseButton.swift */,
 				481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */,
 				48FA3CE52652F81000C27CFC /* Keyboard.swift */,
-				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */,
+				487D23122656E7E700E019AC /* WelcomeBackPopUp.swift */,
+				487D23142656FDB000E019AC /* LetsPlayButton.swift */,
+				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487D23132656E7E700E019AC /* WelcomeBackPopUp.swift in Sources */,
 				5C4A4128264B21D500FE60E3 /* GameSave.swift in Sources */,
 				F4DB010D26558DDC00BE2E90 /* KeyboardCoin.swift in Sources */,
 				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
@@ -308,6 +315,7 @@
 				5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
 				48775CA12641CAFC00F6D4B0 /* Upgradable.swift in Sources */,
+				487D23152656FDB000E019AC /* LetsPlayButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				DEVELOPMENT_TEAM = 6GD2RK7JQN;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
