@@ -35,7 +35,7 @@ class GameScene: SKScene {
     
     
     // Game camera
-    private lazy var cameraNode: Camera = {
+    public lazy var cameraNode: Camera = {
         let cameraNode = Camera(sceneView: self.view!, scenario: background)
         cameraNode.position = CGPoint(x:UIScreen.main.bounds.width / 50, y: UIScreen.main.bounds.height / 2)
         cameraNode.applyZoomScale(scale: 0.5)

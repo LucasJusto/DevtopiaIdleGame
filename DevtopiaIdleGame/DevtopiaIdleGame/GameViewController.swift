@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
                 let scene = GameScene(size: view.bounds.size)
                 let delegate = UIApplication.shared.delegate as? AppDelegate
                 delegate?.mainCurrency = scene.mainCurrency
+                delegate?.gameScene = scene
                 scene.scaleMode = .resizeFill
                 view.ignoresSiblingOrder = true
                 

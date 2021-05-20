@@ -49,7 +49,6 @@ class DevsDesk: SKNode, Generator{
         self.isUserInteractionEnabled = true
         self.addChild(desk)
         self.desk.position = CGPoint(x: x, y: y)
-        self.observer.addMultiplier(multiplier: equipment)
     }
     
     
