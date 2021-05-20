@@ -35,7 +35,7 @@ class GameScene: SKScene {
     
     
     // Game camera
-    private lazy var cameraNode: Camera = {
+    public lazy var cameraNode: Camera = {
         let cameraNode = Camera(sceneView: self.view!, scenario: background)
         cameraNode.position = CGPoint(x:UIScreen.main.bounds.width / 50, y: UIScreen.main.bounds.height / 2)
         cameraNode.applyZoomScale(scale: 0.5)
@@ -48,10 +48,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        let panel = SKSpriteNode(imageNamed: "Panel")
-        panel.position = CGPoint(x: 0.6,y: 844.5)
-        panel.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        panel.zPosition = 1
+        let panel = PanelButton(scene: self)
         background.addChild(panel)
         
         // GameScene anchorPoint setter x: 0 , y: 0

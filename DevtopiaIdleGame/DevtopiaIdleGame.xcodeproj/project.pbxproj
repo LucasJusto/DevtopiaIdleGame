@@ -29,6 +29,7 @@
 		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
 		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
 		4EE7C9872656CD7D00D6A7B0 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7C9862656CD7D00D6A7B0 /* Panel.swift */; };
+		4EE7C9892656E84C00D6A7B0 /* ManagersMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */; };
 		5C4A4128264B21D500FE60E3 /* GameSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4127264B21D500FE60E3 /* GameSave.swift */; };
 		5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A412B264C565C00FE60E3 /* SoundController.swift */; };
 		F44E8E6E2652E07F001A76C2 /* upgradeVisualSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */; };
@@ -64,6 +65,7 @@
 		48FA3CE52652F81000C27CFC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		48FA3CE92652FF1900C27CFC /* typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = typing.wav; sourceTree = "<group>"; };
 		4EE7C9862656CD7D00D6A7B0 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersMenu.swift; sourceTree = "<group>"; };
 		5C4A4127264B21D500FE60E3 /* GameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
 		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upgradeVisualSound.wav; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */,
 				48FA3CE52652F81000C27CFC /* Keyboard.swift */,
 				4EE7C9862656CD7D00D6A7B0 /* Panel.swift */,
+				4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */,
 				481F9BB4264C68CC007AFC35 /* UpgradeButton.swift in Sources */,
 				48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */,
+				4EE7C9892656E84C00D6A7B0 /* ManagersMenu.swift in Sources */,
 				48FA3CE62652F81000C27CFC /* Keyboard.swift in Sources */,
 				5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
