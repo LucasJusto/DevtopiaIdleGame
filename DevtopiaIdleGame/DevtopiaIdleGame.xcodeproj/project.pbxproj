@@ -23,7 +23,7 @@
 		48775CA62645B32200F6D4B0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775CA52645B32200F6D4B0 /* Camera.swift */; };
 		4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */; };
 		48FA3CE62652F81000C27CFC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA3CE52652F81000C27CFC /* Keyboard.swift */; };
-		48FA3CEA2652FF1900C27CFC /* typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48FA3CE92652FF1900C27CFC /* typing.wav */; };
+		48FA3CEA2652FF1900C27CFC /* sound5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48FA3CE92652FF1900C27CFC /* sound5.wav */; };
 		4EAAD3872649C568009DB1B0 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144422645D912003CACB3 /* Montserrat-Bold.ttf */; };
 		4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144412645D912003CACB3 /* Montserrat-Regular.ttf */; };
 		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
@@ -35,6 +35,11 @@
 		F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F4264C706F008DFDC9 /* insuficientMoney.wav */; };
 		F47499F9264C7071008DFDC9 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47499F5264C7071008DFDC9 /* backgroundMusic.wav */; };
 		F4B2F86A265439970040C0E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B2F869265439970040C0E4 /* LaunchScreen.storyboard */; };
+		F4C3EE4D2656E5F000BCD57F /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F4C3EE492656E5ED00BCD57F /* sound2.wav */; };
+		F4C3EE4E2656E5F000BCD57F /* sound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F4C3EE4A2656E5EF00BCD57F /* sound4.wav */; };
+		F4C3EE4F2656E5F000BCD57F /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = F4C3EE4B2656E5EF00BCD57F /* sound1.wav */; };
+		F4C3EE502656E5F000BCD57F /* sound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F4C3EE4C2656E5F000BCD57F /* sound3.wav */; };
+		F4DB010D26558DDC00BE2E90 /* KeyboardCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */; };
 		F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +66,7 @@
 		48775CA52645B32200F6D4B0 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		48FA3CE52652F81000C27CFC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		48FA3CE92652FF1900C27CFC /* typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = typing.wav; sourceTree = "<group>"; };
+		48FA3CE92652FF1900C27CFC /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
 		5C4A4127264B21D500FE60E3 /* GameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
 		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upgradeVisualSound.wav; sourceTree = "<group>"; };
@@ -69,6 +74,11 @@
 		F47499F4264C706F008DFDC9 /* insuficientMoney.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = insuficientMoney.wav; sourceTree = "<group>"; };
 		F47499F5264C7071008DFDC9 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
 		F4B2F869265439970040C0E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4C3EE492656E5ED00BCD57F /* sound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound2.wav; sourceTree = "<group>"; };
+		F4C3EE4A2656E5EF00BCD57F /* sound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound4.wav; sourceTree = "<group>"; };
+		F4C3EE4B2656E5EF00BCD57F /* sound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound1.wav; sourceTree = "<group>"; };
+		F4C3EE4C2656E5F000BCD57F /* sound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound3.wav; sourceTree = "<group>"; };
+		F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCoin.swift; sourceTree = "<group>"; };
 		F4FBA46B26431E1D00ABED0A /* DevsDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevsDesk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +126,7 @@
 				481F9BB0264C5059007AFC35 /* CloseButton.swift */,
 				481F9BB3264C68CC007AFC35 /* UpgradeButton.swift */,
 				48FA3CE52652F81000C27CFC /* Keyboard.swift */,
+				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -175,13 +186,25 @@
 		F47499F1264C7047008DFDC9 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F4C3EE532656E8D100BCD57F /* TotalSoundFiles */,
 				F47499F5264C7071008DFDC9 /* backgroundMusic.wav */,
 				F47499F4264C706F008DFDC9 /* insuficientMoney.wav */,
 				F47499F3264C706F008DFDC9 /* selectSound.wav */,
 				F44E8E6D2652E07F001A76C2 /* upgradeVisualSound.wav */,
-				48FA3CE92652FF1900C27CFC /* typing.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		F4C3EE532656E8D100BCD57F /* TotalSoundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F4C3EE4B2656E5EF00BCD57F /* sound1.wav */,
+				F4C3EE492656E5ED00BCD57F /* sound2.wav */,
+				F4C3EE4C2656E5F000BCD57F /* sound3.wav */,
+				F4C3EE4A2656E5EF00BCD57F /* sound4.wav */,
+				48FA3CE92652FF1900C27CFC /* sound5.wav */,
+			);
+			path = TotalSoundFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +264,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C3EE4F2656E5F000BCD57F /* sound1.wav in Resources */,
+				F4C3EE4D2656E5F000BCD57F /* sound2.wav in Resources */,
 				F47499F8264C7071008DFDC9 /* insuficientMoney.wav in Resources */,
 				4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */,
+				F4C3EE502656E5F000BCD57F /* sound3.wav in Resources */,
+				F4C3EE4E2656E5F000BCD57F /* sound4.wav in Resources */,
 				F44E8E6E2652E07F001A76C2 /* upgradeVisualSound.wav in Resources */,
 				48775C91264083C300F6D4B0 /* Main.storyboard in Resources */,
-				48FA3CEA2652FF1900C27CFC /* typing.wav in Resources */,
+				48FA3CEA2652FF1900C27CFC /* sound5.wav in Resources */,
 				4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */,
 				48775C93264083C400F6D4B0 /* Assets.xcassets in Resources */,
 				F47499F7264C7071008DFDC9 /* selectSound.wav in Resources */,
@@ -264,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C4A4128264B21D500FE60E3 /* GameSave.swift in Sources */,
+				F4DB010D26558DDC00BE2E90 /* KeyboardCoin.swift in Sources */,
 				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
 				4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */,
 				48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */,
@@ -427,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Game.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = game.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Game.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = game.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
