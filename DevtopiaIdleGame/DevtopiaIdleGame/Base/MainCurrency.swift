@@ -1,10 +1,3 @@
-//
-//  MainCurrency.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 04/05/21.
-//
-
 import Foundation
 
 public class MainCurrency {
@@ -30,7 +23,7 @@ public class MainCurrency {
         return devCoinsPerSec
     }
     
-    func getGenerators() -> [Generator]{
+    func getGenerators() -> [Generator] {
         return generators
     }
     

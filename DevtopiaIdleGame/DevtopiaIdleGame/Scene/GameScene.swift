@@ -21,12 +21,12 @@ class GameScene: SKScene {
     var save1: GameSave = GameSave()
     
     // MARK: Properties
-    //background properties
+    // Background properties
     private lazy var background: SKSpriteNode = {
         let background = SKSpriteNode(imageNamed: "Piso")
-        //setter da posição do backgroud para a posição x: 0.5 , y: 0.5
+        // Background position setter x: 0.5 , y: 0.5
         background.position = CGPoint(x: 0.5,y: 0.5)
-        //setter da anchorPoint do backgroud para a posição x: 0.5 , y: 0.5
+        // Background anchorPoint setter x: 0.5 , y: 0.5
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         background.zPosition = 0
         
@@ -34,10 +34,9 @@ class GameScene: SKScene {
     }()
     
     
-    //Game camera
+    // Game camera
     private lazy var cameraNode: Camera = {
-        let cameraNode = Camera(sceneView: self.view!, cenario: background)
-        //setter da posição inicial para o valor de x igual a metade da largura de sua tela e de y igual a metade da altura da tela.
+        let cameraNode = Camera(sceneView: self.view!, scenario: background)
         cameraNode.position = CGPoint(x:UIScreen.main.bounds.width / 50, y: UIScreen.main.bounds.height / 2)
         cameraNode.applyZoomScale(scale: 0.5)
         topTab = TopTab(mainCurrency: mainCurrency)
@@ -49,15 +48,15 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        //setter da anchorPoint da GameScene para a posição x: 0 , y: 0
+        // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
-        //setter do tamanho da GameScene para o tamanho do cenário
+        // GameScene size setter to scenario size
         self.size = background.size
         
-        //atribui a câmera da GameScene a câmera customizada.
+        // Attributes GameScene camera to customized camera
         camera = cameraNode
         
-        //adiciona a câmera e o cenário como filhas da GameScene
+        // Adds camera to background as child
         addChild(background)
         
         if let _ = save1.userDefaults.value(forKey: "devCoins") {

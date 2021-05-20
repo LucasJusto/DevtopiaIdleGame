@@ -1,10 +1,3 @@
-//
-//  DevsDesk.swift
-//  DevtopiaIdleGame
-//
-//  Created by Enzo Degrazia on 05/05/21.
-//
-
 import Foundation
 import SpriteKit
 
@@ -28,7 +21,7 @@ class DevsDesk: SKNode, Generator{
         
         let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
         
-        //setter da anchorPoint do dev para a posição x: 0.458 , y: 0.5
+        //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
         desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
         desk.zPosition = 1
         desk.name = "desk"

@@ -55,7 +55,7 @@ struct GameSave {
         
     }
     
-    func saveProgress(mainCurrency: MainCurrency){
+    func saveProgress(mainCurrency: MainCurrency) {
         userDefaults.setValue(mainCurrency.getDevCoins(), forKey: "devCoins")
         for i in 0...mainCurrency.getGenerators().count-1 {
             userDefaults.setValue(mainCurrency.getGenerators()[i].id, forKey: "dev\(i)id")
@@ -73,7 +73,7 @@ struct GameSave {
         }
     }
     
-    func loadProgress(mainCurrency: MainCurrency){
+    func loadProgress(mainCurrency: MainCurrency) {
         let devCoins = unwrap(any: userDefaults.value(forKey: "devCoins")!) as! NSNumber
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 2

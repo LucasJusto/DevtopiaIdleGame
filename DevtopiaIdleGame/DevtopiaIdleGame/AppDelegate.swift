@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  DevtopiaIdleGame
-//
-//  Created by Lucas Dimer Justo on 03/05/21.
-//
-
 import UIKit
 
 @main

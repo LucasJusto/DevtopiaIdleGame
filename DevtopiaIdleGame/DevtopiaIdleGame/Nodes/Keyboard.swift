@@ -1,10 +1,3 @@
-//
-//  Keyboard.swift
-//  DevTopia
-//
-//  Created by Lucas Dimer Justo on 17/05/21.
-//
-
 import Foundation
 import SpriteKit
 

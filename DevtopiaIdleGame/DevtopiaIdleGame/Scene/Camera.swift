@@ -5,83 +5,77 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
     
     // MARK: Properties
     
-    // MARK: Váriaveis padrões
+    // MARK: Main Varibles
     
-    /** O nó da câmera. Tudo que você queira que seja afetádo pela câmera deve ser filho desse nó. */
-    let cenario: SKNode
+    // camera node
+    let scenario: SKNode
     
-    /** Limites do Tela do iPhone. O valor padrão é o size da View, mas esse valor pode ser mudado. */
-    private var limitesdDaTela: CGRect
+    // device limits
+    private var screenLimits: CGRect
     
-    /**  Limites do cenário. */
-    private var cenarioFrame: CGRect
+    // scene limits
+    private var scenarioFrame: CGRect
     
-    /** Habilita/Desabilita a câmera. */
-    var cameraHabilitada: Bool {
+    // enable/disable camera
+    var enableCamera: Bool {
         didSet {
-            //Habilita o gesture quando a câmera for habilitada
-            pinchGestureRecognizer.isEnabled = cameraHabilitada
+            // enable/disable gesture
+            pinchGestureRecognizer.isEnabled = enableCamera
             
         }
     }
     
-    /** Habilita/Desabilita o travamento da câmera */
-    var travamentoHabilitado: Bool
+    // blocks/unblocks camera
+    var enableLock: Bool
     
     // MARK: Zoom in/out
     
-    /** O atual valor da escala da câmera. */
-    private var escalaZoom: CGFloat
+    // current camera zoom
+    private var zoomScale: CGFloat
     
-    /** Min/Max possível da escala da câmera durante o zoom in/out. */
-    var intervaloZoom: (min: CGFloat, max: CGFloat)
+    // min and max possible zoom
+    var zoomInterval: (min: CGFloat, max: CGFloat)
     
-    /** Habilita/Desabilita o zoom da câmera. */
-    var zoomHabilitado: Bool
+    // enable/disable camera zoom
+    var enableZoom: Bool
     
-    /** Gesture para o zoom da câmera. */
+    // zoom camera gesture
     var pinchGestureRecognizer: UIPinchGestureRecognizer!
     
-    /** Determina a posição inicial do toque quando o usuário faz o pinchGesture. */
-    private var posicaoInicialDoToque = CGPoint.zero
+    // last touches position
+    private var initialTouchPosition = CGPoint.zero
     
-    // MARK: Navegação
+    // MARK: Navigation
     
-    //var a: UISwipeGestureRecognizer
-    
-    /** Gesture para o navegação da câmera. */
+    // gesture for navigating through the camera
     private var swipeNavigation: UIPanGestureRecognizer {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.updatePosition(_:)))
-        //        longPressGestureRecognizer.numberOfTouchesRequired = 1
-        //        longPressGestureRecognizer.numberOfTapsRequired = 0
-        //        longPressGestureRecognizer.allowableMovement = 0
-        //        longPressGestureRecognizer.minimumPressDuration = 0
         panGesture.maximumNumberOfTouches = 1
         return panGesture
     }
     
-    /** Ultima Localização do toque na tela. */
-    private var ultimaPosicaoDoToque: CGPoint!
+    // location of the last screen touch
+    private var lastTouchPosition: CGPoint!
     
-    init(sceneView: SKView, cenario: SKNode) {
-        //configurações iniciais da câmera
-        self.cenario = cenario
-        self.cenarioFrame = cenario.frame
+    init(sceneView: SKView, scenario: SKNode) {
+        //initial camera config
+        self.scenario = scenario
+        self.scenarioFrame = scenario.frame
         let myBounds = CGRect(x: 0, y: 0, width: sceneView.bounds.width/2, height: sceneView.bounds.height/2)
-        self.limitesdDaTela = myBounds
+        self.screenLimits = myBounds
         
-        //determina a escla inicial do zoom para 1
-        escalaZoom = 1
-        //determina o intervalo de escla do zoom para o intervalo [1,1.3]
-        intervaloZoom = (0.1, 1.0)
-        //habilita a câmera e o zoom
-        zoomHabilitado = true
-        cameraHabilitada = true
-        //habilita o travamento da câmera para tentativa de sair do cenário
-        travamentoHabilitado = true
+        // determines initial zoom sacle for 1
+        zoomScale = 1
+        // determines zoom interval
+        zoomInterval = (0.1, 1.0)
+        //enavles zoom
+        enableZoom = true
+        enableCamera = true
+        // locks camera when trying to leave the scenario
+        enableLock = true
         super.init()
         
-        //adiciona o gesture a view da câmera
+        // add gesture to the view
         pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.updateScale(_:)))
         
         pinchGestureRecognizer.delegate = self
@@ -98,51 +92,51 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Escala e Zoom
+    // MARK: Scale and Zoom
     
-    /** Aplica uma escala ao Cenário. */
+    // zoom scale
     func applyZoomScale(scale: CGFloat) {
         
         var zoomScale = scale
         
-        if zoomScale < intervaloZoom.min {
-            zoomScale = intervaloZoom.min
-        } else if zoomScale > intervaloZoom.max {
-            zoomScale = intervaloZoom.max
+        if zoomScale < zoomInterval.min {
+            zoomScale = zoomInterval.min
+        } else if zoomScale > zoomInterval.max {
+            zoomScale = zoomInterval.max
         }
         
-        self.escalaZoom = zoomScale
-        cenario.setScale(zoomScale)
+        self.zoomScale = zoomScale
+        scenario.setScale(zoomScale)
     }
     
     
     // MARK: Bounds
     
-    /** Mantém o cenário travado em limites especificos. */
+    // mantains scene limits
     private func clampWorldNode() {
         
-        //A variável travamentoHabilitado precisa está habilitada para que os limites serem mantidos
-        if !travamentoHabilitado { return }
+        // for the scene limits to mantain this variable needs to be true
+        if !enableLock { return }
         
-        //Cálcula o limites da tela
-        // Os cálculos do tipo (bounds.size.width / 2) são necessários para a compensação mátematica da câmera em relação ao seu anchor point. Mais informações na Parte 1 (o link é encontrado no final dessa parte).
-        let frame = cenarioFrame
-        var minX = frame.minX + (limitesdDaTela.size.width/2)
-        var maxX = frame.maxX - (limitesdDaTela.size.width/2)
-        var minY = frame.minY + (limitesdDaTela.size.height/2)
-        var maxY = frame.maxY - (limitesdDaTela.size.height/2)
+        // Calculates screen limits
+        
+        let frame = scenarioFrame
+        var minX = frame.minX + (screenLimits.size.width/2)
+        var maxX = frame.maxX - (screenLimits.size.width/2)
+        var minY = frame.minY + (screenLimits.size.height/2)
+        var maxY = frame.maxY - (screenLimits.size.height/2)
         
         
-        //Essa verificações são necessárias para saber se o tamanho do cenário é menor do que o tamanho da View, se sim os valores são trocados.
-        if frame.width < limitesdDaTela.width {
+        // Verifies if the scene size is bigger than the view size in case needs change
+        if frame.width < screenLimits.width {
             swap(&minX, &maxX)
         }
         
-        if frame.height < limitesdDaTela.height {
+        if frame.height < screenLimits.height {
             swap(&minY, &maxY)
         }
         
-        //Verifica se o usuário está nos limites. Caso ele ultrapasse algum deles, será setádo o seu respectivo valor min ou max .
+        // Verifies if user is at the limits
         if position.x < minX {
             position.x = CGFloat(Int(minX))
         } else if position.x > maxX {
@@ -157,12 +151,12 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
         
     }
     
-    // MARK: Posicionando
+    // MARK: Positioning
     
-    /** Move a câmera pra uma posição checando seus limites. */
+    // Moves acmera cheking limits
     func centerOnPosition(scenePosition: CGPoint) {
-        // verifica se a escala está nos parametros válidos e atribui o valor recebido a posição da câmera(parte-2) e verifica se a ultima posição na tela não é nula(parte - 3)
-        if (escalaZoom > intervaloZoom.min && escalaZoom < intervaloZoom.max) || ultimaPosicaoDoToque != nil {
+        // Verifies if the scales are in the right parameters
+        if (zoomScale > zoomInterval.min && zoomScale < zoomInterval.max) || lastTouchPosition != nil {
             position = scenePosition
             clampWorldNode()
         }
@@ -171,85 +165,49 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
     
     // MARK: Input
     
-    /** Escala o cenário a partir de um input proveniente do pinchGestureRecognizer.*/
+    // Scales scenario with pinchGesture
         @objc func updateScale(_ recognizer: UIPinchGestureRecognizer) {
     
             guard let scene = self.scene else { return }
     
-            //captura o primeiro toque do usuário
+            // Calculates user's first touch
             if recognizer.state == .began {
-                posicaoInicialDoToque = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
+                initialTouchPosition = scene.convertPoint(fromView: recognizer.location(in: recognizer.view))
     
             }
-            //Cálcula o zoom, aplica no cenário e centraliza a câmera.
-            if recognizer.state == .changed && cameraHabilitada && zoomHabilitado {
+            
+            // Calculates zoom and applies it in the scenario then centers camera
+            if recognizer.state == .changed && enableCamera && enableZoom {
     
-                escalaZoom *= recognizer.scale
-                applyZoomScale(scale: escalaZoom)
+                zoomScale *= recognizer.scale
+                applyZoomScale(scale: zoomScale)
                 recognizer.scale = 1
-                //centerOnPosition(scenePosition: CGPoint(x: posicaoInicialDoToque.x * escalaZoom, y: posicaoInicialDoToque.y * escalaZoom))
+                // centerOnPosition(scenePosition: CGPoint(x: initialTouchPosition.x * zoomScale, y: initialTouchPosition.y * zoomScale))
             }
     
             if recognizer.state == .ended { }
         }
     
-//    @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
-//
-//        guard let scene = self.scene else { return }
-//
-//        if sender.numberOfTouches == 2 {
-//            let locationInView = sender.location(in: scene.view)
-//            let location = self.convert(locationInView, from: self)
-//            if sender.state == .changed {
-//                let deltaScale = (sender.scale - 1.0) * 2
-//                let convertedScale = sender.scale - deltaScale
-//                let newScale = self.xScale * convertedScale
-//                self.setScale(newScale)
-//
-//                let locationAfterScale = self.convert(locationInView, from: self)
-//                let locationDelta = CGPoint(x: location.x - locationAfterScale.x, y: location.y - locationAfterScale.y)
-//                let newPoint = CGPoint(x: self.position.x + locationDelta.x, y: self.position.y + locationDelta.y)
-//                self.position = newPoint
-//                sender.scale = 1.0
-//            }
-//        }
-//    }
-//
-//
+    // MARK: Screen Navigation
     
-    //        @objc func updateScale(_ sender: UIPinchGestureRecognizer) {
-    //            guard sender.view != nil else {
-    //                return
-    //            }
-    //
-    //            if sender.state == .began || sender.state == .changed {
-    //                self.setScale(sender.scale)
-    //                self.scale
-    //                sender.scale = 1.0
-    //            }
-    //        }
-    //
-    
-    // MARK: Navegação pela tela
-    
-    /** Move a câmera pelo cenário a partir de input proveniente do pinchGestureRecognizer.*/
+    // Moves camera thtough the scenario
     @objc func updatePosition(_ recognizer: UIPanGestureRecognizer) {
         
         if recognizer.state == .began {
-            //salva a posição inicial do toque como ultima
-            ultimaPosicaoDoToque = recognizer.location(in: recognizer.view)
+            // Saves initial touch position
+            lastTouchPosition = recognizer.location(in: recognizer.view)
         }
         
         if recognizer.state == .changed {
             
-            if ultimaPosicaoDoToque == nil { return }
+            if lastTouchPosition == nil { return }
             
             let location = recognizer.location(in: recognizer.view)
-            //cálcula o Δx e Δy da câmera
-            let difference = CGPoint(x: location.x - ultimaPosicaoDoToque.x, y: location.y - ultimaPosicaoDoToque.y)
-            //utiliza a função criada na postagem 2 para limitar a área do usuário
+            // Calculates the Δx and Δy 
+            let difference = CGPoint(x: location.x - lastTouchPosition.x, y: location.y - lastTouchPosition.y)
+            // Limits user area
             centerOnPosition(scenePosition: CGPoint(x: Int(position.x - difference.x), y: Int(position.y - -difference.y)))
-            ultimaPosicaoDoToque = location
+            lastTouchPosition = location
         }
     }
     
