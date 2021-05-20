@@ -26,7 +26,8 @@ class PanelButton: SKSpriteNode {
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
         if node.name == "panelButton" {
-            let managersMenu = ManagersMenu()
+            SoundController.selectSound(parentNode: self)
+            let managersMenu = ManagersMenu(panel: self)
             sceneTwo.cameraNode.addChild(managersMenu)
         }
     }

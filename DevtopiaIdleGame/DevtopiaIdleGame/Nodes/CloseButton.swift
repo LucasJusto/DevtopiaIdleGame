@@ -21,6 +21,7 @@ class CloseButton: SKSpriteNode {
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
         if node.name == "closeButton" {
+            //SoundController.selectSound(parentNode: menu!)
             self.menu?.removeFromParent()
         }
     }
