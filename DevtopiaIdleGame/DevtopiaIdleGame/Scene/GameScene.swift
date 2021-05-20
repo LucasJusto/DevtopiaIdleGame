@@ -74,15 +74,170 @@ class GameScene: SKScene {
             }
         }
         else {
-            let devsDesk = DevsDesk(x: 0, y: 844.5, perSec: 20, increase: 2, id: 0, basePrice: 500, observer: mainCurrency, equipmentLevel: 0, equipmentMultiply: 0, equipmentPriceMultiplier: 1.1, currentLevel: 0, equipmentCurrentPrice: 500 * 0.2, currentPrice: 500)
+            
+            let initialPoint = (x: 0.0, y: 844.5)
+            let downLeft = (x: -97, y: -56)
+            let downRight = (x: 97, y: -56)
+            let upLeft = (x: -97, y: 56)
+            let upRight = (x: 97, y: 56)
+            let down = (x: initialPoint.x, y: -112)
+            let up = (x: initialPoint.x, y: 112)
+            let right = (x: 193, y: initialPoint.y)
+            let left = (x: -193, y: initialPoint.y)
+            
+            //Devs creation
+            let devsDesk = DevsDesk(x: CGFloat(initialPoint.x),
+                                    y: CGFloat(initialPoint.y),
+                                    perSec: 20,
+                                    increase: 2,
+                                    id: 0, basePrice: 500,
+                                    observer: mainCurrency,
+                                    equipmentLevel: 0,
+                                    equipmentMultiply: 0,
+                                    equipmentPriceMultiplier: 1.1,
+                                    currentLevel: 0,
+                                    equipmentCurrentPrice: 500 * 0.2,
+                                    currentPrice: 500)
             devsDesk.delegate = self
             mainCurrency.addGenerator(generator: devsDesk)
             background.addChild(devsDesk)
             
-            let devsDesk2 = DevsDesk(x: 0, y: 844.5 - (112 * 2), perSec: 20, increase: 2, id: 1, basePrice: 500, observer: mainCurrency, equipmentLevel: 0, equipmentMultiply: 0, equipmentPriceMultiplier: 1.1, currentLevel: 0, equipmentCurrentPrice: 500 * 0.2, currentPrice: 500)
+            let devsDesk2 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -3),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -3),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
             devsDesk2.delegate = self
             mainCurrency.addGenerator(generator: devsDesk2)
             background.addChild(devsDesk2)
+            
+            let devsDesk3 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -6),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk3.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk3)
+            background.addChild(devsDesk3)
+            
+            let devsDesk4 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -3),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -3),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk4.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk4)
+            background.addChild(devsDesk4)
+            
+            let devsDesk5 = DevsDesk(x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -6),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk5.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk5)
+            background.addChild(devsDesk5)
+            
+            let devsDesk6 = DevsDesk(x: CGFloat(down.x),
+                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -3),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk6.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk6)
+            background.addChild(devsDesk6)
+            
+            let devsDesk7 = DevsDesk(x: CGFloat(down.x),
+                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -6),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk7.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk7)
+            background.addChild(devsDesk7)
+            
+            let devsDesk8 = DevsDesk(x: CGFloat(down.x) - CGFloat(downLeft.x * -3),
+                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downLeft.y * -3)),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk8.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk8)
+            background.addChild(devsDesk8)
+            
+            let devsDesk9 = DevsDesk(x: CGFloat(down.x) - CGFloat(downRight.x * -3),
+                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downRight.y * -3)),
+                                     perSec: 20,
+                                     increase: 2,
+                                     id: 1,
+                                     basePrice: 500,
+                                     observer: mainCurrency,
+                                     equipmentLevel: 0,
+                                     equipmentMultiply: 0,
+                                     equipmentPriceMultiplier: 1.1,
+                                     currentLevel: 0,
+                                     equipmentCurrentPrice: 500 * 0.2,
+                                     currentPrice: 500)
+            devsDesk9.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk9)
+            background.addChild(devsDesk9)
+            
         }
         
         addChild(cameraNode)

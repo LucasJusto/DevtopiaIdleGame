@@ -1,4 +1,5 @@
 import Foundation
+import SpriteKit
 
 public class MainCurrency {
     private var devCoins: Decimal //current amount of devCoins that the player earn
@@ -33,9 +34,6 @@ public class MainCurrency {
     
     func addGenerator(generator: Generator) {
         generators.append(generator)
-        for g in generators {
-            g.setMultipliers(ms: multipliers)
-        }
         self.updateDevCoinsPerSec()
     }
     
@@ -105,7 +103,19 @@ public class MainCurrency {
         return "\(nInteger).\(nDecimal)\(str)"
     }
       
-    func updateDevCoinsWhenBack(timeAway: Decimal) {
-        devCoins += timeAway * devCoinsPerSec * 0.1
+    func updateDevCoinsWhenBack(timeAway: Decimal, gameScene: GameScene) {
+        var hasChild: SKSpriteNode? = nil
+        for child in gameScene.cameraNode.children {
+            if child.name == "welcomeBackPopUp" {
+                hasChild = (child as! SKSpriteNode)
+            }
+        }
+        if (hasChild != nil) {
+            (hasChild as! WelcomeBackPopUp).mainCurrency.updateDevCoins(value: (hasChild as! WelcomeBackPopUp).value)
+            (hasChild as! WelcomeBackPopUp).removeFromParent()
+            
+        }
+        gameScene.cameraNode.addChild(WelcomeBackPopUp(mainCurrency: self, value: timeAway * devCoinsPerSec * 0.1, timeAway: timeAway))
+        
     }
 }
