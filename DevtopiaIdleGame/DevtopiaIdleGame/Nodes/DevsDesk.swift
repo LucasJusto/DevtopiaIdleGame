@@ -21,20 +21,40 @@ class DevsDesk: SKNode, Generator{
     weak var delegate: DevDelegate?
     var equipment: Equipment
     
-    
-    
-    
-    
     public lazy var desk: SKSpriteNode = {
         
         if character == "dev" {
-            characterAsset = "Dev_step_01-1"
+            
             anchorPoint = CGPoint(x: 0.458, y: 0.5 )
+            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "Dev_step_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "Dev_step_03"
+            }
+            else {
+                characterAsset = "Dev_step_01-1"
+                
+            }
         }
         else {
-            characterAsset = "Designer_step_01"
             anchorPoint = CGPoint(x: 0.564, y: 0.578 )
+            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "Designer_step_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "Designer_step_03"
+            }
+            else {
+                characterAsset = "Designer_step_01"
+                
+            }
         }
+        
+        
+        
         
         let desk = SKSpriteNode(imageNamed: characterAsset)
         
@@ -77,7 +97,7 @@ class DevsDesk: SKNode, Generator{
         
         
         if node.name == "desk" {
-           
+            
             SoundController.selectSound(parentNode: desk)
             
             delegate?.didTapDev(character: self)

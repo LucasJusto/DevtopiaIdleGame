@@ -75,12 +75,12 @@ class GameScene: SKScene {
             let initialPoint = (x: 0.0, y: 844.5)
             let downLeft = (x: -97, y: -56)
             let downRight = (x: 97, y: -56)
-            let upLeft = (x: -97, y: 56)
-            let upRight = (x: 97, y: 56)
+//            let upLeft = (x: -97, y: 56)
+//            let upRight = (x: 97, y: 56)
             let down = (x: initialPoint.x, y: -112)
-            let up = (x: initialPoint.x, y: 112)
-            let right = (x: 193, y: initialPoint.y)
-            let left = (x: -193, y: initialPoint.y)
+//            let up = (x: initialPoint.x, y: 112)
+//            let right = (x: 193, y: initialPoint.y)
+//            let left = (x: -193, y: initialPoint.y)
             
             //Devs creation
             let devsDesk = DevsDesk(character: "designer",
@@ -101,8 +101,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk)
             
             let devsDesk2 = DevsDesk(character: "dev",
-                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -3),
-                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -3),
+                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -6),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -119,8 +119,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk2)
             
             let devsDesk3 = DevsDesk(character: "dev",
-                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
-                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -6),
+                                     x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -12),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -12),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -137,8 +137,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk3)
             
             let devsDesk4 = DevsDesk(character: "designer",
-                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -3),
-                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -3),
+                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -6),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -155,8 +155,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk4)
             
             let devsDesk5 = DevsDesk(character: "designer",
-                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
-                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -6),
+                                     x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -12),
+                                     y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -12),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -174,7 +174,7 @@ class GameScene: SKScene {
             
             let devsDesk6 = DevsDesk(character: "dev",
                                      x: CGFloat(down.x),
-                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -3),
+                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -6),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -192,7 +192,7 @@ class GameScene: SKScene {
             
             let devsDesk7 = DevsDesk(character: "dev",
                                      x: CGFloat(down.x),
-                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -6),
+                                     y: CGFloat(initialPoint.y) - CGFloat(down.y * -12),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -209,8 +209,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk7)
             
             let devsDesk8 = DevsDesk(character: "dev",
-                                     x: CGFloat(down.x) - CGFloat(downLeft.x * -3),
-                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downLeft.y * -3)),
+                                     x: CGFloat(down.x) - CGFloat(downLeft.x * -6),
+                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -6)) - CGFloat(downLeft.y * -6)),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -227,8 +227,8 @@ class GameScene: SKScene {
             background.addChild(devsDesk8)
             
             let devsDesk9 = DevsDesk(character: "dev",
-                                     x: CGFloat(down.x) - CGFloat(downRight.x * -3),
-                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -3)) - CGFloat(downRight.y * -3)),
+                                     x: CGFloat(down.x) - CGFloat(downRight.x * -6),
+                                     y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -6)) - CGFloat(downRight.y * -6)),
                                      perSec: 20,
                                      increase: 2,
                                      id: 1,
@@ -279,4 +279,3 @@ extension GameScene: DevDelegate {
         }
     }
 }
-

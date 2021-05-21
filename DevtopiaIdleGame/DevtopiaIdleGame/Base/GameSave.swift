@@ -58,7 +58,7 @@ struct GameSave {
     func saveProgress(mainCurrency: MainCurrency) {
         userDefaults.setValue(mainCurrency.getDevCoins(), forKey: "devCoins")
         for i in 0...mainCurrency.getGenerators().count-1 {
-            userDefaults.setValue(mainCurrency.getGenerators()[i], forKey: "dev\(i)characterAsset")
+            userDefaults.setValue((mainCurrency.getGenerators()[i] as! DevsDesk).character, forKey: "dev\(i)character")
             userDefaults.setValue(mainCurrency.getGenerators()[i].id, forKey: "dev\(i)id")
             userDefaults.setValue(mainCurrency.getGenerators()[i].perSec, forKey: "dev\(i)perSec")
             userDefaults.setValue(mainCurrency.getGenerators()[i].basePrice, forKey: "dev\(i)basePrice")
@@ -79,7 +79,7 @@ struct GameSave {
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 9
         for i in 0...nDevs-1 {
-            let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)characterAsset")!) as! String)
+            let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
             let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
             let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
             let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
