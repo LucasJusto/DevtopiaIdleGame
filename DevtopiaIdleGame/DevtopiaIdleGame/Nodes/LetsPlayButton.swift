@@ -24,6 +24,7 @@ class LetsPlaybutton: SKSpriteNode {
         letsPlayLabel.fontColor = UIColor(named: "white")
         letsPlayLabel.fontName = "Montserrat-Regular"
         letsPlayLabel.verticalAlignmentMode = .center
+        letsPlayLabel.name = self.name
         self.addChild(letsPlayLabel)
     }
     

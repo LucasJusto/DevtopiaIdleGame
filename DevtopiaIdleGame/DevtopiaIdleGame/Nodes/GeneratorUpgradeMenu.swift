@@ -133,7 +133,7 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         devNowLabel.fontSize = developerLabel.fontSize * 0.7
         devNowLabel.fontName = "Montserrat-Regular"
         devNowLabel.fontColor = UIColor(named: "black")
-        devNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: developerUpgradeButton.position.y + developerUpgradeButton.size.height/2 - devNowLabel.fontSize)
+        devNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: developerRectangle.position.y - developerRectangle.size.height/2 - devNowLabel.fontSize/2 - grayRectangle.size.height * 0.07)
         devNowLabel.horizontalAlignmentMode = .left
         let devAfterLabel: SKLabelNode = SKLabelNode(text: "After Upgrade")
         devAfterLabel.fontSize = developerLabel.fontSize * 0.85
@@ -185,7 +185,7 @@ class GeneratorUpgradeMenu: SKSpriteNode {
         equipmentNowLabel.fontSize = equipmentLabel.fontSize * 0.7
         equipmentNowLabel.fontName = "Montserrat-Regular"
         equipmentNowLabel.fontColor = UIColor(named: "black")
-        equipmentNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: equipmentUpgradeButton.position.y + equipmentUpgradeButton.size.height/2 - equipmentNowLabel.fontSize)
+        equipmentNowLabel.position = CGPoint(x: -grayRectangle.size.width * 0.4, y: equipmentRectangle.position.y - equipmentRectangle.size.height/2 - equipmentNowLabel.fontSize/2 - grayRectangle.size.height * 0.07)
         equipmentNowLabel.horizontalAlignmentMode = .left
         let equipmentAfterLabel: SKLabelNode = SKLabelNode(text: "After Upgrade")
         equipmentAfterLabel.fontSize = equipmentLabel.fontSize * 0.85
