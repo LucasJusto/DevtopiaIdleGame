@@ -6,6 +6,10 @@ protocol DevDelegate: AnyObject {
 }
 
 class DevsDesk: SKNode, Generator{
+    
+    var character: String
+    var characterAsset: String = ""
+    var anchorPoint: CGPoint = CGPoint(x: 0.0, y: 0.0 )
     var perSec: Decimal
     var multipliers: [Multiplier]
     var id: Int
@@ -19,22 +23,53 @@ class DevsDesk: SKNode, Generator{
     
     public lazy var desk: SKSpriteNode = {
         
-        let desk = SKSpriteNode(imageNamed: "Dev_step_01-1")
-        if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
-            desk.texture = SKTexture(imageNamed: "Dev_step_02")
+
+        if character == "dev" {
+            
+            anchorPoint = CGPoint(x: 0.458, y: 0.5 )
+            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "Dev_step_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "Dev_step_03"
+            }
+            else {
+                characterAsset = "Dev_step_01-1"
+                
+            }
         }
-        else if self.equipment.currentLevel >= equipment.changeVisual2 {
-            desk.texture = SKTexture(imageNamed: "Dev_step_03")
+        else {
+            anchorPoint = CGPoint(x: 0.564, y: 0.578 )
+            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "Designer_step_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "Designer_step_03"
+            }
+            else {
+                characterAsset = "Designer_step_01"
+                
+            }
         }
+        
+        
+        
+        
+        let desk = SKSpriteNode(imageNamed: characterAsset)
+        
+
         //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
-        desk.anchorPoint = CGPoint(x: 0.458, y: 0.5)
+        desk.anchorPoint = anchorPoint
         desk.zPosition = 2
         desk.name = "desk"
         
         return desk
     }()
     
-    init(x: CGFloat, y: CGFloat, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency, equipmentLevel: Int, equipmentMultiply: Decimal, equipmentPriceMultiplier: Decimal, currentLevel: Int, equipmentCurrentPrice: Decimal, currentPrice: Decimal) {
+    init(character: String, x: CGFloat, y: CGFloat, perSec: Decimal, increase: Decimal, id: Int, basePrice: Decimal, observer: MainCurrency, equipmentLevel: Int, equipmentMultiply: Decimal, equipmentPriceMultiplier: Decimal, currentLevel: Int, equipmentCurrentPrice: Decimal, currentPrice: Decimal) {
+        self.character = character
         self.perSec = perSec
         self.multipliers = [Multiplier]()
         self.id = id
@@ -63,7 +98,7 @@ class DevsDesk: SKNode, Generator{
         
         
         if node.name == "desk" {
-           
+            
             SoundController.selectSound(parentNode: desk)
             
             delegate?.didTapDev(character: self)

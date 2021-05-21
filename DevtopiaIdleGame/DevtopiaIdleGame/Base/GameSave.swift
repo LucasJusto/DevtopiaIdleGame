@@ -58,6 +58,7 @@ struct GameSave {
     func saveProgress(mainCurrency: MainCurrency) {
         userDefaults.setValue(mainCurrency.getDevCoins(), forKey: "devCoins")
         for i in 0...mainCurrency.getGenerators().count-1 {
+            userDefaults.setValue((mainCurrency.getGenerators()[i] as! DevsDesk).character, forKey: "dev\(i)character")
             userDefaults.setValue(mainCurrency.getGenerators()[i].id, forKey: "dev\(i)id")
             userDefaults.setValue(mainCurrency.getGenerators()[i].perSec, forKey: "dev\(i)perSec")
             userDefaults.setValue(mainCurrency.getGenerators()[i].basePrice, forKey: "dev\(i)basePrice")
@@ -78,6 +79,7 @@ struct GameSave {
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 9
         for i in 0...nDevs-1 {
+            let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
             let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
             let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
             let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
@@ -91,7 +93,7 @@ struct GameSave {
             let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
             let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
             
-            mainCurrency.addGenerator(generator: DevsDesk(x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
+            mainCurrency.addGenerator(generator: DevsDesk(character: character, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
         }
         
     }
