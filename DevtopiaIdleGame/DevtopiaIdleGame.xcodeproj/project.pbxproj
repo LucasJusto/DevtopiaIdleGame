@@ -73,10 +73,9 @@
 		487D23142656FDB000E019AC /* LetsPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsPlayButton.swift; sourceTree = "<group>"; };
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		48FA3CE52652F81000C27CFC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		48FA3CE92652FF1900C27CFC /* typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = typing.wav; sourceTree = "<group>"; };
+		48FA3CE92652FF1900C27CFC /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
 		4EE7C9862656CD7D00D6A7B0 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersMenu.swift; sourceTree = "<group>"; };
-		48FA3CE92652FF1900C27CFC /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
 		5C4A4127264B21D500FE60E3 /* GameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
 		5C4A412B264C565C00FE60E3 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		5C9833A2265714EA00C4BC96 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
@@ -141,7 +140,7 @@
 				4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */,
 				487D23122656E7E700E019AC /* WelcomeBackPopUp.swift */,
 				487D23142656FDB000E019AC /* LetsPlayButton.swift */,
-				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */
+				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -468,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6GD2RK7JQN;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -476,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = game.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Game.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,7 +489,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 6GD2RK7JQN;
 				INFOPLIST_FILE = DevtopiaIdleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,7 +498,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = game.DevtopiaIdleGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Game.DevtopiaIdleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

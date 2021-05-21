@@ -15,8 +15,8 @@ class GameViewController: UIViewController {
                 scene.scaleMode = .resizeFill
                 view.ignoresSiblingOrder = true
                 
-                view.showsFPS = true
-                view.showsNodeCount = true
+                view.showsFPS = false
+                view.showsNodeCount = false
                 view.isMultipleTouchEnabled = true
                 view.isUserInteractionEnabled = true
                 
