@@ -5,7 +5,7 @@ public class SoundController {
     
      static func backgroundMusic(parentNode: SKNode) {
   
-        let sound = SKAudioNode(fileNamed: "backgroundMusic.wav")
+        let sound = SKAudioNode(fileNamed: "backgroundMusic.mp3")
         sound.isPositional = false
         sound.autoplayLooped = true
         parentNode.addChild(sound)
