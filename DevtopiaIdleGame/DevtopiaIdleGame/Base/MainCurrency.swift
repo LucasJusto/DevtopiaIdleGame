@@ -93,6 +93,19 @@ public class MainCurrency {
             str = "AB"
             n = "\(value/pow(10, 18))"
         }
+        else if value < pow(10, 24) {
+            str = "AC"
+            n = "\(value/pow(10, 21))"
+        }
+        else if value < pow(10, 27) {
+            str = "AD"
+            n = "\(value/pow(10, 24))"
+        }
+        else if value < pow(10, 30) {
+            str = "AE"
+            n = "\(value/pow(10, 27))"
+        }
+
         
         let splitedN = n.split(separator: ".")
         let nInteger: String = "\(splitedN[0])"

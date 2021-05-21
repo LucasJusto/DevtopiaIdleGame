@@ -113,7 +113,7 @@ class UpgradeButton: SKSpriteNode {
                     }
                     else {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Designer_step_03")
-                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.718, y: devsdesk.desk.position.y + 35.108)
+                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_03")
                         
                     }
