@@ -23,6 +23,7 @@ class DevsDesk: SKNode, Generator{
     
     public lazy var desk: SKSpriteNode = {
         
+
         if character == "dev" {
             
             anchorPoint = CGPoint(x: 0.458, y: 0.5 )
@@ -58,11 +59,12 @@ class DevsDesk: SKNode, Generator{
         
         let desk = SKSpriteNode(imageNamed: characterAsset)
         
+
         //anchorPoint setter for dev is at position x: 0.458 , y: 0.5
         desk.anchorPoint = anchorPoint
         desk.zPosition = 2
         desk.name = "desk"
-        //desk.size = CGSize(width: 500, height: 500
+        
         return desk
     }()
     
@@ -82,7 +84,6 @@ class DevsDesk: SKNode, Generator{
         self.isUserInteractionEnabled = true
         self.addChild(desk)
         self.desk.position = CGPoint(x: x, y: y)
-        self.observer.addMultiplier(multiplier: equipment)
     }
     
     
