@@ -27,6 +27,10 @@ class PanelButton: SKSpriteNode {
         let node = self.atPoint(location ?? .zero)
         if node.name == "panelButton" {
             SoundController.selectSound(parentNode: self)
+            let scaleDown = SKAction.scale(to: 0.95, duration: 0.05)
+            let scaleUp = SKAction.scale(to: 1, duration: 0.05)
+            let scaleSequence = SKAction.sequence([scaleDown, scaleUp])
+            self.run(scaleSequence)
             let managersMenu = ManagersMenu(panel: self)
             sceneTwo.cameraNode.addChild(managersMenu)
         }

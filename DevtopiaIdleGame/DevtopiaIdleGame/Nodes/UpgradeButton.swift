@@ -58,9 +58,17 @@ class UpgradeButton: SKSpriteNode {
         let node = self.atPoint(location ?? .zero)
         if node.name == "developer" {
             upgradeDev()
+            let scaleDown = SKAction.scale(to: 0.95, duration: 0.05)
+            let scaleUp = SKAction.scale(to: 1, duration: 0.05)
+            let scaleSequence = SKAction.sequence([scaleDown, scaleUp])
+            self.run(scaleSequence)
         }
         else if node.name == "equipment" {
             upgradeEquipment()
+            let scaleDown = SKAction.scale(to: 0.95, duration: 0.05)
+            let scaleUp = SKAction.scale(to: 1, duration: 0.05)
+            let scaleSequence = SKAction.sequence([scaleDown, scaleUp])
+            self.run(scaleSequence)
         }
     }
     

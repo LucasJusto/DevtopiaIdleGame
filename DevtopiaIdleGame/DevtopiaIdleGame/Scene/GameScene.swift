@@ -1,5 +1,6 @@
 import SpriteKit
 import Foundation
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -47,6 +48,12 @@ class GameScene: SKScene {
     }()
     
     override func didMove(to view: SKView) {
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+        } catch {
+            print(error.localizedDescription)
+        }
         
         let panel = PanelButton(scene: self)
         background.addChild(panel)
@@ -250,7 +257,7 @@ class GameScene: SKScene {
         }
         
         addChild(cameraNode)
-         
+        
         SoundController.backgroundMusic(parentNode: background)
         startIncrement()
     }
@@ -258,7 +265,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         topTab.updateLabels()
     }
-
+    
     func startIncrement() {
         run(perSecIncrement, withKey: "perSecIncrement")
     }
@@ -266,7 +273,7 @@ class GameScene: SKScene {
     func stopIncrement() {
         removeAction(forKey: "perSecIncrement")
     }
-   
+    
 }
 
 extension GameScene: DevDelegate {
