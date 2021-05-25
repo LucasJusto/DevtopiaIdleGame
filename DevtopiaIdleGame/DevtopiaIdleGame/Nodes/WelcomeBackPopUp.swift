@@ -4,10 +4,12 @@ import SpriteKit
 class WelcomeBackPopUp: SKSpriteNode {
     var mainCurrency: MainCurrency
     var value: Decimal
+    var timeAway: Decimal
     
     init(mainCurrency: MainCurrency, value: Decimal, timeAway: Decimal) {
         self.mainCurrency = mainCurrency
         self.value = value
+        self.timeAway = timeAway
         super.init(texture: nil, color: UIColor(named: "white")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.5))
         self.position = CGPoint(x: 0, y: 0)
         self.isUserInteractionEnabled = true
@@ -33,7 +35,7 @@ class WelcomeBackPopUp: SKSpriteNode {
         coins.horizontalAlignmentMode = .left
         coinImage.position = CGPoint(x: -((coinImage.size.width - self.size.width * 0.07 + coins.frame.width)/2), y: earned.position.y - self.size.height * 0.08)
         coins.position = CGPoint(x: coinImage.position.x + (self.size.width * 0.07), y: coinImage.position.y - coinImage.size.height/2.5)
-        let whileOff1: SKLabelNode = SKLabelNode(text: "during the \(timeAway)s that")
+        let whileOff1: SKLabelNode = SKLabelNode(text: "during the \(self.timeAway)s that")
         whileOff1.fontName = "Montserrat-Regular"
         whileOff1.fontSize = welcomeBack.fontSize * 0.7
         whileOff1.position = CGPoint(x: 0, y: coins.position.y - self.size.height * 0.1)
