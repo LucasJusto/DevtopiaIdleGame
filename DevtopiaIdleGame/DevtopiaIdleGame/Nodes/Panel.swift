@@ -38,6 +38,7 @@ class PanelButton: SKSpriteNode {
                 let managersMenu = ManagersMenu(panel: self)
                 sceneTwo.cameraNode.addChild(managersMenu)
             }
+
         }
     }
 }

@@ -79,7 +79,17 @@ struct GameSave {
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 9
         for i in 0...nDevs-1 {
-            let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
+            var character: String?
+            if i == 0 || i == 5 || i == 7 {
+                character = "whiteDev"
+            }
+            else if i == 2 || i == 6 || i == 8 {
+                character = "blackDev"
+            }
+            else {
+                character = "whiteDesigner"
+            }
+            //let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
             let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
             let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
             let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
@@ -93,7 +103,7 @@ struct GameSave {
             let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
             let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
             
-            mainCurrency.addGenerator(generator: DevsDesk(character: character, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
+            mainCurrency.addGenerator(generator: DevsDesk(character: character!, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
         }
         
     }

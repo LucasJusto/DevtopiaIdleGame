@@ -13,7 +13,7 @@ class WelcomeBackPopUp: SKSpriteNode {
         super.init(texture: nil, color: UIColor(named: "white")! ,size: CGSize(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.5))
         self.position = CGPoint(x: 0, y: 0)
         self.isUserInteractionEnabled = true
-        self.zPosition = 150
+        self.zPosition = 700
         self.name = "welcomeBackPopUp"
         
         let welcomeBack: SKLabelNode = SKLabelNode(text: "WelcomeBack!")

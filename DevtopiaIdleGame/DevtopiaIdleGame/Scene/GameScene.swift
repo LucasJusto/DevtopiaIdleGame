@@ -1,5 +1,6 @@
 import SpriteKit
 import Foundation
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -48,6 +49,12 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         let panel = PanelButton(scene: self)
         background.addChild(panel)
         
@@ -86,7 +93,7 @@ class GameScene: SKScene {
             //let left = (x: -193, y: initialPoint.y)
             
             //Devs creation
-            let devsDesk = DevsDesk(character: "designer",
+            let devsDesk0 = DevsDesk(character: "whiteDev",
                                     x: CGFloat(initialPoint.x),
                                     y: CGFloat(initialPoint.y),
                                     perSec: 20,
@@ -99,11 +106,11 @@ class GameScene: SKScene {
                                     currentLevel: 0,
                                     equipmentCurrentPrice: 500 * 0.2,
                                     currentPrice: 500)
-            devsDesk.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk)
-            background.addChild(devsDesk)
+            devsDesk0.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk0)
+            background.addChild(devsDesk0)
             
-            let devsDesk2 = DevsDesk(character: "dev",
+            let devsDesk1 = DevsDesk(character: "whiteDesigner",
                                      x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -6),
                                      y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -6),
                                      perSec: 0,
@@ -117,11 +124,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 10000 * 0.2,
                                      currentPrice: 10000)
-            devsDesk2.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk2)
-            background.addChild(devsDesk2)
+            devsDesk1.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk1)
+            background.addChild(devsDesk1)
             
-            let devsDesk3 = DevsDesk(character: "dev",
+            let devsDesk2 = DevsDesk(character: "blackDev",
                                      x: CGFloat(initialPoint.x) - CGFloat(downLeft.x * -12),
                                      y: CGFloat(initialPoint.y) - CGFloat(downLeft.y * -12),
                                      perSec: 0,
@@ -135,11 +142,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 150000 * 0.2,
                                      currentPrice: 150000)
-            devsDesk3.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk3)
-            background.addChild(devsDesk3)
+            devsDesk2.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk2)
+            background.addChild(devsDesk2)
             
-            let devsDesk4 = DevsDesk(character: "designer",
+            let devsDesk3 = DevsDesk(character: "whiteDesigner",
                                      x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -6),
                                      y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -6),
                                      perSec: 0,
@@ -153,11 +160,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 500000 * 0.2,
                                      currentPrice: 500000)
-            devsDesk4.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk4)
-            background.addChild(devsDesk4)
+            devsDesk3.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk3)
+            background.addChild(devsDesk3)
             
-            let devsDesk5 = DevsDesk(character: "designer",
+            let devsDesk4 = DevsDesk(character: "whiteDev",
                                      x: CGFloat(initialPoint.x) - CGFloat(downRight.x * -12),
                                      y: CGFloat(initialPoint.y) - CGFloat(downRight.y * -12),
                                      perSec: 0,
@@ -171,11 +178,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 1500000 * 0.2,
                                      currentPrice: 1500000)
-            devsDesk5.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk5)
-            background.addChild(devsDesk5)
+            devsDesk4.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk4)
+            background.addChild(devsDesk4)
             
-            let devsDesk6 = DevsDesk(character: "dev",
+            let devsDesk5 = DevsDesk(character: "whiteDev",
                                      x: CGFloat(down.x),
                                      y: CGFloat(initialPoint.y) - CGFloat(down.y * -6),
                                      perSec: 0,
@@ -189,11 +196,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 500000000 * 0.2,
                                      currentPrice: 500000000)
-            devsDesk6.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk6)
-            background.addChild(devsDesk6)
+            devsDesk5.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk5)
+            background.addChild(devsDesk5)
             
-            let devsDesk7 = DevsDesk(character: "dev",
+            let devsDesk6 = DevsDesk(character: "blackDev",
                                      x: CGFloat(down.x),
                                      y: CGFloat(initialPoint.y) - CGFloat(down.y * -12),
                                      perSec: 0,
@@ -207,11 +214,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 1500000000 * 0.2,
                                      currentPrice: 1500000000)
-            devsDesk7.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk7)
-            background.addChild(devsDesk7)
+            devsDesk6.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk6)
+            background.addChild(devsDesk6)
             
-            let devsDesk8 = DevsDesk(character: "dev",
+            let devsDesk7 = DevsDesk(character: "whiteDesigner",
                                      x: CGFloat(down.x) - CGFloat(downLeft.x * -6),
                                      y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -6)) - CGFloat(downLeft.y * -6)),
                                      perSec: 0,
@@ -225,11 +232,11 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 3000000000 * 0.2,
                                      currentPrice: 3000000000)
-            devsDesk8.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk8)
-            background.addChild(devsDesk8)
+            devsDesk7.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk7)
+            background.addChild(devsDesk7)
             
-            let devsDesk9 = DevsDesk(character: "dev",
+            let devsDesk8 = DevsDesk(character: "blackDev",
                                      x: CGFloat(down.x) - CGFloat(downRight.x * -6),
                                      y: ((CGFloat(initialPoint.y) - CGFloat(down.y * -6)) - CGFloat(downRight.y * -6)),
                                      perSec: 0,
@@ -243,14 +250,14 @@ class GameScene: SKScene {
                                      currentLevel: 0,
                                      equipmentCurrentPrice: 30000000000 * 0.2,
                                      currentPrice: 30000000000)
-            devsDesk9.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk9)
-            background.addChild(devsDesk9)
+            devsDesk8.delegate = self
+            mainCurrency.addGenerator(generator: devsDesk8)
+            background.addChild(devsDesk8)
             
         }
         
         addChild(cameraNode)
-         
+        
         SoundController.backgroundMusic(parentNode: background)
         startIncrement()
     }
@@ -258,7 +265,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         topTab.updateLabels()
     }
-
+    
     func startIncrement() {
         run(perSecIncrement, withKey: "perSecIncrement")
     }
@@ -266,7 +273,7 @@ class GameScene: SKScene {
     func stopIncrement() {
         removeAction(forKey: "perSecIncrement")
     }
-   
+    
 }
 
 extension GameScene: DevDelegate {
