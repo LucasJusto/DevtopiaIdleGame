@@ -24,13 +24,6 @@ class KeyboardButton: SKSpriteNode {
         let node = self.atPoint(location ?? .zero)
         if node.name == "keyboardButton" {
             
-            //            let keyboard = KeyboardButton(mainCurrency: self.mainCurrency)
-            //            let animationKeyboard = SKAction.scale(by: 0.5, duration: 1)
-            //            keyboard.run(animationKeyboard) {
-            //                keyboard.removeFromParent()
-            //            }
-            
-            
             self.mainCurrency.updateDevCoins(value: mainCurrency.getDevCoinsPerSec() * 0.2)
             let coin = KeyboardCoin(mainCurrency: self.mainCurrency)
             if let location = location {
@@ -63,7 +56,7 @@ class KeyboardButton: SKSpriteNode {
             let scaleUp = SKAction.scale(to: 1, duration: 0.05)
             let scaleSequence = SKAction.sequence([scaleDown, scaleUp])
             let playKeyboardSound = SKAction.run {
-                            
+                
                 SoundController.keyboardClick(parent: self)
             }
             let scaleGroup = SKAction.group([playKeyboardSound, scaleSequence])

@@ -21,7 +21,7 @@ class PanelButton: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         let location = touch?.location(in: self)
         let node = self.atPoint(location ?? .zero)
