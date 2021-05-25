@@ -24,7 +24,7 @@ class DevsDesk: SKNode, Generator{
     public lazy var desk: SKSpriteNode = {
         
 
-        if character == "dev" {
+        if character == "whiteDev" {
             
             anchorPoint = CGPoint(x: 0.458, y: 0.5 )
             if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
@@ -39,7 +39,7 @@ class DevsDesk: SKNode, Generator{
                 
             }
         }
-        else {
+        else if character == "whiteDesigner" {
             anchorPoint = CGPoint(x: 0.564, y: 0.578 )
             if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
                 
@@ -53,6 +53,21 @@ class DevsDesk: SKNode, Generator{
                 
             }
         }
+        else if character == "blackDev" {
+            anchorPoint = CGPoint(x: 0.458, y: 0.5)
+            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "blackDev_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "blackDev_03"
+            }
+            else {
+                characterAsset = "blackDev_01"
+                
+            }
+        }
+
         
         
         
