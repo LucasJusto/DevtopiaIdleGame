@@ -31,6 +31,7 @@
 		4ED9B15F264B222400B04D3D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144412645D912003CACB3 /* Montserrat-Regular.ttf */; };
 		4ED9B160264B222700B04D3D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144402645D912003CACB3 /* Montserrat-SemiBold.ttf */; };
 		4ED9B161264B222B00B04D3D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 486144432645D913003CACB3 /* Montserrat-Medium.ttf */; };
+		4EDDBAEA265D667E00B12862 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDBAE9265D667E00B12862 /* OnboardingScene.swift */; };
 		4EE7C9872656CD7D00D6A7B0 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7C9862656CD7D00D6A7B0 /* Panel.swift */; };
 		4EE7C9892656E84C00D6A7B0 /* ManagersMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */; };
 		5C4A4128264B21D500FE60E3 /* GameSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4127264B21D500FE60E3 /* GameSave.swift */; };
@@ -75,6 +76,7 @@
 		4889E6AD264AF96A003CF228 /* GeneratorUpgradeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorUpgradeMenu.swift; sourceTree = "<group>"; };
 		48FA3CE52652F81000C27CFC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		48FA3CE92652FF1900C27CFC /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
+		4EDDBAE9265D667E00B12862 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		4EE7C9862656CD7D00D6A7B0 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		4EE7C9882656E84C00D6A7B0 /* ManagersMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersMenu.swift; sourceTree = "<group>"; };
 		5C4A4127264B21D500FE60E3 /* GameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				486144392645C54B003CACB3 /* TopTab.swift */,
 				48775CA52645B32200F6D4B0 /* Camera.swift */,
 				48775C8B264083C300F6D4B0 /* GameScene.swift */,
+				4EDDBAE9265D667E00B12862 /* OnboardingScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				4EE7C9892656E84C00D6A7B0 /* ManagersMenu.swift in Sources */,
 				48FA3CE62652F81000C27CFC /* Keyboard.swift in Sources */,
 				5C4A412C264C565C00FE60E3 /* SoundController.swift in Sources */,
+				4EDDBAEA265D667E00B12862 /* OnboardingScene.swift in Sources */,
 				F4FBA46C26431E1D00ABED0A /* DevsDesk.swift in Sources */,
 				48775CA12641CAFC00F6D4B0 /* Upgradable.swift in Sources */,
 				487D23152656FDB000E019AC /* LetsPlayButton.swift in Sources */,

@@ -39,7 +39,7 @@ class DevsDesk: SKNode, Generator{
                 
             }
         }
-        else {
+        else if character == "designer" {
             anchorPoint = CGPoint(x: 0.564, y: 0.578 )
             if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
                 
@@ -50,12 +50,13 @@ class DevsDesk: SKNode, Generator{
             }
             else {
                 characterAsset = "Designer_step_01"
-                
             }
+            
         }
-        
-        
-        
+        else if character == "starter" {
+            anchorPoint = CGPoint(x: 0.5, y: 0.5 )
+            characterAsset = "Dev_onboarding"
+        }
         
         let desk = SKSpriteNode(imageNamed: characterAsset)
         

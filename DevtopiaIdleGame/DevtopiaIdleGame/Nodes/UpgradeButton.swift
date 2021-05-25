@@ -61,6 +61,10 @@ class UpgradeButton: SKSpriteNode {
         }
         else if node.name == "equipment" {
             upgradeEquipment()
+            
+            let scene = GameScene(size: (self.scene?.view?.bounds.size)!)
+            scene.scaleMode = .aspectFill
+            self.scene?.view?.presentScene(scene)
         }
     }
     
