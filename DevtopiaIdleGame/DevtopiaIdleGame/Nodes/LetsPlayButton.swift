@@ -38,7 +38,7 @@ class LetsPlaybutton: SKSpriteNode {
         let node = self.atPoint(location ?? .zero)
         
         if node.name == self.name {
-            //SoundController.selectSound(parentNode: popUp)
+            SoundController.selectSound(parentNode: self.scene?.children.first ?? SKNode())
             popUp.mainCurrency.updateDevCoins(value: popUp.value)
             popUp.removeFromParent()
         }
