@@ -117,18 +117,21 @@ public class MainCurrency {
     }
       
     func updateDevCoinsWhenBack(timeAway: Decimal, gameScene: GameScene) {
-        var hasChild: SKSpriteNode? = nil
-        for child in gameScene.cameraNode.children {
-            if child.name == "welcomeBackPopUp" {
-                hasChild = (child as! SKSpriteNode)
+        if timeAway >= 1 {
+            var hasChild: SKSpriteNode? = nil
+            for child in gameScene.cameraNode.children {
+                if child.name == "welcomeBackPopUp" {
+                    hasChild = (child as! SKSpriteNode)
+                }
             }
-        }
-        if (hasChild != nil) {
-            (hasChild as! WelcomeBackPopUp).mainCurrency.updateDevCoins(value: (hasChild as! WelcomeBackPopUp).value)
-            (hasChild as! WelcomeBackPopUp).removeFromParent()
             
+            var correctTimeAway: Decimal = timeAway
+            
+            if (hasChild != nil) {
+                correctTimeAway += (hasChild as! WelcomeBackPopUp).timeAway
+                (hasChild as! WelcomeBackPopUp).removeFromParent()
+            }
+            gameScene.cameraNode.addChild(WelcomeBackPopUp(mainCurrency: self, value: correctTimeAway * devCoinsPerSec * 0.1, timeAway: correctTimeAway))
         }
-        gameScene.cameraNode.addChild(WelcomeBackPopUp(mainCurrency: self, value: timeAway * devCoinsPerSec * 0.1, timeAway: timeAway))
-        
     }
 }
