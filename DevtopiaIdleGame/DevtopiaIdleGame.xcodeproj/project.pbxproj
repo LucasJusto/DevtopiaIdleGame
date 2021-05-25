@@ -12,6 +12,7 @@
 		4861443A2645C54B003CACB3 /* TopTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486144392645C54B003CACB3 /* TopTab.swift */; };
 		486144452649A8FE003CACB3 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486144442649A8FE003CACB3 /* Equipment.swift */; };
 		486883CC2658137E00A81BFB /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 486883CB2658137E00A81BFB /* backgroundMusic.mp3 */; };
+		486883CE265D827A00A81BFB /* PanelClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486883CD265D827A00A81BFB /* PanelClose.swift */; };
 		48775C86264083C300F6D4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C85264083C300F6D4B0 /* AppDelegate.swift */; };
 		48775C8C264083C300F6D4B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8B264083C300F6D4B0 /* GameScene.swift */; };
 		48775C8E264083C300F6D4B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48775C8D264083C300F6D4B0 /* GameViewController.swift */; };
@@ -58,6 +59,7 @@
 		486144432645D913003CACB3 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		486144442649A8FE003CACB3 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		486883CB2658137E00A81BFB /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		486883CD265D827A00A81BFB /* PanelClose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelClose.swift; sourceTree = "<group>"; };
 		48775C82264083C300F6D4B0 /* DevTopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevTopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48775C85264083C300F6D4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48775C8B264083C300F6D4B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				487D23122656E7E700E019AC /* WelcomeBackPopUp.swift */,
 				487D23142656FDB000E019AC /* LetsPlayButton.swift */,
 				F4DB010C26558DDC00BE2E90 /* KeyboardCoin.swift */,
+				486883CD265D827A00A81BFB /* PanelClose.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				48775CA62645B32200F6D4B0 /* Camera.swift in Sources */,
 				4889E6AE264AF96A003CF228 /* GeneratorUpgradeMenu.swift in Sources */,
 				48775CA42645B2A700F6D4B0 /* Generator.swift in Sources */,
+				486883CE265D827A00A81BFB /* PanelClose.swift in Sources */,
 				486144452649A8FE003CACB3 /* Equipment.swift in Sources */,
 				48775C9D2641C6CB00F6D4B0 /* MainCurrency.swift in Sources */,
 				4861443A2645C54B003CACB3 /* TopTab.swift in Sources */,
