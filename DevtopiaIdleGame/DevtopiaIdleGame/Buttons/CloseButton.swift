@@ -16,6 +16,13 @@ class CloseButton: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let scaleDown = SKAction.scale(to: 0.95, duration: 0.05)
+        let scaleUp = SKAction.scale(to: 1, duration: 0.05)
+        let scaleSequence = SKAction.sequence([scaleDown, scaleUp])
+        self.run(scaleSequence)
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         let location = touch?.location(in: self)
