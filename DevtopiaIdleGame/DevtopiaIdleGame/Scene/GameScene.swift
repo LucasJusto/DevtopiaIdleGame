@@ -93,7 +93,7 @@ class GameScene: SKScene {
             //let left = (x: -193, y: initialPoint.y)
             
             //Devs creation
-            let devsDesk0 = DevsDesk(character: "whiteDev",
+            let devsDesk0 = DevsDesk(character: "firstDev",
                                     x: CGFloat(initialPoint.x),
                                     y: CGFloat(initialPoint.y),
                                     perSec: 20,
