@@ -18,7 +18,6 @@ class OnboardingScene: SKScene {
         
         return actionForever
     }()
-    var save1: GameSave = GameSave()
     
     // MARK: Properties
     // Background properties
@@ -76,7 +75,6 @@ class OnboardingScene: SKScene {
                                 equipmentCurrentPrice: 500 * 0.2,
                                 currentPrice: 500)
         devsDesk.delegate = self
-        mainCurrency.addGenerator(generator: devsDesk)
         background.addChild(devsDesk)
         
         addChild(cameraNode)

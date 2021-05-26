@@ -80,22 +80,32 @@ struct GameSave {
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 9
         for i in 0...nDevs-1 {
-            let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
-            let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
-            let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
-            let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
-            let currentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentPrice")!) as! NSNumber)
-            let currentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentLevel")!) as! Int)
-            let increase = (unwrap(any: userDefaults.value(forKey: "dev\(i)increase")!) as! NSNumber)
-            let x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
-            let y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
-            let equipmentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentLevel")!) as! Int)
-            let equipmentMultiply = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentMultiply")!) as! NSNumber)
-            let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
-            let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
-            
-            mainCurrency.addGenerator(generator: DevsDesk(character: character, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
-        }
+                    var character: String?
+                    if i == 0 || i == 5 || i == 7 {
+                        character = "whiteDev"
+                    }
+                    else if i == 2 || i == 6 || i == 8 {
+                        character = "blackDev"
+                    }
+                    else {
+                        character = "whiteDesigner"
+                    }
+                    //let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
+                    let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
+                    let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
+                    let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
+                    let currentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentPrice")!) as! NSNumber)
+                    let currentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentLevel")!) as! Int)
+                    let increase = (unwrap(any: userDefaults.value(forKey: "dev\(i)increase")!) as! NSNumber)
+                    let x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
+                    let y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
+                    let equipmentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentLevel")!) as! Int)
+                    let equipmentMultiply = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentMultiply")!) as! NSNumber)
+                    let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
+                    let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
+                    
+                    mainCurrency.addGenerator(generator: DevsDesk(character: character!, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
+                }
      
     }
     
