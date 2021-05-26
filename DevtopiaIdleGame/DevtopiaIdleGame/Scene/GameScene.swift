@@ -29,11 +29,10 @@ class GameScene: SKScene {
         background.position = CGPoint(x: 0.5,y: 0.5)
         // Background anchorPoint setter x: 0.5 , y: 0.5
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = 0
+        background.zPosition = 50
         
         return background
     }()
-    
     
     // Game camera
     public lazy var cameraNode: Camera = {
@@ -47,6 +46,17 @@ class GameScene: SKScene {
         return cameraNode
     }()
     
+    private lazy var back: SKSpriteNode = {
+        let back = SKSpriteNode(imageNamed: "BG_teste_02")
+        // Background position setter x: 0.5 , y: 0.5
+        back.position = CGPoint(x: 0.5,y: 0.5)
+        // Background anchorPoint setter x: 0.5 , y: 0.5
+        back.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        back.zPosition = 0
+        
+        return back
+    }()
+    
     override func didMove(to view: SKView) {
         
         do {
@@ -58,6 +68,10 @@ class GameScene: SKScene {
         let panel = PanelButton(scene: self)
         background.addChild(panel)
         
+        
+        
+        background.addChild(back)
+        
         // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         // GameScene size setter to scenario size
@@ -67,7 +81,9 @@ class GameScene: SKScene {
         camera = cameraNode
         
         // Adds camera to background as child
+        
         addChild(background)
+        
         
         if let _ = save1.userDefaults.value(forKey: "devCoins") {
             save1.loadProgress(mainCurrency: mainCurrency)
