@@ -79,6 +79,9 @@ struct GameSave {
         mainCurrency.setDevCoins(value: devCoins.decimalValue)
         let nDevs = 9
         for i in 0...nDevs-1 {
+            
+            let currentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentLevel")!) as! Int)
+            let equipmentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentLevel")!) as! Int)
             var character: String?
             if i == 0 || i == 5 || i == 7 {
                 character = "whiteDev"
@@ -89,21 +92,49 @@ struct GameSave {
             else {
                 character = "whiteDesigner"
             }
-            //let character: String = (unwrap(any: userDefaults.value(forKey: "dev\(i)character")!) as! String)
+            var x: CGFloat?
+            var y: CGFloat?
+            if i == 0 {
+                if equipmentLevel < 30 {
+                    x = 0.0
+                    y = 844.5
+                }
+                else if equipmentLevel >= 30{
+                    x = -66.5
+                    y = 814.5
+                }
+
+            }
+            else if i == 1 {
+                if equipmentLevel < 30 {
+                    x = -582.0
+                    y = 508.5
+                }
+                else if equipmentLevel >= 30 && equipmentLevel < 70 {
+                    x = -581.718017578125
+                    y = 527.1079711914062
+                }
+                else {
+                    x = -516.9180297851562
+                    y = 494.10797119140625
+                }
+            }
+            else {
+                x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
+                y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
+            }
             let id: Int = (unwrap(any: userDefaults.value(forKey: "dev\(i)id")!) as! Int)
             let perSec = (unwrap(any: userDefaults.value(forKey: "dev\(i)perSec")!) as! NSNumber)
             let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
             let currentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentPrice")!) as! NSNumber)
-            let currentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentLevel")!) as! Int)
             let increase = (unwrap(any: userDefaults.value(forKey: "dev\(i)increase")!) as! NSNumber)
-            let x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
-            let y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
-            let equipmentLevel = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentLevel")!) as! Int)
+            x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
+            y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
             let equipmentMultiply = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentMultiply")!) as! NSNumber)
             let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
             let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
             
-            mainCurrency.addGenerator(generator: DevsDesk(character: character!, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
+            mainCurrency.addGenerator(generator: DevsDesk(character: character!, x: x!, y: y!, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
         }
         
     }
