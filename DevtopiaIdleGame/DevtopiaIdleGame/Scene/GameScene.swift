@@ -20,6 +20,7 @@ class GameScene: SKScene {
     }()
     var save1: GameSave = GameSave()
     
+    
     // MARK: Properties
     // Background properties
     private lazy var background: SKSpriteNode = {
@@ -54,7 +55,7 @@ class GameScene: SKScene {
         // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         // GameScene size setter to scenario size
-        self.size = background.size
+        self.size = UIScreen.main.bounds.size
         
         // Attributes GameScene camera to customized camera
         camera = cameraNode

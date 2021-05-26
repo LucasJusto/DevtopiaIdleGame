@@ -2,7 +2,7 @@ import SpriteKit
 import Foundation
 
 class OnboardingScene: SKScene {
- 
+    
     var mainCurrency: MainCurrency = MainCurrency()
     var topTab: TopTab!
     var keyboard: KeyboardButton!
@@ -37,7 +37,7 @@ class OnboardingScene: SKScene {
     // Game camera
     public lazy var cameraNode: Camera = {
         let cameraNode = Camera(sceneView: self.view!, scenario: background)
-        cameraNode.position = CGPoint(x:UIScreen.main.bounds.width / 50, y: UIScreen.main.bounds.height / 2)
+        cameraNode.position = CGPoint(x:UIScreen.main.bounds.width/16, y: UIScreen.main.bounds.height/8)
         cameraNode.applyZoomScale(scale: 0.5)
         topTab = TopTab(mainCurrency: mainCurrency)
         cameraNode.addChild(topTab)
@@ -51,7 +51,7 @@ class OnboardingScene: SKScene {
         // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         // GameScene size setter to scenario size
-        self.size = background.size
+        self.size = UIScreen.main.bounds.size
         
         // Attributes GameScene camera to customized camera
         camera = cameraNode
@@ -59,43 +59,28 @@ class OnboardingScene: SKScene {
         // Adds camera to background as child
         addChild(background)
         
-        if let _ = save1.userDefaults.value(forKey: "devCoins") {
-            save1.loadProgress(mainCurrency: mainCurrency)
-        }
+        let initialPoint = (x: -200, y: 50)
         
-        if mainCurrency.getGenerators().count > 0 {
-            for generator in mainCurrency.getGenerators() {
-                let dev = generator as! DevsDesk
-                dev.delegate = self
-                background.addChild(generator as! DevsDesk)
-            }
-        }
-        else {
-
-            let initialPoint = (x: -200, y: 50)
-
-            //Dev creation
-            let devsDesk = DevsDesk(character: "starter",
-                                    x: CGFloat(initialPoint.x),
-                                    y: CGFloat(initialPoint.y),
-                                    perSec: 20,
-                                    increase: 2,
-                                    id: 0, basePrice: 500,
-                                    observer: mainCurrency,
-                                    equipmentLevel: 0,
-                                    equipmentMultiply: 0,
-                                    equipmentPriceMultiplier: 1.1,
-                                    currentLevel: 0,
-                                    equipmentCurrentPrice: 500 * 0.2,
-                                    currentPrice: 500)
-            devsDesk.delegate = self
-            mainCurrency.addGenerator(generator: devsDesk)
-            background.addChild(devsDesk)
-            
-        }
+        //Dev creation
+        let devsDesk = DevsDesk(character: "starter",
+                                x: CGFloat(initialPoint.x),
+                                y: CGFloat(initialPoint.y),
+                                perSec: 20,
+                                increase: 2,
+                                id: 0, basePrice: 500,
+                                observer: mainCurrency,
+                                equipmentLevel: 0,
+                                equipmentMultiply: 0,
+                                equipmentPriceMultiplier: 1.1,
+                                currentLevel: 0,
+                                equipmentCurrentPrice: 500 * 0.2,
+                                currentPrice: 500)
+        devsDesk.delegate = self
+        mainCurrency.addGenerator(generator: devsDesk)
+        background.addChild(devsDesk)
         
         addChild(cameraNode)
-         
+        
         SoundController.backgroundMusic(parentNode: background)
         startIncrement()
     }
@@ -103,7 +88,7 @@ class OnboardingScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         topTab.updateLabels()
     }
-
+    
     func startIncrement() {
         run(perSecIncrement, withKey: "perSecIncrement")
     }
@@ -111,7 +96,7 @@ class OnboardingScene: SKScene {
     func stopIncrement() {
         removeAction(forKey: "perSecIncrement")
     }
-   
+    
 }
 
 extension OnboardingScene: DevDelegate {

@@ -8,6 +8,7 @@ enum ButtonType {
 class UpgradeButton: SKSpriteNode {
     unowned var menu: GeneratorUpgradeMenu!
     var price: SKLabelNode
+    var gameSave = GameSave()
     
     init(menu: GeneratorUpgradeMenu, type: ButtonType) {
         self.menu = menu
@@ -65,6 +66,7 @@ class UpgradeButton: SKSpriteNode {
             let scene = GameScene(size: (self.scene?.view?.bounds.size)!)
             scene.scaleMode = .aspectFill
             self.scene?.view?.presentScene(scene)
+            gameSave.setFirstTimePlaying(firstTimePlaying: false)
         }
     }
     

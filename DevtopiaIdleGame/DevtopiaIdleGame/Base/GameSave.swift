@@ -5,6 +5,7 @@ struct GameSave {
 
     private enum TypeStore: String {
         case timeLeft
+        case firstTimePlaying
     }
     
     let userDefaults = UserDefaults.standard
@@ -95,7 +96,15 @@ struct GameSave {
             
             mainCurrency.addGenerator(generator: DevsDesk(character: character, x: x, y: y, perSec: perSec.decimalValue, increase: increase.decimalValue, id: id, basePrice: basePrice.decimalValue, observer: mainCurrency, equipmentLevel: equipmentLevel, equipmentMultiply: equipmentMultiply.decimalValue, equipmentPriceMultiplier: equipmentPriceMultiplier.decimalValue, currentLevel: currentLevel, equipmentCurrentPrice: equipmentCurrentPrice.decimalValue, currentPrice: currentPrice.decimalValue))
         }
-        
+     
     }
     
+    func setFirstTimePlaying(firstTimePlaying: Bool) {
+        userDefaults.setValue(firstTimePlaying, forKey: TypeStore.firstTimePlaying.rawValue)
+    }
+    
+    func getFirstTimePlaying() -> Bool {
+        let result = (unwrap(any: userDefaults.value(forKey: TypeStore.firstTimePlaying.rawValue) ?? true) as! Bool)
+        return result
+    }
 }
