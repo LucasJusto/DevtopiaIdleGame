@@ -105,7 +105,7 @@ class UpgradeButton: SKSpriteNode {
                         devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x - 66.5, y: devsdesk.desk.position.y - 30)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_02")
                     }
-                    else if  devsdesk.character == "whiteDesigner" {
+                    else if devsdesk.character == "whiteDesigner" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Designer_step_02")
                         devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 0.282, y: devsdesk.desk.position.y + 18.608)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_02")
@@ -116,9 +116,9 @@ class UpgradeButton: SKSpriteNode {
                         self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_02")
                         
                     }
-                    else if  devsdesk.character == "blackDev" {
+                    else if devsdesk.character == "blackDev" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "blackDev_02")
-                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 0.282, y: devsdesk.desk.position.y + 18.608)
+                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x - 66.5, y: devsdesk.desk.position.y - 30)
                         self.menu.devImage.texture = SKTexture(imageNamed: "blackDev_02")
                     }
                 }
@@ -136,16 +136,9 @@ class UpgradeButton: SKSpriteNode {
                         self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_03")
                         
                     }
-                    else if devsdesk.character == "firstDev" {
-                        devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_03")
-                        self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_03")
-                        
-                    }
                     else if devsdesk.character == "blackDev" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "blackDev_03")
-//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
                         self.menu.devImage.texture = SKTexture(imageNamed: "blackDev_03")
-                        
                     }
                 }
             }
