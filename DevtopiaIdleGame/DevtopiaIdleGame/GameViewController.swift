@@ -8,9 +8,9 @@ class GameViewController: UIViewController {
             
             if let view = self.view as! SKView? {
                 // Carrega SKScene da classe GameScene.swift
-                let scene = OnboardingScene(size: view.bounds.size)
+                //let scene = OnboardingScene(size: view.bounds.size)
                 // change scenes
-                //scene = GameScene(size: view.bounds.size)
+                let scene = GameScene(size: view.bounds.size)
                 let delegate = UIApplication.shared.delegate as? AppDelegate
                 delegate?.mainCurrency = scene.mainCurrency
                 //delegate?.gameScene = scene
