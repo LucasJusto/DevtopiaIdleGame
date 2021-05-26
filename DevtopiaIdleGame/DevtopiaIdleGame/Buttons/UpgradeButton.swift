@@ -96,37 +96,109 @@ class UpgradeButton: SKSpriteNode {
             self.menu.equipment!.upgrade()
             self.menu.updateNumbers()
             self.price.text = "\(menu.generator.observer.decimalToString(value: menu.equipment!.currentPrice))"
+            
             if self.menu.equipment!.currentLevel == self.menu.equipment!.changeVisual1 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     
-                    if devsdesk.character == "dev" {
+                    if devsdesk.character == "whiteDev" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_02")
                         devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x - 66.5, y: devsdesk.desk.position.y - 30)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_02")
                     }
-                    else {
+                    else if  devsdesk.character == "whiteDesigner" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Designer_step_02")
                         devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 0.282, y: devsdesk.desk.position.y + 18.608)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_02")
+                    }
+                    else if devsdesk.character == "firstDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_02")
+                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x - 66.5, y: devsdesk.desk.position.y - 30)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_02")
                         
+                    }
+                    else if  devsdesk.character == "blackDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "blackDev_02")
+                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 0.282, y: devsdesk.desk.position.y + 18.608)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "blackDev_02")
                     }
                 }
             }
             else if self.menu.equipment!.currentLevel == self.menu.equipment!.changeVisual2 {
                 if let devsdesk = self.menu.generator as? DevsDesk {
                     
-                    if devsdesk.character == "dev" {
+                    if devsdesk.character == "whiteDev" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_03")
                         self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_03")
                     }
-                    else {
+                    else if devsdesk.character == "whiteDesigner" {
                         devsdesk.desk.texture = SKTexture(imageNamed: "Designer_step_03")
-                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
                         self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_03")
+                        
+                    }
+                    else if devsdesk.character == "firstDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_03")
+                        self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_03")
+                        
+                    }
+                    else if devsdesk.character == "blackDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "blackDev_03")
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "blackDev_03")
                         
                     }
                 }
             }
+            else if self.menu.equipment!.currentLevel == 0 {
+                if let devsdesk = self.menu.generator as? DevsDesk {
+                    if devsdesk.character == "whiteDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "whiteDevBlur")
+                        self.menu.devImage.texture = SKTexture(imageNamed: "whiteDevBlur")
+                    }
+                    else if devsdesk.character == "whiteDesigner" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "whiteDesignerBlur")
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "whiteDesignerBlur")
+                        
+                    }
+                    else if devsdesk.character == "firstDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "whiteDevBlur")
+                        self.menu.devImage.texture = SKTexture(imageNamed: "whiteDevBlur")
+                        
+                    }
+                    else if devsdesk.character == "blackDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "blackDevBlur")
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "blackDevBlur")
+                    }
+                }
+            }
+            
+            else {
+                if let devsdesk = self.menu.generator as? DevsDesk {
+                    if devsdesk.character == "whiteDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_01-1")
+                        self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_01-1")
+                    }
+                    else if devsdesk.character == "firstDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "Dev_step_01-1")
+                        self.menu.devImage.texture = SKTexture(imageNamed: "Dev_step_01-1")
+                        
+                    }
+                    else if devsdesk.character == "whiteDesigner" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "Designer_step_01")
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "Designer_step_01")
+                        
+                    }
+                    else if devsdesk.character == "blackDev" {
+                        devsdesk.desk.texture = SKTexture(imageNamed: "blackDev_01")
+//                        devsdesk.desk.position = CGPoint(x: devsdesk.desk.position.x + 64.8, y: devsdesk.desk.position.y - 33)
+                        self.menu.devImage.texture = SKTexture(imageNamed: "blackDev_01")
+                    }
+                }
+            }
+            
             //play song
             SoundController.upgradeSound(parentNode: self)
         }

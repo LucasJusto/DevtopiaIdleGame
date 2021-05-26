@@ -26,6 +26,25 @@ class DevsDesk: SKNode, Generator{
         
         if character == "whiteDev" {
             
+            print(self.equipment.currentLevel)
+            
+            anchorPoint = CGPoint(x: 0.458, y: 0.5 )
+            if self.equipment.currentLevel == 1 {
+                characterAsset = "Dev_step_01-1"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+                
+                characterAsset = "Dev_step_02"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual2 {
+                characterAsset = "Dev_step_03"
+            }
+            else {
+                characterAsset = "whiteDevBlur"
+                
+            }
+        }
+        else if character == "firstDev" {
             anchorPoint = CGPoint(x: 0.458, y: 0.5 )
             if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
                 
@@ -41,7 +60,10 @@ class DevsDesk: SKNode, Generator{
         }
         else if character == "whiteDesigner" {
             anchorPoint = CGPoint(x: 0.564, y: 0.578 )
-            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+            if self.equipment.currentLevel == 1 {
+                characterAsset = "Designer_step_01"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
                 
                 characterAsset = "Designer_step_02"
             }
@@ -49,13 +71,16 @@ class DevsDesk: SKNode, Generator{
                 characterAsset = "Designer_step_03"
             }
             else {
-                characterAsset = "Designer_step_01"
+                characterAsset = "whiteDesignerBlur"
                 
             }
         }
         else if character == "blackDev" {
             anchorPoint = CGPoint(x: 0.458, y: 0.5)
-            if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
+            if self.equipment.currentLevel == 1 {
+                characterAsset = "blackDev_01"
+            }
+            else if self.equipment.currentLevel >= equipment.changeVisual1 && self.equipment.currentLevel < equipment.changeVisual2 {
                 
                 characterAsset = "blackDev_02"
             }
@@ -63,7 +88,7 @@ class DevsDesk: SKNode, Generator{
                 characterAsset = "blackDev_03"
             }
             else {
-                characterAsset = "blackDev_01"
+                characterAsset = "blackDevBlur"
                 
             }
         }
