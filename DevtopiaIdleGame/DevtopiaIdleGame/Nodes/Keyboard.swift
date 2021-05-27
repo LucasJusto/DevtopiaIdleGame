@@ -11,7 +11,7 @@ class KeyboardButton: SKSpriteNode {
         self.position = CGPoint(x: 0, y: (UIScreen.main.bounds.height * -0.43) + self.size.height/2)
         self.name = "keyboardButton"
         self.isUserInteractionEnabled = true
-        self.zPosition = 101
+        self.zPosition = 150
     }
     
     required init?(coder aDecoder: NSCoder) {

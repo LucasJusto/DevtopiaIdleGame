@@ -29,7 +29,7 @@ class GameScene: SKScene {
         background.position = CGPoint(x: 0.5,y: 0.5)
         // Background anchorPoint setter x: 0.5 , y: 0.5
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = 50
+        background.zPosition = 100
         
         return background
     }()
@@ -47,14 +47,22 @@ class GameScene: SKScene {
     }()
     
     private lazy var back: SKSpriteNode = {
-        let back = SKSpriteNode(imageNamed: "BG_teste_02")
+        let back = SKSpriteNode(imageNamed: "BG_teste_04")
         // Background position setter x: 0.5 , y: 0.5
-        back.position = CGPoint(x: 0.5,y: 0.5)
+        back.position = CGPoint(x: -500,y: 950)
         // Background anchorPoint setter x: 0.5 , y: 0.5
         back.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         back.zPosition = 0
         
         return back
+    }()
+    private lazy var building: SKSpriteNode = {
+        let building = SKSpriteNode(imageNamed: "Predio_piso")
+        building.position = CGPoint(x: 0.5,y: -2337)
+        building.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        building.zPosition = 20
+        
+        return building
     }()
     
     override func didMove(to view: SKView) {
@@ -69,13 +77,15 @@ class GameScene: SKScene {
         background.addChild(panel)
         
         
-        
+        background.addChild(building)
         background.addChild(back)
         
         // GameScene anchorPoint setter x: 0 , y: 0
         anchorPoint = CGPoint(x: 0, y: 0)
         // GameScene size setter to scenario size
         self.size = background.size
+        
+        cameraNode.clampWorldNode()
         
         // Attributes GameScene camera to customized camera
         camera = cameraNode

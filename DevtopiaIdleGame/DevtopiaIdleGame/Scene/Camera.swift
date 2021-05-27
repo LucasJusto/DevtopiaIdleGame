@@ -113,18 +113,19 @@ class Camera: SKCameraNode, UIGestureRecognizerDelegate {
     // MARK: Bounds
     
     // mantains scene limits
-    private func clampWorldNode() {
+    public func clampWorldNode() {
         
         // for the scene limits to mantain this variable needs to be true
         if !enableLock { return }
         
         // Calculates screen limits
         
+        
         let frame = scenarioFrame
-        var minX = frame.minX + (screenLimits.size.width/2)
-        var maxX = frame.maxX - (screenLimits.size.width/2)
-        var minY = frame.minY + (screenLimits.size.height/2)
-        var maxY = frame.maxY - (screenLimits.size.height/2)
+        var minX = frame.minX + 1750
+        var maxX = frame.maxX - 1800
+        var minY = frame.minY + 1550
+        var maxY = frame.maxY - 1250
         
         
         // Verifies if the scene size is bigger than the view size in case needs change
