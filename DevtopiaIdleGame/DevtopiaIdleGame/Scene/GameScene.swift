@@ -96,7 +96,7 @@ class GameScene: SKScene {
             let devsDesk0 = DevsDesk(character: "whiteDev",
                                     x: CGFloat(initialPoint.x),
                                     y: CGFloat(initialPoint.y),
-                                    perSec: 999999999,
+                                    perSec: 20,
                                     increase: 2,
                                     id: 0, basePrice: 500,
                                     observer: mainCurrency,
