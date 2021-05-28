@@ -128,8 +128,6 @@ struct GameSave {
             let basePrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)basePrice")!) as! NSNumber)
             let currentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)currentPrice")!) as! NSNumber)
             let increase = (unwrap(any: userDefaults.value(forKey: "dev\(i)increase")!) as! NSNumber)
-            x = (unwrap(any: userDefaults.value(forKey: "dev\(i)x")!) as! CGFloat)
-            y = (unwrap(any: userDefaults.value(forKey: "dev\(i)y")!) as! CGFloat)
             let equipmentMultiply = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentMultiply")!) as! NSNumber)
             let equipmentPriceMultiplier = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentPriceMultiplier")!) as! NSNumber)
             let equipmentCurrentPrice = (unwrap(any: userDefaults.value(forKey: "dev\(i)equipmentCurrentPrice")!) as! NSNumber)
